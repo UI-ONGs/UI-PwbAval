@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI ONG's</title>
+    <link rel="stylesheet" href="../css/cabecalho.css">
+    <link rel="stylesheet" href="../css/perfil.css">
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    
+</head>
+<body>
+
+    <!--id para puxar no js dos dados-->
+    <div id="dados"></div>
+
+    <!--cabeçalho-->
+    <header class="header">
+        <a href="#"><img src="img/logo.png" alt="UI ONGs" class="logo"></a>
+        <nav>
+            <ul class="menu">
+                <li><a href="nos.html">Quem Somos?</a></li>
+                <li><a href="instituicao.html">Instituições</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="calendario.html">Calendário</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!--Criando a div geral-->
+    <div class="wrapper">
+        <!--Criando a div esquerda-->
+        <div class="left">
+            <img src="img/gui_perfil.png" alt="sua foto" width="200">
+            <div class="info-perfil">
+                <h4 id="nickname">nickname</h4>
+                <p>Volunatariado</p>
+            </div>
+        </div>
+
+        <!--Criando a div direita-->
+        <div class="right">
+            <h3>Minhas Informações</h3>
+            <div class="info">
+                <div class="info_data">
+                    <div class="data" id="dados">
+                        <h4>Nome Completo</h4>
+                        <p id="nome">Fulano da Silva</p>
+                    </div>
+                    <div class="data">
+                        <h4>Email</h4>
+                        <p id="email">fulaninho@gmail.com</p>
+                    </div>
+                    <div class="data">
+                        <h4>Senha</h4>
+                        <p id="senha">123456</p>
+                    </div>
+                </div>
+                <div class="social_media">
+                    <ul>
+                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            
+
+            <div class="projects">
+                <h3>projetos</h3>
+                <div class="projects_data">
+                    <div class="data">
+                        <h4>Participações Recentes</h4>
+                        <p>Aqui vai aparecer o nome das Instituições/projetos que o usuário participou.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!--rodapé-->
+    <footer><p>Termos de Uso e Privacidade</p></footer>
+    <script src="mostrar_dados.js"></script>
+
+
+</body>
+</html>
