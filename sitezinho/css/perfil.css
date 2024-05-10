@@ -1,0 +1,126 @@
+/*reset geral*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+
+/*dividindo a div principal em dois lados*/
+.wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  display: flex;
+  box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
+}
+
+/*estilizando a div esquerda*/
+.wrapper .left {
+  width: 35%;
+  background: linear-gradient(to right, #8aa373, #b7d19f);
+  padding: 30px 25px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  text-align: center;
+  color: #fff;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.info-perfil {
+ margin-top: -50px;
+}
+
+.wrapper .left img {
+  border-radius: 5px;
+  width: 200px;
+  height: 200px;
+}
+
+.wrapper .left h4 {
+  margin-bottom: 10px;
+  margin-top: 2px;
+
+}
+
+.wrapper .left p {
+  font-size: 12px;
+
+}
+
+/*estilizando a div direita geral (em cima e embaixo)*/
+.wrapper .right {
+  width: 65%;
+  background: #51614e;
+  padding: 30px 25px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.wrapper .right .info,
+.wrapper .right .projects {
+  margin-bottom: 25px;
+}
+
+.wrapper .right h3,
+.wrapper .right .projects h3 {
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #e0e0e0;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+.info{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.wrapper .right .info_data .data h4,
+.wrapper .right .data h4 {
+  color: #f7f7f7;
+  margin-bottom: 2px;
+}
+
+.wrapper .right .info_data .data p,
+.wrapper .right .data p {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: black;
+  
+}
+
+/*estilizando as tags de redes sociais*/
+.social_media ul li a:hover{
+  background-color: #667a63;
+  border-radius: 5px;
+}
+
+.wrapper .social_media ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper .social_media ul li {
+  width: 45px;
+  height: 45px;
+  background: #b7d19f;
+  margin: 5px;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 45px;
+}
+
+.wrapper .social_media ul li a {
+  color: #fff;
+  display: block;
+  font-size: 18px;
+}

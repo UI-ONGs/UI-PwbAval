@@ -1,0 +1,70 @@
+/*reset css*/
+body, ul, li, p {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    font-size: 1.2rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-sizing: border-box;
+}
+
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #f6f6f6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* estilizando o rodape */
+footer, footer p {
+    background-color: #51614e;
+    
+    color: #f6f6f6;
+    margin-top: auto;
+    min-height: 30px;
+    max-width: 100%;
+    padding: 5px;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+  
+/*estilizando o cabeçalho*/
+.header {
+    background-color: #51614e;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    min-height: 50px;
+}
+
+/* arrumando o menu */
+.menu {
+    display: flex;
+}
+
+.menu li {
+    margin-left: 10px;
+}
+
+.menu li a {
+    display: block;
+    padding: 10px;
+    color:#f6f6f6;
+}
+
+/* redimensionando a imagem da logo */
+.logo {
+    min-width: 100px;
+    max-width: 200px;
+}

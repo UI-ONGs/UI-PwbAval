@@ -1,0 +1,201 @@
+/*reset css*/
+body, ul, li, p {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    font-size: 1.2rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-sizing: border-box;
+}
+
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #f6f6f6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* estilizando o rodape */
+footer, footer p {
+    background-color: #51614e;
+    
+    color: #e6d5a9;
+    margin-top: auto;
+    min-height: 30px;
+    max-width: 100%;
+    padding: 5px;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+  
+/*estilizando o cabeçalho*/
+.header {
+    background-color: #51614e;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    min-height: 50px;
+}
+
+/* arrumando o menu */
+.menu {
+    display: flex;
+}
+
+.menu li {
+    margin-left: 10px;
+}
+
+.menu li a {
+    display: block;
+    padding: 10px;
+    color: #e6d5a9;
+}
+
+/* redimensionando a imagem da logo */
+.logo {
+    min-width: 100px;
+    max-width: 200px;
+}
+
+
+/*estilizando os div principais*/
+
+/*Estilizando o Texto Introdutório*/
+.team-section{
+    width: 100%;
+}
+
+.team-section .container{
+    width: 80%;
+    margin: auto;
+}
+
+.team-section .container .row{
+    width: 60%;
+    margin: auto;
+}
+
+.team-section .container .row .title{
+    text-align: center;
+    margin-top: 50px;
+}
+
+.team-section .container .row .title h1{
+    font-size: 35px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.team-section .container .row .title p{
+    font-size: 18px;
+    font-family: sans-serif;
+    margin: 30px 0px;
+}
+
+/*Dividindo em 3 card principais*/
+.team-section .container .team-card{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 90px;
+    margin-top: 50px;
+}
+
+.team-section .container .team-card .card{
+    width: 100%;
+    background-color: #51614e;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    cursor: pointer;
+}
+
+/*Animação caso passe o curso por cima*/
+.team-section .container .team-card .card:hover{
+    background-color: #b7d19f;
+    transition: 0.4s;
+    color: #51614e;
+}
+
+/*Estilizando as Imagens da Equipe*/ 
+.image-section{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+h4 {
+    text-align: center;
+    margin-top: 10px;
+    max-width: 150px;
+}
+
+.image-section img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 6px solid #d5b741;
+}
+
+.image-section div{    
+    margin: 0 10px;
+}
+
+/*Estilizando Cards Missão e App*/
+.team-section .container .team-card .card .content{
+    width: 100%;
+    text-align: center;
+}
+
+.team-section .container .team-card .card .content h3{
+    font-size: 2vw;
+    max-width: 100%;
+    margin-top: 0.1vw;
+    letter-spacing: 1.5px;
+    color: #d5b741;
+}
+
+.team-section .container .team-card .card .content p{
+    font-size: 15px;
+    margin: 16px 0px;
+    line-height: 1.5;
+    color: black;
+}
+
+h3{
+    text-shadow: 2px 2px black;
+}
+
+p {
+    font-weight: bold;
+}
+
+/*Tornando Responsivo - Tela Maior*/
+@media screen and (max-width: 900px) {
+    .team-section .container .team-card{
+
+    grid-template-columns: repeat(2, 1fr);    
+    }
+}
+
+/*Tornando Responsivo - Tela Menor*/
+@media screen and (max-width: 768px) {
+    .team-section .container .team-card{
+ 
+    grid-template-columns: 1fr;    
+    }
+}
