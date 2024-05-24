@@ -123,4 +123,20 @@
   color: #fff;
   display: block;
   font-size: 18px;
+  width: 45px;
 }
+
+/*estilizando a foto*/
+.preview-img {
+  position: relative;
+}
+
+.icone {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  bottom: 15px;
+  right: 7px;
+  background-color: #51614e;
+}
+
