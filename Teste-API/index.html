@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Google Maps Teste</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABtMF7HLvrhCj2OgIiIcRlwurWBCUtWJA"></script>
+ <script>
+        let map;
+        let currentInfoWindow = null;
+
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: { lat: -34.397, lng: 150.644 },
+                zoom: 8
+            });
+
+            // Load stored markers from localStorage
+            loadMarkers();
+
+            map.addListener('click', function(event) {
+                showAddLocationForm(event.latLng);
+            });
+        }
+
+        function showAddLocationForm(location) {
+            if (currentInfoWindow) {
+                currentInfoWindow.close();
+            }
+
+            const formHtml = `
+                <div id="form">
+                    <h3>Adicionar Local</h3>
+                    <label>Nome:</label><br>
+                    <input type="text" id="name"><br>
+                    <label>Descrição:</label><br>
+                    <textarea id="description"></textarea><br>
+                    <label>Imagem:</label><br>
+                    <input type="file" id="image"><br>
+                    <p>Latitude: ${location.lat()}</p>
+                    <p>Longitude: ${location.lng()}</p>
+                    <button onclick="addMarker(${location.lat()}, ${location.lng()})">Adicionar</button>
+                </div>
+            `;
+
+            const infoWindow = new google.maps.InfoWindow({
+                content: formHtml,
+                position: location
+            });
+
+            infoWindow.open(map);
+            currentInfoWindow = infoWindow;
+        }
+
+        function addMarker(lat, lng) {
+            const name = document.getElementById('name').value;
+            const description = document.getElementById('description').value;
+            const imageFile = document.getElementById('image').files[0];
+
+            let imageUrl = '';
+            if (imageFile) {
+                const reader = new FileReader();
+                reader.onloadend = function() {
+                    imageUrl = reader.result;
+                    saveMarker({ lat, lng, name, description, imageUrl });
+                    createMarker({ lat, lng, name, description, imageUrl });
+                }
+                reader.readAsDataURL(imageFile);
+            } else {
+                saveMarker({ lat, lng, name, description });
+                createMarker({ lat, lng, name, description });
+            }
+
+            if (currentInfoWindow) {
+                currentInfoWindow.close();
+            }
+        }
+
+        function saveMarker(marker) {
+            let markers = JSON.parse(localStorage.getItem('markers')) || [];
+            markers.push(marker);
+            localStorage.setItem('markers', JSON.stringify(markers));
+        }
+
+        function loadMarkers() {
+            let markers = JSON.parse(localStorage.getItem('markers')) || [];
+            markers.forEach(marker => {
+                createMarker(marker);
+            });
+        }
+
+        function createMarker({ lat, lng, name, description, imageUrl }) {
+            const location = { lat: parseFloat(lat), lng: parseFloat(lng) };
+
+            const marker = new google.maps.Marker({
+                position: location,
+                map: map,
+                title: name
+            });
+
+            const infoWindowContent = `
+                <div>
+                    <h3>${name}</h3>
+                    <p>${description}</p>
+                    ${imageUrl ? `<img src="${imageUrl}" alt="${name}" style="max-width: 100px; max-height: 100px;">` : ''}
+                    <p>Latitude: ${lat}</p>
+                    <p>Longitude: ${lng}</p>
+                </div>
+            `;
+
+            const infoWindow = new google.maps.InfoWindow({
+                content: infoWindowContent
+            });
+
+            marker.addListener('click', function() {
+                infoWindow.open(map, marker);
+            });
+
+            map.panTo(location);
+        }
+    </script>
+    <style>
+        #map {
+            height: 100%;
+        }
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        #form {
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body onload="initMap()">
+    <div id="map"></div>
+</body>
+</html>
