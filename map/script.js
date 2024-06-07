@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+    initMap();
     const btn = document.getElementById("btn");
     const switchDiv = document.querySelector(".switch");
 
@@ -9,14 +10,12 @@ document.addEventListener("DOMContentLoaded", function () {
     function rightClick() {
         const switchWidth = switchDiv.offsetWidth;
         const btnWidth = btn.offsetWidth;
-        btn.style.left = (switchWidth - btnWidth - 5) + 'px';
+        btn.style.left = (switchWidth - btnWidth - 6) + 'px';
     }
 
-    // Adiciona event listeners aos botões
     document.querySelector(".toggle-btn:nth-of-type(1)").addEventListener("click", leftClick);
     document.querySelector(".toggle-btn:nth-of-type(2)").addEventListener("click", rightClick);
 
-    // Ajusta a posição do botão ao redimensionar a janela
     window.addEventListener("resize", function () {
         if (btn.style.left !== '0') {
             rightClick();
@@ -27,17 +26,16 @@ document.addEventListener("DOMContentLoaded", function () {
 let map;
 let currentInfoWindow = null;
 let geocoder;
-let markersArray = []; // Armazena todos os marcadores para fácil remoção
+let markersArray = [];
 
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
-        center: { lat: -20.3155, lng: -40.3128 }, // Vitória - ES
+        center: { lat: -20.3155, lng: -40.3128 },
         zoom: 12
     });
 
     geocoder = new google.maps.Geocoder();
 
-    // Carrega os marcadores armazenados no localStorage
     loadMarkers();
 
     map.addListener('rightclick', function (event) {
@@ -77,8 +75,8 @@ function showAddLocationForm(location) {
                     <input type="text" id="name"><br>
                     <label>Descrição:</label><br>
                     <textarea id="description"></textarea><br>
-                    <label>Imagem:</label><br>
-                    <input type="file" id="image"><br>
+                    <label>Imagens:</label><br>
+                    <input type="file" id="images" multiple><br>
                     <p>Endereço: ${address}</p>
                     <p>Rua: ${street}</p>
                     <p>Bairro: ${neighborhood}</p>
@@ -103,17 +101,28 @@ function showAddLocationForm(location) {
 function addMarker(street, neighborhood, city, lat, lng) {
     const name = document.getElementById('name').value;
     const description = document.getElementById('description').value;
-    const imageFile = document.getElementById('image').files[0];
+    const imageFiles = document.getElementById('images').files;
 
-    let imageUrl = '';
-    if (imageFile) {
-        const reader = new FileReader();
-        reader.onloadend = function () {
-            imageUrl = reader.result;
-            saveMarker({ lat, lng, name, description, imageUrl, street, neighborhood, city });
-            createMarker({ lat, lng, name, description, imageUrl, street, neighborhood, city });
-        }
-        reader.readAsDataURL(imageFile);
+    let images = [];
+    if (imageFiles.length > 0) {
+        const promises = Array.from(imageFiles).map(file => {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onloadend = function () {
+                    resolve(reader.result);
+                };
+                reader.onerror = reject;
+                reader.readAsDataURL(file);
+            });
+        });
+
+        Promise.all(promises).then(results => {
+            images = results;
+            saveMarker({ lat, lng, name, description, images, street, neighborhood, city });
+            createMarker({ lat, lng, name, description, images, street, neighborhood, city });
+        }).catch(error => {
+            console.error("Error loading images: ", error);
+        });
     } else {
         saveMarker({ lat, lng, name, description, street, neighborhood, city });
         createMarker({ lat, lng, name, description, street, neighborhood, city });
@@ -137,7 +146,7 @@ function loadMarkers() {
     });
 }
 
-function createMarker({ lat, lng, name, description, imageUrl, street, neighborhood, city }) {
+function createMarker({ lat, lng, name, description, images, street, neighborhood, city }) {
     const location = { lat: parseFloat(lat), lng: parseFloat(lng) };
 
     const marker = new google.maps.Marker({
@@ -146,89 +155,93 @@ function createMarker({ lat, lng, name, description, imageUrl, street, neighborh
         title: name
     });
 
-    markersArray.push(marker); // Adiciona o marcador ao array
+    markersArray.push(marker);
 
     marker.addListener('click', function () {
-        displayMarkerInfo({ name, description, imageUrl, street, neighborhood, city, lat, lng });
+        displayMarkerInfo({ name, description, images, street, neighborhood, city, lat, lng });
     });
 
     map.panTo(location);
 }
 
-function displayMarkerInfo({ name, description, imageUrl, street, neighborhood, city, lat, lng }) {
+function displayMarkerInfo({ name, description, images, street, neighborhood, city, lat, lng }) {
     const infoDiv = document.querySelector(".info");
-    const infoContent = `
+    let imageHtml = '';
+
+    if (images && images.length > 0) {
+        imageHtml = `
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    ${images.map((_, index) => `<li data-target="#carouselExampleIndicators" data-slide-to="${index}" class="${index === 0 ? 'active' : ''}"></li>`).join('')}
+                </ol>
+                <div class="carousel-inner">
+                    ${images.map((image, index) => `<div class="carousel-item ${index === 0 ? 'active' : ''}"><img src="${image}" class="d-block w-100"></div>`).join('')}
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        `;
+    }
+
+    infoDiv.innerHTML = `
         <h3>${name}</h3>
         <p>${description}</p>
-        ${imageUrl ? `<img src="${imageUrl}" alt="${name}" style="max-width: 100px; max-height: 100px;">` : ''}
-        <p>Rua: ${street}</p>
-        <p>Bairro: ${neighborhood}</p>
-        <p>Cidade: ${city}</p>
-        <p>Latitude: ${lat}</p>
-        <p>Longitude: ${lng}</p>
+        <p>Endereço: ${street}, ${neighborhood}, ${city}</p>
+        <p>Coordenadas: ${lat}, ${lng}</p>
+        ${imageHtml}
         <button onclick="deleteMarker(${lat}, ${lng})">Excluir</button>
     `;
-    infoDiv.innerHTML = infoContent;
 }
 
-function searchLocation() {
-    const address = document.getElementById('searchBox').value;
-    geocoder.geocode({ address: address }, function (results, status) {
-        if (status === 'OK') {
-            map.setCenter(results[0].geometry.location);
-            map.setZoom(15);
-        } else {
-            alert('Geocode não foi bem-sucedido por causa de: ' + status);
-        }
-    });
-}
-
-// Função para excluir um marcador
 function deleteMarker(lat, lng) {
-    // Remover o marcador do localStorage
     let markers = JSON.parse(localStorage.getItem('markers')) || [];
     markers = markers.filter(marker => marker.lat !== lat || marker.lng !== lng);
     localStorage.setItem('markers', JSON.stringify(markers));
 
-    // Remover o marcador do mapa e do array markersArray
-    markersArray.forEach((marker, index) => {
-        if (marker.position.lat() === lat && marker.position.lng() === lng) {
-            marker.setMap(null); // Remove o marcador do mapa
-            markersArray.splice(index, 1); // Remove o marcador do array
-        }
-    });
+    clearMarkers();
+    loadMarkers();
 
-    // Limpar a div de informações
-    document.querySelector('.info').innerHTML = '';
+    const infoDiv = document.querySelector(".info");
+    infoDiv.innerHTML = '';
 }
 
-// Função para criar um marcador no mapa e adicionar suas informações na div info
-function createMarker({ lat, lng, name, description, imageUrl, street, neighborhood, city }) {
-    const location = { lat: parseFloat(lat), lng: parseFloat(lng) };
+function clearMarkers() {
+    for (let i = 0; i < markersArray.length; i++) {
+        markersArray[i].setMap(null);
+    }
+    markersArray = [];
+}
 
-    const marker = new google.maps.Marker({
-        position: location,
-        map: map,
-        title: name
+document.querySelector("#go-to").addEventListener("click", function() {
+    const address = document.getElementById("searchBox").value;
+    geocoder.geocode({ 'address': address }, function (results, status) {
+        if (status === 'OK') {
+            map.setCenter(results[0].geometry.location);
+        } else {
+            alert('Geocode was not successful due to: ' + status);
+        }
     });
+});
 
-    markersArray.push(marker); // Adiciona o marcador ao array
+document.querySelector(".nav").addEventListener("mouseover", hideDiv);
+document.querySelector(".nav").addEventListener("mouseout", showDiv);
 
-    marker.addListener('click', function () {
-        const infoDiv = document.querySelector('.info');
-        const infoWindowContent = `
-            <h3>${name}</h3>
-            <p>${description}</p>
-            ${imageUrl ? `<img src="${imageUrl}" alt="${name}" style="max-width: 100px; max-height: 100px;">` : ''}
-            <p>Rua: ${street}</p>
-            <p>Bairro: ${neighborhood}</p>
-            <p>Cidade: ${city}</p>
-            <p>Latitude: ${lat}</p>
-            <p>Longitude: ${lng}</p>
-            <button onclick="deleteMarker(${lat}, ${lng})">Excluir</button>
-        `;
-        infoDiv.innerHTML = infoWindowContent;
+function hideDiv() {
+    document.querySelector(".carousel-indicators").style.opacity = "0";
+    document.querySelectorAll(".carousel-control-prev, .carousel-control-next").forEach(function(element) {
+        element.style.opacity = "0";
     });
+}
 
-    map.panTo(location);
+function showDiv() {
+    document.querySelector(".carousel-indicators").style.opacity = "1";
+    document.querySelectorAll(".carousel-control-prev, .carousel-control-next").forEach(function(element) {
+        element.style.opacity = "1";
+    });
 }

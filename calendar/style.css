@@ -91,7 +91,7 @@ nav:hover{
 
 body {
     position: relative;
-    min-height: 100vh;
+    max-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -107,7 +107,6 @@ body {
     padding: 5px;
     color: #fff;
     display: flex;
-
     border-radius: 10px;
     background-color: #373c4f;
 }
@@ -522,8 +521,30 @@ body {
     color: #373c4f;
 }
 
+.add-event-input .event-photos{
+    border-radius: 20px;
+}
+
 .add-event-body .add-event-input input::placeholder{
     color: #a5a5a5;
+}
+
+.add-event-input .event-photos{
+    display: none;
+}
+
+.add-event-input .file-count{
+    color: #fff;
+    background-color: var(--primary-clr);
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin: 0 auto;
+}
+
+.add-event-input .event-category{
+    font-size: 1rem;
+    font-weight: 400;
+    color: #373c4f;
 }
 
 .add-event-body .add-event-input input:focus{

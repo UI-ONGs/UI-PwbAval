@@ -1,3 +1,21 @@
+// Variável global para armazenar o número de arquivos
+let fileCount = 0;
+
+// Seleciona o elemento de upload de arquivos globalmente
+const fileUploadElement = document.getElementById('file-upload');
+
+// Função para contar os arquivos selecionados
+fileUploadElement.addEventListener('change', function () {
+    fileCount = this.files.length;
+    var fileCountSpan = document.querySelector('.file-count');
+    if (fileCount === 1) {
+        fileCountSpan.textContent = '1 arquivo selecionado';
+    } else {
+        fileCountSpan.textContent = fileCount + ' arquivos selecionados';
+    }
+});
+
+
 const calendar = document.querySelector(".calendar"),
     date = document.querySelector(".date"),
     daysContainer = document.querySelector(".days"),
@@ -65,6 +83,7 @@ const months = [
     }
 ];*/
 
+
 //define um array vazio
 let eventsArr = [];
 
@@ -120,7 +139,7 @@ function initCalendar() {
             && year === new Date().getFullYear()
             && month === new Date().getMonth()) {
 
-            activeDay= i;    
+            activeDay = i;
             getActiveDay(i);
             updateEvents(i);
             //se event for encontrado, adicione a classe evnto
@@ -270,7 +289,7 @@ addEventFrom.addEventListener("input", (e) => {
     if (addEventFrom.value.length === 2) {
         addEventFrom.value += ':';
     }
-    
+
     //não deixa o suário colocar mais de 4 números (+1 do dos dois pontos)
     if (addEventFrom.value.length > 5) {
         addEventFrom.value = addEventFrom.value.slice(0, 5);
@@ -351,7 +370,7 @@ function addListner() {
 }
 
 //mostrar dias de evntos e datas no topo
-function getActiveDay(date){
+function getActiveDay(date) {
     const day = new Date(year, month, date);
     const dayName = day.toString().split(" ")[0];
     eventDay.innerHTML = dayName;
@@ -359,15 +378,15 @@ function getActiveDay(date){
 }
 
 //função para mostrar os eventos de determinado dia
-function updateEvents(date){
+function updateEvents(date) {
     let events = "";
     eventsArr.forEach((event) => {
         //pegar eventos somente dos dias atives
-        if(date === event.day &&
+        if (date === event.day &&
             month + 1 === event.month &&
-            year === event.year){
+            year === event.year) {
             //mostre eventos nos documentos
-            event.events.forEach((event) =>{
+            event.events.forEach((event) => {
                 events += `
                 <div class="event">
                     <div class="title">
@@ -383,8 +402,8 @@ function updateEvents(date){
     })
 
     //se nada for encontrado
-    if(events === ""){
-        events =  `
+    if (events === "") {
+        events = `
         <div class="no-event">
             <h3>No Events</h3>
         </div>`;
@@ -403,9 +422,9 @@ addEventSubmit.addEventListener("click", () => {
     const eventTimeTo = addEventTo.value;
 
     //algumas validações
-    if (eventTitle === "" || 
-        eventTimeFrom === "" || 
-        eventTimeTo === ""){
+    if (eventTitle === "" ||
+        eventTimeFrom === "" ||
+        eventTimeTo === "" || fileCount < 1) {
         alert("Please fill all the fields");
         return;
     }
@@ -413,12 +432,12 @@ addEventSubmit.addEventListener("click", () => {
     const timeFromArr = eventTimeFrom.split(":");
     const timeToArr = eventTimeTo.split(":");
 
-    if(timeFromArr.length !=2 ||
-        timeToArr.length !=2 ||
-        timeFromArr[0]> 23 ||
-        timeFromArr[1]> 59 ||
-        timeToArr[0]> 23 ||
-        timeToArr[1]> 59){
+    if (timeFromArr.length != 2 ||
+        timeToArr.length != 2 ||
+        timeFromArr[0] > 23 ||
+        timeFromArr[1] > 59 ||
+        timeToArr[0] > 23 ||
+        timeToArr[1] > 59) {
         alert("Invalid Time Format");
     }
 
@@ -432,14 +451,14 @@ addEventSubmit.addEventListener("click", () => {
 
     let eventAdded = false;
     //checa se o eventsArr não está vazio
-    if(eventsArr.length > 0){
+    if (eventsArr.length > 0) {
         //checa se o dia atual já tem um evento e adiciona à ele
         eventsArr.forEach((item) => {
-            if(
+            if (
                 item.day === activeDay &&
                 item.month === month + 1 &&
                 item.year === year
-            ){
+            ) {
                 item.events.push(newEvent);
                 eventAdded = true;
             }
@@ -447,7 +466,7 @@ addEventSubmit.addEventListener("click", () => {
     }
 
     //se o eventsArr está vazio ou o dia atual mão possui eventos crie um novo
-    if(!eventAdded){
+    if (!eventAdded) {
         eventsArr.push({
             day: activeDay,
             month: month + 1,
@@ -468,13 +487,13 @@ addEventSubmit.addEventListener("click", () => {
 
     //adiciona a classe event para o novo evento criado (se não adicionado)
     const activeDayElem = document.querySelector(".day.active");
-    if(!activeDayElem.classList.contains("event")){
+    if (!activeDayElem.classList.contains("event")) {
         activeDayElem.classList.add("event");
     }
 
 });
 
-function convertTime(time){
+function convertTime(time) {
     let timeArr = time.split(":");
     let timeHour = timeArr[0];
     let timeMin = timeArr[1];
@@ -484,82 +503,38 @@ function convertTime(time){
     return time;
 }
 
-//função para remover eventos ao click
-//vai ser uma função para abrir o dialog
-/*eventsContainer.addEventListener("click", (e) => {
-    if(e.target.classList.contains("event")){
-        const eventTitle = e.target.children[0].children[1].innerHTML;
+function openEventDialog(eventInfo) {
+    const dialog = document.getElementById('event-dialog');
+    const eventDetails = document.getElementById('event-details');
+    eventDetails.innerText = eventInfo;
+    dialog.style.display = 'block';
 
-        //pega o titulo do event e procura por ele no array e em seguida o deleta
-        eventsArr.forEach((event) => {
-            if(
-                event.day === activeDay &&
-                event.month === month + 1 &&
-                event.year === year
-            ){
-                event.events.forEach((item, index) => {
-                    if(item.title === eventTitle){
-                        event.events.splice(index, 1);
-                    }
-                });
+    const closeBtn = document.getElementsByClassName('close-dialog')[0];
+    closeBtn.onclick = function () {
+        dialog.style.display = 'none';
+    };
 
-                //se nenhum evento sobrando em determinado dia, remova o dia completo
-                if(event.events.length === 0){
-                    eventsArr.splice(eventsArr.indexOf(event), 1);
-                    //depois de remover o dia por completo, remova a classe 'active' deste dia
-
-                    const activeDayElem = document.querySelector(".day.active");
-                    if(activeDayElem.classList.contains("event")){
-                        activeDayElem.classList.remove("event");
-                    }
-                }
-            }
-        });
-        //depois de remover do array atualize event
-        updateEvents(activeDay);
-    }
-})*/
-
-document.addEventListener('DOMContentLoaded', function() {
-    // Função para abrir o diálogo com informações do evento
-    function openEventDialog(eventInfo) {
-        const dialog = document.getElementById('event-dialog');
-        const eventDetails = document.getElementById('event-details');
-        eventDetails.innerText = eventInfo;
-        dialog.style.display = 'block';
-
-        const closeBtn = document.getElementsByClassName('close-dialog')[0];
-        closeBtn.onclick = function() {
+    window.onclick = function (event) {
+        if (event.target === dialog) {
             dialog.style.display = 'none';
-        };
+        }
+    };
+}
 
-        window.onclick = function(event) {
-            if (event.target === dialog) {
-                dialog.style.display = 'none';
-            }
-        };
+eventsContainer.addEventListener("click", (e) => {
+    if (e.target.classList.contains("event")) {
+        const eventInfo = e.target.innerText;
+        openEventDialog(eventInfo)
     }
-
-    // Modificar a função de remover para abrir o diálogo
-    function removeEvent(event) {
-        const eventInfo = event.target.innerText; // Supondo que o nome do evento está no texto do elemento
-        openEventDialog(eventInfo);
-    }
-
-    // Exemplo de como você pode adicionar eventos para teste
-    const events = document.querySelectorAll('.event');
-    events.forEach(event => {
-        event.addEventListener('click', removeEvent);
-    });
 });
 
 //armazenar eventos em um histórico local
-function saveEvents(){
+function saveEvents() {
     localStorage.setItem("events", JSON.stringify(eventsArr));
 }
 
-function getEvents(){
-    if(localStorage.getItem("events") === null){
+function getEvents() {
+    if (localStorage.getItem("events") === null) {
         return;
     }
     eventsArr.push(...JSON.parse(localStorage.getItem("events")));

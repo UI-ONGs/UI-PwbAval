@@ -6,10 +6,14 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/0e6a916873.js" crossorigin="anonymous"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABtMF7HLvrhCj2OgIiIcRlwurWBCUtWJA"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <title>Document</title>
 </head>
-<body onload="initMap()">
-    <nav>
+<body>
+    <nav class="nav">
         <ul>
             <li><a href="#" class="logo">
                 <img src="logo.jpg" alt="">
@@ -53,18 +57,17 @@
         <div class="left">
             <div id="controls" class="controls">
                 <input type="text" id="searchBox" placeholder="Pesquisar localização">
-                <button onclick="searchLocation()">Ir</button>
+                <button id="go-to">Ir</button>
             </div>
-            <div class="info"></div>
+            <div class="info">Clique em um Ponto do Mapa para Ver suas informações</div>
         </div>
         <div class="right">
             <div class="switch">
                 <div class="btn" id="btn"></div>
-                <button type="button" class="toggle-btn" onclick="leftClick()">Instituições</button>
-                <button type="button" class="toggle-btn" onclick="rightClick()">Eventos</button>
+                <button type="button" class="toggle-btn">Instituições</button>
+                <button type="button" class="toggle-btn">Eventos</button>
             </div>
             <div class="map" id="map">
-                <button onclick="Teste()">Teste</button>
             </div>
         </div>
     </div>
