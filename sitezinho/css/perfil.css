@@ -16,7 +16,7 @@
 /*estilizando a div esquerda*/
 .wrapper .left {
   width: 35%;
-  background: linear-gradient(to right, #bfe1df, #a5ccc9);
+  background: linear-gradient(to right, #CCD9D5, #9ab1aa);
   padding: 30px 25px;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
@@ -53,7 +53,7 @@
 /*estilizando a div direita geral (parte informações e projetos)*/
 .wrapper .right {
   width: 65%;
-  background: #68c7c1;
+  background: #45736A;
   padding: 30px 25px;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
@@ -95,7 +95,7 @@
 
 /*estilizando as tags de redes sociais*/
 .social_media ul li a:hover{
-  background-color: #508884;
+  background-color: #5c9490;
   border-radius: 5px;
 }
 
@@ -108,7 +108,7 @@
 .wrapper .social_media ul li {
   width: 45px;
   height: 45px;
-  background: #4a7b78;
+  background: #CCD9D5;
   margin: 5px;
   border-radius: 5px;
   text-align: center;
@@ -118,7 +118,7 @@
 }
 
 .wrapper .social_media ul li a {
-  color: #fff;
+  color: #45736A;
   font-size: 18px;
   width: 45px;
   display: flex;

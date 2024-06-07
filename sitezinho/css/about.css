@@ -52,18 +52,18 @@ img {
 
 .team-section .container .team-card .card{
     width: 100%;
-    background-color: #51614e;
-    display: flex;
+    background-color: #CCD9D5;
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
     padding: 20px;
     cursor: pointer;
+    transition: background 1s ease-in-out;
 }
 
 /*Animação caso passe o curso por cima*/
 .team-section .container .team-card .card:hover{
-    background-color: #b7d19f;
+    background-color: #a7be90e5;
     transition: 0.4s;
     color: #51614e;
 }
@@ -79,7 +79,7 @@ img {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    border: 6px solid #d5b741;
+    border: 6px solid #45736A;
 }
 
 .image-section div{    
@@ -103,7 +103,7 @@ h4 {
     max-width: 100%;
     margin-top: 0.1vw;
     letter-spacing: 1.5px;
-    color: #d5b741;
+    color: #45736A;
 }
 
 .team-section .container .team-card .card .content p{

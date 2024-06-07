@@ -1,5 +1,5 @@
 :root {
-    --primary-clr: #b38add;
+    --primary-clr: #6DA0A6;
 }
 
 * {
@@ -21,7 +21,7 @@ nav{
     bottom: 0;
     left: 0;
     height: 100%;
-    background: #fff;
+    background: #4a7b78;
     width: 90px;
     overflow: hidden;
     transition: width 0.2s linear;
@@ -96,7 +96,7 @@ body {
     align-items: center;
     justify-content: center;
     padding: 30px 30px 30px 120px;
-    background-color: #e2e1dc;
+    background-color: #faf6f6;
 }
 
 .container {
@@ -108,7 +108,7 @@ body {
     color: #fff;
     display: flex;
     border-radius: 10px;
-    background-color: #373c4f;
+    background-color: #45736A;
 }
 
 .left {
@@ -353,7 +353,7 @@ body {
 .today-date .event-date{
     font-size: 1rem;
     font-weight: 400;
-    color: #878895;
+    color: #fff;
 }
 
 .events{
@@ -446,7 +446,7 @@ body {
     justify-content: center;
     font-size: 1.5rem;
     font-weight: 500;
-    color: #b7b7b7;
+    color: #CCD9D5;
 }
 
 .add-event-wrapper{
@@ -591,8 +591,8 @@ body {
     align-items: center;
     justify-content: center;
     font-size: 1rem;
-    color: #878895;
-    border: 2px solid #878895;
+    color: #CCD9D5;
+    border: 2px solid #CCD9D5;
     opacity: 0.5;
     border-radius: 50%;
     background-color: transparent;
