@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+
+#final {
+    font-weight: bold;
+    color: antiquewhite;
+}
+
+.extremidade{
+    background-color: rgb(178, 211, 140);  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+header{
+    min-height: 20vh;
+    overflow: hidden;
+    border-radius: 0 0 0.5em 0.5em;
+}
+
+footer{
+    min-height: 6vh;
+    border-left: groove 1.2em;
+    border-right: ridge 1.2em;
+    border-color:rgb(134, 185, 75);
+
+}
+
+.principal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardImage{
+    position: relative;
+    width: 20vh;
+    height: 20vh;
+    background: #fff;
+    border-radius: 15%;
+    padding: 0.15em;
+}
+
+.cardImage .cardImg{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15%;
+    border: 0.2em solid rgb(208, 209, 115);
+}
+
+.card{
+    border-radius: 5%;
+    background-color: #fff;
+}
+
+.conteudo{
+    margin:0 12em;
+    overflow: hidden;
+    border-radius: 15px;
+}
+.conteudoImg,
+.conteudoCard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.7em 0.9em;
+}
+
+.conteudoImg{
+    position: relative;
+    row-gap: 5px;
+    padding: 1.2em 0;
+}
+
+.overlay{
+    position:absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color:  rgb(208, 209, 115);
+    border-radius: 5%;
+}
+
+.nome{
+    font-size: 1.1em;
+    font-weight: 500;
+    color:rgb(77, 64, 7)
+}
+
+.descricao{
+    font-size: 0.9em;
+    color:rgb(14, 107, 26);
+    text-align: center;
+}
+
+.botao{
+    border:none;
+    font-size: 1em;
+    color:#fff;
+    padding:0.5em 1em;
+    background-color: yellowgreen;
+    border-radius: 0.5em;
+    margin:0.9em;
+    cursor: pointer;
+    transition:all 0.3s ease;
+}
+
+.botao:hover{
+    background-color: rgb(102, 138, 31);
+    border-radius: 1em;
+}
+
+.swiper-navBtn{
+    color:#73f76e;
+    transition: color 0.3s ease;
+    padding: 2em;
+
+}
+
+.swiper-navBtn:hover{
+    color:#1eff00;
+    font-weight: bolder;
+}
+
+.swiper-pagination-bullet{
+    background-color: #73f76e;
+    opacity: 1;
+}
+
+.swiper-pagination-bullet-active{
+    background-color: #1eff00;
+}
+
+.slide-container{ 
+    max-width: 90vw;
+    padding: 3em 0;
+    width: 100%;
+}
+
+.principal img{
+    max-height: 14vh;
+    width: 14vw;
+    border-radius: 1rem;
+}
+
+
+main{
+    min-height: 74vh;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #EFEFEF;
+}
