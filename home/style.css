@@ -1,0 +1,251 @@
+/*NavBar*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    background: #FAF6F6;
+}
+
+nav{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    background: #4A7B78;
+    width: 90px;
+    overflow: hidden;
+    transition: width 0.2s linear;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+.logo{
+    text-align: center;
+    display: flex;
+    transition: all 0.5s ease;
+    margin: 10px 0 0 10px;
+}
+
+.logo img{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+.logo span{
+    font-weight: bold;
+    padding-left: 15px;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+nav ul li a{
+    position: relative;
+    color: #fff;
+    font-size: 14px;
+    display: table;
+    width: 300px;
+    padding: 10px;
+}
+
+.fas{
+    position: relative;
+    width: 70px;
+    height: 40px;
+    top: 14px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.nav-item{
+    position: relative;
+    top: 12px;
+    margin-left: 10px;
+}
+
+a:hover{
+    background: #5da0db;
+}
+
+nav:hover{
+    width: 280px;
+    transition: all 0.5s ease;
+}
+
+.logout{
+    position: absolute;
+    bottom: 0;
+}
+
+/*CSS*/
+.content{
+    margin-left: 90px;
+    width: calc(100vw-90px);
+    display: flex;
+}
+
+.right, .left{
+    width: 50%;
+    height: 100vh;
+    
+}
+
+.left{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+
+.left h1{
+    font-size: 3rem;
+    text-align: center;
+    color: #6DA0A6;
+}
+
+.left .top{
+    
+    width: 60%;
+}
+
+.left .bottom{
+    
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    width: 20vw;
+    height: 200px;
+}
+
+.left .bottom button{
+    padding: 10px 20px;
+    border-radius: 20px;
+    width: 100%;
+    background: #4576A0;
+    color: #fff;
+    font-weight: 500;
+    transition: background 0.5s ease-in-out;
+}
+
+.left .bottom button:hover{
+    background: #5da0db;
+}
+
+/*search*/
+
+
+.search-container {
+    position: relative;
+    width: 300px;
+    margin: 100px auto;
+    margin-bottom: 30px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.results-container {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: none;
+}
+
+.results-container div {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.results-container div:hover {
+    background: #f0f0f0;
+}
+
+.info-container {
+    width: 30vw;
+    height: 40vh;
+    margin: 0 auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #6DA0A6;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+}
+
+.info-container p, .info-container h2{
+    text-align: center;
+}
+
+.info-container button{
+    padding: 5px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.5s ease-in-out;
+}
+
+.info-container button:hover{
+    background: #fff;
+}
+
+/*sociais*/
+.social-media{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 25px 40px;   
+}
+
+.social-media ul{
+    display: flex;
+    justify-content: space-between;
+    width: 10vw;
+}
+
+.social-media ul li a i{
+    font-size: 1.5rem;
+    color: #4576A0;
+}
+
+.social-media ul li a i:hover{
+    color: #5da0db;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left, .right {
+        width: 100%;
+        text-align: center;
+    }
+
+    .left .bottom {
+        align-items: center;
+    }
+}
