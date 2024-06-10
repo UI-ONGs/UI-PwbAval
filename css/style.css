@@ -2,6 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 /*CSS*/
+body {
+    background: #f6f6f6;
+}
+
 .content{
     margin-left: 90px;
     width: calc(100vw-90px);
@@ -24,7 +28,7 @@
 .left h1{
     font-size: 3rem;
     text-align: center;
-    color: #6DA0A6;
+    color: #4A7B78;
 }
 
 .left .top{
@@ -46,14 +50,14 @@
     padding: 10px 20px;
     border-radius: 20px;
     width: 100%;
-    background: #4576A0;
+    background: #4A7B78;
     color: #fff;
     font-weight: 500;
     transition: background 0.5s ease-in-out;
 }
 
 .left .bottom button:hover{
-    background: #5da0db;
+    background: #7fb3a1;
 }
 
 /*search*/
@@ -101,7 +105,7 @@ input[type="text"] {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    background: #6DA0A6;
+    background: #86b9b6;
     display: flex;
     justify-content: space-around;
     flex-direction: column;
@@ -111,6 +115,7 @@ input[type="text"] {
 
 .info-container p, .info-container h2{
     text-align: center;
+    color: #3d6663;
 }
 
 .info-container button{
@@ -140,11 +145,11 @@ input[type="text"] {
 
 .social-media ul li a i{
     font-size: 1.5rem;
-    color: #4576A0;
+    color: #4A7B78;
 }
 
 .social-media ul li a i:hover{
-    color: #5da0db;
+    color: #335351;
 }
 
 /* Responsive Design */
