@@ -16,11 +16,26 @@ body {
     background-color: #f6f6f6;
 }
 
+.content-div{
+    margin-left: 90px;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.left, .right{
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 .card-container {
     display: flex;
     overflow: hidden;
     width: 500px;
-    max-height: 500px;
+    max-height: 600px;
     position: relative;
     justify-content: center;
     align-items: center;
@@ -56,15 +71,10 @@ body {
 }
 
 
-button a {
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-}
-
 .slider {
     display: flex;
     align-items: center;
+    flex-direction: column;
 }
 
 .card-container {
@@ -131,4 +141,108 @@ button {
     cursor: pointer;
     border-radius: 5px;
     color: #fff;
+}
+
+/*Search*/
+.search-container {
+    position: relative;
+    width: 30vw;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+}
+
+.results-container {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: none;
+}
+
+.results-container div {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.results-container div:hover {
+    background: #f0f0f0;
+}
+
+.info-container {
+    width: 30vw;
+    height: 40vh;
+    margin: 0 auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #86b9b6;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+}
+
+.info-container p, .info-container h2{
+    text-align: center;
+    color: #3d6663;
+}
+
+.info-container button{
+    padding: 5px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+.info-container button:hover{
+    background: #fff;
+    color: black;
+}
+
+/*sociais*/
+.social-media{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 25px 40px;   
+}
+
+.social-media ul{
+    display: flex;
+    justify-content: space-between;
+    width: 10vw;
+}
+
+.social-media ul li a i{
+    font-size: 1.5rem;
+    color: #4A7B78;
+}
+
+.social-media ul li a i:hover{
+    color: #335351;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content-div {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left, .right {
+        width: 100%;
+        text-align: center;
+    }
 }

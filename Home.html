@@ -51,12 +51,37 @@
             </a></li>
         </ul>
     </nav>
-    <div class="slider">
-        <button id="prevBtn">Prev</button>
-        <div class="card-container">
-            <!-- Os cards serão postos aqui através do js -->
+    <div class="content-div">
+        <div class="left">
+            <div class="slider">
+                <div class="card-container">
+                    <!-- Os cards serão postos aqui através do js -->
+                </div>
+                <div class="buttons">
+                    <button id="prevBtn">Prev</button>
+                    <button id="nextBtn">Next</button>
+                </div>
+            </div>
         </div>
-        <button id="nextBtn">Next</button>
+
+        <div class="right">
+            <div class="search-container">
+                <input type="text" id="search" placeholder="Pesquise por uma ONG">
+                <div class="results-container" id="results"></div>
+            </div>
+            <div class="info-container" id="info">
+                <h2 id="ong-nome">Detalhes da Instituição</h2>
+                <p id="ong-descricao">Selecione uma instituição para visualizar seus detalhes completos.</p>
+                <button id="ver-mais">Ver mais</button>
+            </div>
+            <div class="social-media">
+                <ul>
+                    <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href=""><i class="fab fa-twitter"></i></a></li>
+                    <li><a href=""><i class="fab fa-instagram"></i></a></li>
+                </ul>
+            </div>
+        </div>
     </div>
 </body>
 </html>
