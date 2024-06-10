@@ -6,7 +6,6 @@
 
 }
 
-
 /*#final {
     font-weight: bold;
     color: antiquewhite;
@@ -54,7 +53,7 @@ footer{
     height: 100%;
     object-fit: cover;
     border-radius: 15%;
-    border: 0.2em solid rgb(208, 209, 115);
+    border: 0.2em solid #619986;
 }
 
 .card{
@@ -87,19 +86,19 @@ footer{
     top: 0;
     height: 100%;
     width: 100%;
-    background-color:  rgb(208, 209, 115);
+    background-color: #45736A;
     border-radius: 5%;
 }
 
 .nome{
     font-size: 1.1em;
-    font-weight: 500;
-    color:rgb(77, 64, 7)
+    font-weight: bold;
+    color:#45736A;
 }
 
 .descricao{
     font-size: 0.9em;
-    color:rgb(14, 107, 26);
+    color:black;
     text-align: center;
 }
 
@@ -108,7 +107,7 @@ footer{
     font-size: 1em;
     color:#fff;
     padding:0.5em 1em;
-    background-color: yellowgreen;
+    background-color:#4D6E72;
     border-radius: 0.5em;
     margin:0.9em;
     cursor: pointer;
@@ -116,29 +115,29 @@ footer{
 }
 
 .botao:hover{
-    background-color: rgb(102, 138, 31);
+    background-color: #619986;
     border-radius: 1em;
 }
 
 .swiper-navBtn{
-    color:#73f76e;
+    color:#4D6E72;
     transition: color 0.3s ease;
     padding: 2em;
 
 }
 
 .swiper-navBtn:hover{
-    color:#1eff00;
+    color:#4D6E72;
     font-weight: bolder;
 }
 
 .swiper-pagination-bullet{
-    background-color: #73f76e;
+    background-color: #6DA0A6;
     opacity: 1;
 }
 
 .swiper-pagination-bullet-active{
-    background-color: #1eff00;
+    background-color: #6DA0A6;
 }
 
 .slide-container{ 
@@ -159,5 +158,5 @@ main{
     display:flex;
     align-items: center;
     justify-content: center;
-    background-color: #EFEFEF;
+    background-color: #f6f6f6;
 }

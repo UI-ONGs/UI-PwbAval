@@ -6,7 +6,7 @@
 }
 
 body{
-    background-image: linear-gradient(to bottom, rgb(219, 238, 207),rgb(132, 211, 80));
+    background-color: #f6f6f6;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -15,24 +15,30 @@ body{
 
 fieldset{
     padding: 1em;
-    border:0.1em solid rgb(132, 211, 80);
+    border:0.1em solid #f6f6f6;
     border-radius: 0.5em;
 }
 
 legend{
-    border:1px solid rgb(132, 211, 80);
+    border:1px solid #f6f6f6;
     padding: 1em;
     text-align: center;
-    background-color: rgb(132, 211, 80);
+    background-color: #f6f6f6;
     border-radius: 0.5em;
+    color: #45736A;
+    font-weight: bold;
+}
+
+b {
+    color: #f6f6f6;
 }
 
 .box{
     width: 40%;
     position: absolute;
-    background-color:rgba(0,0,0,0.6);
+    background-color:#45736A;
     padding:1em;
     border-radius: 1em;
-    color: white;
+    color: rgb(0, 0, 0);
 
 }
