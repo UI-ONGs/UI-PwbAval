@@ -27,7 +27,7 @@ body {
 
 .left {
     width: 40vw;
-    background: #c7ddb5;
+    background: #619986;
 }
 
 .right {
@@ -49,10 +49,10 @@ body {
 .switch {
     width: 40vw;
     margin: 35px auto;
-    border: 3px solid #c7ddb5;
+    border: 3px solid #619986;
     position: relative;
     border-radius: 30px;
-    background: #c7ddb5;
+    background: #619986;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -114,7 +114,7 @@ body {
 /*info*/
 
 .info {
-    background-color: #fdf3dc; 
+    background-color: #f6f6f6; 
     padding: 20px; 
     border-radius: 10px; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 

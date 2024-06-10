@@ -6,11 +6,11 @@
 }
 
 body{
-    background-image: linear-gradient(to bottom, rgb(219, 238, 207),rgb(132, 211, 80));
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #f6f6f6;
 }
 
 .inputBox{
@@ -42,7 +42,7 @@ body{
 .inputUser:valid ~ .labelInput{
     top:-1em;
     font-size: 0.8em;
-    color:rgb(132, 211, 80)
+    color:rgb(222, 243, 209)
 }
 
 .noWrite{
@@ -56,7 +56,7 @@ body{
 .box{
     width: 40%;
     position: absolute;
-    background-color:rgba(0,0,0,0.6);
+    background-color:#45736A;
     padding:1em;
     border-radius: 1em;
     color: white;
@@ -72,8 +72,8 @@ body{
 #submit{
     cursor: pointer;
     font-size: 1em;
-    background-color: rgb(132, 211, 80);
-    color: white;
+    background-color: #f6f6f6;
+    color: #4D6E72;
     padding:1em;
     border:none;
     width: 100%;
@@ -83,19 +83,20 @@ body{
 
 #submit:hover{
     transition: 0.3s ease;
-    background-color: rgb(97, 197, 30);
+    background-color:#dfdddd;
 }
 
 fieldset{
     padding: 1em;
-    border:0.1em solid rgb(132, 211, 80);
+    border:0.1em solid #f6f6f6;
     border-radius: 0.5em;
 }
 
 legend{
-    border:1px solid rgb(132, 211, 80);
+    border:1px solid #f6f6f6;
     padding: 1em;
     text-align: center;
-    background-color: rgb(132, 211, 80);
+    background-color: #f6f6f6;
     border-radius: 0.5em;
+    color: #4D6E72;
 }
