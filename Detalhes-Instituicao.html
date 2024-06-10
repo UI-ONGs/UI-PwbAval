@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/Detalhes-Instituicao.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/NavBar.css">
+    <!--link para utilizar os icones-->
+    <script src="https://kit.fontawesome.com/0e6a916873.js" crossorigin="anonymous"></script>
+    <script src="js/Detalhes-Instituicao.js" defer></script>
+    <title>Detalhes ONG</title>
+</head>
+<body>
+    <nav class="nav">
+        <ul>
+            <li><a href="#" class="logo">
+                <img src="imagens/logo.png" alt="">
+                <span class="nav-item">Code Info</span>
+            </a></li>
+            <li><a href="#">
+                <i class="fas fa-home"></i>
+                <span class="nav-item">Home</span>
+            </a></li>
+            <li><a href="#">
+                <i class="fas fa-user"></i>
+                <span class="nav-item">Profile</span>
+            </a></li>
+            <li><a href="#">
+                <i class="fas fa-wallet"></i>
+                <span class="nav-item">Wallet</span>
+            </a></li>
+            <li><a href="#">
+                <i class="fas fa-chart-bar"></i>
+                <span class="nav-item">Analytics</span>
+            </a></li>
+            <li><a href="#">
+                <i class="fas fa-tasks"></i>
+                <span class="nav-item">Task</span>
+            </a></li>
+            <li><a href="#">
+                <i class="fas fa-cog"></i>
+                <span class="nav-item">Setting</span>
+            </a></li>
+            <li><a href="#">
+                <i class="fas fa-question-circle"></i>
+                <span class="nav-item">Help</span>
+            </a></li>
+            <li><a href="#" class="logout">
+                <i class="fas fa-sign-out-alt"></i>
+                <span class="nav-item">Log out</span>
+            </a></li>
+        </ul>
+    </nav>
+    <div class="card">
+        <div class="title">
+            <h1 id="nome-ong"></h1>
+            <h2 id="categoria-ong"></h2>
+        </div>
+
+        <div class="icon">
+            <img src="imagens/description_icon.svg" alt="icone">
+        </div>
+
+        <div class="description_content">
+            <h3>Descrição</h3>
+            <p id="descricao-ong"></p>
+        </div>
+
+        <div class="endereco">
+            <h3>Endereço</h3>
+            <p id="endereco-ong"></p>
+        </div>
+
+        <div class="contato">
+            <h3>Contato e Redes Sociais</h3>
+            <br>
+
+            <div class="link">
+                <a href="#" id="instagram-link"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" id="facebook-link"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" id="telefone-link"><i class="fa-solid fa-phone"></i></a>
+                <a href="#" id="email-link"><i class="fa-regular fa-envelope"></i></a>
+            </div>
+        </div>
+    </div>    
+</body>
+</html>

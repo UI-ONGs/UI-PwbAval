@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI ONG's</title>
+    <!--chamando o css-->
+    <link rel="stylesheet" href="css/Perfil.css">
+    <link rel="stylesheet" href="css/NavBar.css">
+    <!--links para permitir o uso dos icones-->
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <script src="https://kit.fontawesome.com/0e6a916873.js" crossorigin="anonymous"></script>
+    <!--chamando o js-->
+    <script src="js/Perfil-addFoto.js" defer></script>
+    <script src="js/Perfil-mostrar_dados.js" defer></script>
+    <script src="js/Perfil-redes_sociais.js" defer></script>
+    
+    
+</head>
+<body>
+
+    <!--cabeçalho e rodapé-->
+    <nav>
+        <ul>
+            <li><a href="#" class="logo">
+                <img src="imagens/logo.png" alt="">
+                <span class="nav-item">Code Info</span>
+            </a></li>
+            <li><a href="#">
+                <i class="fas fa-home"></i>
+                <span class="nav-item">Home</span>
+            </a></li>
+            <li><a href="#">
+                <i class="fas fa-user"></i>
+                <span class="nav-item">Profile</span>
+            </a></li>
+            <li><a href="#">
+                <i class="fas fa-wallet"></i>
+                <span class="nav-item">Wallet</span>
+            </a></li>
+            <li><a href="#">
+                <i class="fas fa-chart-bar"></i>
+                <span class="nav-item">Analytics</span>
+            </a></li>
+            <li><a href="#">
+                <i class="fas fa-tasks"></i>
+                <span class="nav-item">Task</span>
+            </a></li>
+            <li><a href="#">
+                <i class="fas fa-cog"></i>
+                <span class="nav-item">Setting</span>
+            </a></li>
+            <li><a href="#">
+                <i class="fas fa-question-circle"></i>
+                <span class="nav-item">Help</span>
+            </a></li>
+            <li><a href="#" class="logout">
+                <i class="fas fa-sign-out-alt"></i>
+                <span class="nav-item">Log out</span>
+            </a></li>
+        </ul>
+    </nav>
+    <!--Criando a div geral-->
+    <div class="wrapper">
+        <!--Criando a div esquerda-->
+        <div class="left">
+            <div class="preview-img">
+                <!--permitindo que o usuário adicione uma foto de perfil-->
+                <img src="imagens/seletor.png" alt="selecione uma foto" width="200">
+                <input type="file" class="file-input" accept="image/*" hidden>
+                <div class="icone">
+                    <i class="fa-solid fa-image" id="iconeFoto"></i>
+                </div>
+            </div>
+
+            <div class="info-perfil">
+                <h4 id="nickname">nickname</h4>
+                <p>Voluntariado</p>   
+            </div>
+        </div>
+
+        <!--Criando a div direita-->
+        <div class="right">
+            <!--mostrando os dados informados pelo usuário no cadastro-->
+            <h3>Minhas Informações</h3>
+            <div class="info">
+                <div class="info_data">
+                    <div class="data" id="dados">
+                        <h4>Nome Completo</h4>
+                        <p id="nome">Fulano da Silva</p>
+                    </div>
+                    <div class="data">
+                        <h4>Email</h4>
+                        <p id="email">fulaninho@gmail.com</p>
+                    </div>
+                    <div class="data">
+                        <h4>Senha</h4>
+                        <p id="senha">123456</p>
+                    </div>
+                </div>
+                <!--tags para habilitar as redes sociais-->
+                <div class="social_media">
+                    <ul>
+                        <li><a id="link1" href="#"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a id="link2" href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a id="link3" href="#"><i class="fab fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <!--parte para aprensentar as instuições-->
+            <div class="projects">
+                <h3>projetos</h3>
+                <div class="projects_data">
+                    <div class="data">
+                        <h4>Participações Recentes</h4>
+                        <p>Aqui vai aparecer o nome das Instituições/projetos que o usuário participou.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
