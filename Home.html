@@ -1,85 +1,62 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/Home.css">
     <link rel="stylesheet" href="css/NavBar.css">
+    <!--link para utilizar os icones-->
     <script src="https://kit.fontawesome.com/0e6a916873.js" crossorigin="anonymous"></script>
     <script src="js/Home.js" defer></script>
-    <title>Document</title>
+    <title>Card</title>
 </head>
 <body>
-    <nav>
+    <nav class="nav">
         <ul>
             <li><a href="#" class="logo">
-                    <img src="imagens/logo.jpg" alt="">
-                    <span class="nav-item">Code Info</span>
-                </a></li>
+                <img src="imagens/logo.png" alt="">
+                <span class="nav-item">Code Info</span>
+            </a></li>
             <li><a href="#">
-                    <i class="fas fa-home"></i>
-                    <span class="nav-item">Home</span>
-                </a></li>
+                <i class="fas fa-home"></i>
+                <span class="nav-item">Home</span>
+            </a></li>
             <li><a href="#">
-                    <i class="fas fa-user"></i>
-                    <span class="nav-item">Profile</span>
-                </a></li>
+                <i class="fas fa-user"></i>
+                <span class="nav-item">Profile</span>
+            </a></li>
             <li><a href="#">
-                    <i class="fas fa-wallet"></i>
-                    <span class="nav-item">Wallet</span>
-                </a></li>
+                <i class="fas fa-wallet"></i>
+                <span class="nav-item">Wallet</span>
+            </a></li>
             <li><a href="#">
-                    <i class="fas fa-chart-bar"></i>
-                    <span class="nav-item">Analytics</span>
-                </a></li>
+                <i class="fas fa-chart-bar"></i>
+                <span class="nav-item">Analytics</span>
+            </a></li>
             <li><a href="#">
-                    <i class="fas fa-tasks"></i>
-                    <span class="nav-item">Task</span>
-                </a></li>
+                <i class="fas fa-tasks"></i>
+                <span class="nav-item">Task</span>
+            </a></li>
             <li><a href="#">
-                    <i class="fas fa-cog"></i>
-                    <span class="nav-item">Setting</span>
-                </a></li>
+                <i class="fas fa-cog"></i>
+                <span class="nav-item">Setting</span>
+            </a></li>
             <li><a href="#">
-                    <i class="fas fa-question-circle"></i>
-                    <span class="nav-item">Help</span>
-                </a></li>
+                <i class="fas fa-question-circle"></i>
+                <span class="nav-item">Help</span>
+            </a></li>
             <li><a href="#" class="logout">
-                    <i class="fas fa-sign-out-alt"></i>
-                    <span class="nav-item">Log out</span>
-                </a></li>
+                <i class="fas fa-sign-out-alt"></i>
+                <span class="nav-item">Log out</span>
+            </a></li>
         </ul>
     </nav>
-    <div class="content">
-        <div class="left">
-            <div class="top">
-                <h1>Ajudar Ficou + Fácil Agora</h1>
-            </div>
-            <div class="bottom">
-                <h2>Cadastre-se:</h2>
-                <button>Sou um Voluntário</button>
-                <button>Sou uma Instituição</button>
-            </div>
+    <div class="slider">
+        <button id="prevBtn">Prev</button>
+        <div class="card-container">
+            <!-- Os cards serão postos aqui através do js -->
         </div>
-
-        <div class="right">
-            <div class="search-container">
-                <input type="text" id="search" placeholder="Pesquise por uma ONG">
-                <div class="results-container" id="results"></div>
-            </div>
-            <div class="info-container" id="info">
-                <h2 id="ong-nome">Detalhes da Insituição</h2>
-                <p id="ong-descricao">Selecione uma instituição para visualizar seus detalhes completos.</p>
-                <button id="ver-mais">Ver mais</button>
-            </div>
-            <div class="social-media">
-                <ul>
-                    <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
-                    <li><a href=""><i class="fab fa-twitter"></i></a></li>
-                    <li><a href=""><i class="fab fa-instagram"></i></a></li>
-                </ul>
-            </div>
-        </div>
+        <button id="nextBtn">Next</button>
     </div>
 </body>
 </html>
