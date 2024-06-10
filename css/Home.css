@@ -13,7 +13,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #EBCFC4;
+    background-color: #f6f6f6;
 }
 
 .card-container {
@@ -55,14 +55,6 @@ body {
     transform: translateX(100%);
 }
 
-button {
-    background-color: #ECE8DF;
-    border: none;
-    padding: 10px 20px;
-    margin: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-}
 
 button a {
     text-decoration: none;
@@ -82,14 +74,15 @@ button a {
     height: 85vh;
     justify-content: center;
     align-items: center;
+    color: #fff;
 }
 
 .card {
     min-width: 100%;
     padding: 25px;
-    background-color: #DEB79D;
+    background-color: #619986;
     text-align: center;
-    box-shadow: 10px 10px 10px #986421;
+    box-shadow: 10px 10px 10px #395c50;
     border-radius: 5px;
     transition: transform 0.5s ease;
 }
@@ -126,15 +119,16 @@ a {
 }
 
 #read_button:hover {
-    background-color: transparent;
+    background-color: #84b1a2f5;
     transition: all 0.2s ease-in-out;
 }
 
 button {
-    background-color: #ECE8DF;
+    background-color: #6DA0A6;
     border: none;
     padding: 10px 20px;
     margin: 10px;
     cursor: pointer;
     border-radius: 5px;
+    color: #fff;
 }
