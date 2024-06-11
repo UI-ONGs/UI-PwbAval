@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <!-- Configurações básicas da página -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link para o arquivo CSS principal -->
     <link rel="stylesheet" href="css/style.css">
+    <!-- Link para o arquivo CSS da barra de navegação -->
     <link rel="stylesheet" href="css/NavBar.css">
+    <!-- Link para o kit Font Awesome -->
     <script src="https://kit.fontawesome.com/0e6a916873.js" crossorigin="anonymous"></script>
+    <!-- Link para o arquivo JavaScript -->
     <script src="js/script.js" defer></script>
+    <!-- Título da página -->
     <title>Document</title>
 </head>
 <body>
+    <!-- Barra de navegação -->
     <nav class="nav">
         <ul>
             <li><a href="#" class="logo">
@@ -50,33 +57,53 @@
             </a></li>
         </ul>
     </nav>
+    <!-- Conteúdo principal -->
     <div class="content">
         <div class="top">
+            <div class="search-container">
+                <input type="text" id="search" placeholder="Pesquise por uma ONG">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <div class="results-container" id="results"></div>
+            </div>
+            <!-- Informações principais -->
             <div class="info">
                 <h1>Collaborate <br> across the world</h1>
-                <p>A selective platform to connect great tallents around the globe, build yours now</p>
+                <p>A selective platform to connect great talents around the globe, build yours now</p>
                 <div class="buttons">
-                    <button>Get Started</button>
-                    <button>Our Plans</button>
+                    <button id="nearbyInst-btn">Insituições Próximas</button>
+                    <button id="login-btn">Login</button>
                 </div>
             </div>
-            
+            <!-- Imagem principal -->
             <div class="img-home">
                 <img src="imagens/home.svg" alt="">
             </div>
         </div>
-
         <div class="bottom">
+            <!-- Cartões de informação -->
             <div class="cards">
                 <div class="card">
-                
+                    <div class="card-img">
+                        <img src="imagens/malu_perfil.png" alt="">
+                    </div>
+                    <div class="card-info">
+                        <h2>Community Insights</h2>
+                        <p>Promovemos educação de qualidade para crianças e jovens.</p>
+                        <a href="#">Clique Aqui Para Ver Mais</a>
+                    </div>
                 </div>
-    
                 <div class="card">
-                    
+                    <div class="card-img">
+                        <img src="imagens/dani_perfil.png" alt="">
+                    </div>
+                    <div class="card-info">
+                        <h2>Community Insights</h2>
+                        <p>Promovemos educação de qualidade para crianças e jovens.</p>
+                        <a href="#">Clique Aqui Para Ver Mais</a>
+                    </div>
                 </div>
             </div>
-
+            <!-- Redes sociais e ajuda -->
             <div class="social-help">
                 <div class="social-media">
                     <ul>
@@ -85,13 +112,12 @@
                         <li><a href="#"><i class="fab fa-instagram"></i></a></li>
                     </ul>
                 </div>
-
                 <div class="help">
                     <ul>
-                        <li><a href="#">TEXT</a></li>
-                        <li><a href="#">TEXT</a></li>
-                        <li><a href="#">TEXT</a></li>
-                        <li><a href="#">TEXT</a></li>
+                        <li><a href="#">Privacidade</a></li>
+                        <li><a href="#">Termos</a></li>
+                        <li><a href="#">Outros Projetos</a></li>
+                        <li><a href="#">Ajuda</a></li>
                     </ul>
                 </div>
             </div>
