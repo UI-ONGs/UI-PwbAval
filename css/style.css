@@ -44,6 +44,10 @@ body {
     height: 30vh;
 }
 
+.top .info .buttons{
+    margin-top: 10px;
+}
+
 .top .info h1 {
     font-size: 3rem;
 }
@@ -97,6 +101,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    margin-left: 10px;
 }
 
 .bottom .cards .card .card-info h2 {
@@ -113,9 +118,9 @@ body {
 }
 
 .bottom .cards .card .card-img img {
-    background: #fff;
     max-width: 250px;
     max-height: 250px;
+    border-radius: 5px;
 }
 
 /* Estilo das redes sociais e ajuda */
@@ -177,6 +182,7 @@ body {
     margin-left: 10px;
     font-size: 20px;
     color: #335351;
+    cursor: pointer;
 }
 
 input[type="text"] {
@@ -206,38 +212,6 @@ input[type="text"] {
 
 .results-container div:hover {
     background: #f0f0f0;
-}
-
-/* Estilo do container de informações */
-.info-container {
-    width: 30vw;
-    height: 40vh;
-    margin: 0 auto;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background: #86b9b6;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    align-items: center;
-    color: #fff;
-}
-
-.info-container p, .info-container h2 {
-    text-align: center;
-    color: #3d6663;
-}
-
-.info-container button {
-    padding: 5px 15px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background 0.5s ease-in-out;
-}
-
-.info-container button:hover {
-    background: #fff;
 }
 
 /* Estilos Responsivos */

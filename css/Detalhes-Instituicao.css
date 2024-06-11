@@ -71,3 +71,8 @@ a {
     text-decoration: none;
     color: black;
 }
+
+
+#categoria-ong, #nome-ong{
+    color: #fff;
+}

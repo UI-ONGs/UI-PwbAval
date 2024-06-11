@@ -1,9 +1,143 @@
-let ongs = [];
+let ongs = [
+    {
+        "nome": "Educar para o Futuro",
+        "descricao": "Promovemos educação de qualidade para crianças e jovens.",
+        "descricao_detalhada": "A Educar para o Futuro atua na promoção da educação de qualidade para crianças e jovens em situação de vulnerabilidade social no Espírito Santo. Através de programas educacionais inovadores e de acompanhamento individualizado, a organização busca garantir o acesso à educação e o desenvolvimento de habilidades essenciais para o futuro dos participantes. Atuando em parceria com escolas e comunidades, a Educar para o Futuro contribui para a construção de uma sociedade mais justa e igualitária.",
+        "categoria": "Educação",
+        "endereco": "Rua das Palmeiras, 123, Bairro Centro, Vitória, ES",
+        "contato": {
+            "instagram": "https://instagram.com/educarparafuturo",
+            "facebook": "https://facebook.com/educarparafuturo",
+            "telefone": "(27) 3333-1234",
+            "email": "contato@educarparafuturo.org"
+        }
+    },
+    {
+        "nome": "Saúde e Vida",
+        "descricao": "Assistência médica gratuita para comunidades carentes.",
+        "descricao_detalhada": "A Saúde e Vida oferece assistência médica gratuita e de qualidade para comunidades carentes na Grande Vitória. Através de consultas médicas, exames, vacinação e ações de prevenção em saúde, a organização busca promover o bem-estar da população e reduzir as desigualdades no acesso à saúde. Atuando em parceria com postos de saúde e unidades móveis, a Saúde e Vida leva saúde para quem mais precisa.",
+        "categoria": "Saúde",
+        "endereco": "Avenida dos Andradas, 456, Bairro Jucutuquara, Vitória, ES",
+        "contato": {
+            "instagram": "https://instagram.com/saudeevida",
+            "facebook": "https://facebook.com/saudeevida",
+            "telefone": "(27) 3344-5678",
+            "email": "contato@saudeevida.org"
+        }
+    },
+    {
+        "nome": "Cidadania Ativa",
+        "descricao": "Empoderamento e defesa dos direitos humanos.",
+        "descricao_detalhada": "A Cidadania Ativa é uma organização dedicada à defesa e promoção dos direitos humanos no Espírito Santo. Através de ações de conscientização, assessoria jurídica, acompanhamento de casos e advocacy, a organização busca fortalecer os direitos da população e garantir o acesso à justiça. Atuando em parceria com movimentos sociais e órgãos públicos, a Cidadania Ativa contribui para a construção de uma sociedade mais justa e democrática.",
+        "categoria": "Direitos Humanos",
+        "endereco": "Rua Sete de Setembro, 789, Bairro Praia do Canto, Vitória, ES",
+        "contato": {
+            "instagram": "https://instagram.com/cidadaniaativa",
+            "facebook": "https://facebook.com/cidadaniaativa",
+            "telefone": "(27) 3355-7890",
+            "email": "contato@cidadaniaativa.org"
+        }
+    },
+    {
+        "nome": "Verde Esperança",
+        "descricao": "Preservação ambiental e educação ecológica.",
+        "descricao_detalhada": "A Verde Esperança trabalha pela preservação ambiental e pela educação ecológica no Espírito Santo. Através de ações de reflorestamento, proteção de áreas verdes, campanhas de conscientização e programas educativos, a organização busca promover a sustentabilidade e o respeito ao meio ambiente. Atuando em parceria com escolas, comunidades e órgãos públicos, a Verde Esperança contribui para a construção de um futuro mais verde e sustentável.",
+        "categoria": "Meio Ambiente",
+        "endereco": "Rua dos Ipês, 101, Bairro Jardim Camburi, Vitória, ES",
+        "contato": {
+            "instagram": "https://instagram.com/verdeesperanca",
+            "facebook": "https://facebook.com/verdeesperanca",
+            "telefone": "(27) 3366-1011",
+            "email": "contato@verdeesperanca.org"
+        }
+    },
+    {
+        "nome": "Amigos do Bem-Estar",
+        "descricao": "Apoio psicológico e emocional para a comunidade.",
+        "descricao_detalhada": "A Amigos do Bem-Estar oferece suporte emocional e psicológico para pessoas em situação de vulnerabilidade no Espírito Santo. Através de terapias individuais e em grupo, oficinas socioeducativas e rodas de conversa, a organização busca promover o bem-estar mental, a saúde emocional e a qualidade de vida da população. Atuando em parceria com centros comunitários e unidades de saúde mental, a Amigos do Bem-Estar contribui para a quebra de tabus relacionados à saúde mental e para a criação de uma rede de apoio social.",
+        "categoria": "Saúde Mental",
+        "endereco": "Avenida Getúlio Vargas, 202, Bairro Centro, Vila Velha, ES",
+        "contato": {
+            "instagram": "https://instagram.com/amigosdobemestar",
+            "facebook": "https://facebook.com/amigosdobemestar",
+            "telefone": "(27) 3377-2022",
+            "email": "contato@amigosdobemestar.org"
+        }
+    },
+    {
+        "nome": "Mãos que Ajudam",
+        "descricao": "Assistência a famílias em situação de rua.",
+        "descricao_detalhada": "A Mãos que Ajudam oferece assistência e suporte a famílias em situação de rua no Espírito Santo. Através de doações de alimentos, roupas e itens de higiene, a organização busca suprir necessidades básicas e promover a dignidade das pessoas em situação de vulnerabilidade. Além disso, a Mãos que Ajudam  trabalha pela reinserção social, oferecendo capacitação profissional, orientação jurídica e encaminhamento para serviços de assistência social.",
+        "categoria": "Assistência Social",
+        "endereco": "Rua das Flores, 303, Bairro Glória, Vila Velha, ES",
+        "contato": {
+            "instagram": "https://instagram.com/maosqueajudam",
+            "facebook": "https://facebook.com/maosqueajudam",
+            "telefone": "(27) 3388-3033",
+            "email": "contato@maosqueajudam.org"
+        }
+    },
+    {
+        "nome": "Animal Acolhido",
+        "descricao": "Resgate e cuidados para animais abandonados.",
+        "descricao_detalhada": "A Animal Acolhido dedica-se ao resgate de animais abandonados e à promoção do bem-estar animal no Espírito Santo. Através de um centro de acolhimento animal, a organização oferece cuidados veterinários, castração, microchipagem e adoção responsável. Além disso, a Animal Acolhido trabalha na conscientização da população sobre maus-tratos e a guarda responsável de animais de estimação.",
+        "categoria": "Proteção Animal",
+        "endereco": "Rua dos Bichos, 404, Bairro Itapuã, Vila Velha, ES",
+        "contato": {
+            "instagram": "https://instagram.com/animalacolhido",
+            "facebook": "https://facebook.com/animalacolhido",
+            "telefone": "(27) 3399-4044",
+            "email": "contato@animalacolhido.org"
+        }
+    },
+    {
+        "nome": "Jovens para o Futuro",
+        "descricao": "Capacitação profissional para jovens.",
+        "descricao_detalhada": "A Jovens para o Futuro é uma organização que atua na capacitação profissional de jovens à procura de oportunidades no mercado de trabalho no Espírito Santo. Através de cursos profissionalizantes, workshops e programas de orientação vocacional, a organização busca qualificar jovens e prepará-los para o ingresso no mercado de trabalho. Atuando em parceria com empresas e instituições de ensino, a Jovens para o Futuro contribui para a redução do desemprego juvenil e para a inserção social e econômica dos jovens.",
+        "categoria": "Empregabilidade",
+        "endereco": "Avenida Vitória, 505, Bairro Jardim da Penha, Vitória, ES",
+        "contato": {
+            "instagram": "https://instagram.com/jovensparafuturo",
+            "facebook": "https://facebook.com/jovensparafuturo",
+            "telefone": "(27) 3400-5055",
+            "email": "contato@jovensparafuturo.org"
+        }
+    },
+    {
+        "nome": "Casa de Apoio",
+        "descricao": "Acolhimento para mulheres vítimas de violência.",
+        "descricao_detalhada": "A Casa de Apoio oferece acolhimento seguro e suporte psicossocial para mulheres vítimas de violência doméstica no Espírito Santo. A organização fornece um ambiente protegido, sigiloso e livre de julgamentos, além de oferecer atendimento psicológico, jurídico e social. A Casa de Apoio também trabalha pela autonomia econômica das mulheres vítimas, por meio de oficinas de geração de renda e capacitação profissional.",
+        "categoria": "Direitos das Mulheres",
+        "endereco": "Rua das Acácias, 606, Bairro São Torquato, Vila Velha, ES",
+        "contato": {
+            "instagram": "https://instagram.com/casadeapoio",
+            "facebook": "https://facebook.com/casadeapoio",
+            "telefone": "(27) 3411-6066",
+            "email": "contato@casadeapoio.org"
+        }
+    },
+    {
+        "nome": "Esporte para Todos",
+        "descricao": "Promoção do esporte e vida saudável.",
+        "descricao_detalhada": "A Esporte para Todos é uma organização que acredita no poder do esporte como ferramenta de transformação social no Espírito Santo. Através da promoção da prática esportiva e de atividades físicas regulares, a organização busca estimular hábitos de vida saudáveis, o desenvolvimento do senso de equipe e o protagonismo juvenil. Atuando em parceria com prefeituras, escolas e comunidades, a Esporte para Todos contribui para a inclusão social e para a melhoria da qualidade de vida da população.",
+        "categoria": "Esporte",
+        "endereco": "Avenida Central, 707, Bairro Coqueiral de Itaparica, Vila Velha, ES",
+        "contato": {
+            "instagram": "https://instagram.com/esporteparatodos",
+            "facebook": "https://facebook.com/esporteparatodos",
+            "telefone": "(27) 3422-7077",
+            "email": "contato@esporteparatodos.org"
+        }
+    }
+];
 
 // Carrega os dados das ONGs do arquivo JSON
-fetch('../json/ongs.json')
+/*fetch('../json/ongs.json')
     .then(response => response.json())
-    .then(data => ongs = data);
+    .then(data => {
+        ongs = data;
+        console.log('Dados carregados:', ongs);  // Log dos dados carregados
+    });*/
 
 console.log(ongs);
 
@@ -23,8 +157,7 @@ function displayResults(results) {
             let div = document.createElement('div');
             div.textContent = ong.nome;
             div.addEventListener('click', () => {
-                showInfo(index);  // Passe o índice da ONG selecionada
-                resultsContainer.style.display = 'none';  // Esconde resultados ao clicar em uma ONG
+                redirectToDetails(index);  // Redireciona diretamente para a página de detalhes
             });
             resultsContainer.appendChild(div);
         });
@@ -34,46 +167,43 @@ function displayResults(results) {
     }
 }
 
-// Função para exibir as informações da ONG selecionada
-function showInfo(index) {
+// Função para redirecionar para a página de detalhes da ONG selecionada
+/*function redirectToDetails(index) {
     const ong = ongs[index];
-    document.getElementById('ong-nome').textContent = ong.nome;
-    document.getElementById('ong-descricao').textContent = ong.descricao;
-    document.getElementById('ver-mais').setAttribute('data-index', index);  // Defina o data-index aqui
-    document.getElementById('info').style.display = 'flex';  // Exibe as informações da ONG
-}
+    const url = new URL('Detalhes-Instituicao.html', window.location.origin);
+    url.searchParams.set('nome', ong.nome);
+    url.searchParams.set('categoria', ong.categoria);
+    url.searchParams.set('descricao', ong.descricao_detalhada);
+    url.searchParams.set('endereco', ong.endereco);
+    url.searchParams.set('instagram', ong.contato.instagram);
+    url.searchParams.set('facebook', ong.contato.facebook);
+    url.searchParams.set('telefone', ong.contato.telefone);
+    url.searchParams.set('email', ong.contato.email);
+    window.location.href = url;
+}*/
 
 // Adiciona um listener ao documento para detectar cliques fora do contêiner de pesquisa
-document.addEventListener('click', function(event) {
+/*document.addEventListener('click', function(event) {
     let searchContainer = document.querySelector('.search-container');
     let resultsContainer = document.getElementById('results');
     // Verifica se o clique ocorreu fora do contêiner de pesquisa
     if (!searchContainer.contains(event.target)) {
         resultsContainer.style.display = 'none';  // Esconde os resultados
     }
-});
+});*/
 
 // Impede que o clique no campo de pesquisa feche os resultados
 document.getElementById('search').addEventListener('click', function(event) {
     event.stopPropagation();
 });
 
-// Evento de clique no botão "Ver mais"
-document.getElementById('ver-mais').addEventListener('click', function () {
-    const index = this.getAttribute('data-index');
-    if (index !== null) {
-        const ong = ongs[index];
-        const url = new URL('Detalhes-Instituicao.html', window.location.origin);
-        url.searchParams.set('nome', ong.nome);
-        url.searchParams.set('categoria', ong.categoria);
-        url.searchParams.set('descricao', ong.descricao_detalhada);
-        url.searchParams.set('endereco', ong.endereco);
-        url.searchParams.set('instagram', ong.contato.instagram);
-        url.searchParams.set('facebook', ong.contato.facebook);
-        url.searchParams.set('telefone', ong.contato.telefone);
-        url.searchParams.set('email', ong.contato.email);
-        window.location.href = url;
-    } else {
-        alert('Por favor, selecione uma ONG antes de clicar em "Ver mais".');
-    }
+//Adiciona o evento de troca de página para quando o botão for clicado
+document.getElementById("login-btn").addEventListener("click", function() {
+    window.location.href = "Login.html";
+});
+
+
+//Adiciona o evento de troca de página para quando o botão for clicado
+document.getElementById("nearbyInst-btn").addEventListener("click", function() {
+    window.location.href = "Geo-Map.html";
 });

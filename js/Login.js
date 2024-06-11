@@ -49,21 +49,25 @@ function showMessage(message) {
     }
 }
 
-signUpForm.addEventListener("submit", (e) => {
+signUpForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    const username = signUpForm.querySelector("input[placeholder='Username']").value;
+    const fullname = signUpForm.querySelector("input[placeholder='Nome Completo']").value;
+    const username = signUpForm.querySelector("input[placeholder='Nome de Usuário']").value;
     const email = signUpForm.querySelector("input[placeholder='Email']").value;
-    const password = signUpForm.querySelector("input[placeholder='Password']").value;
+    const password = signUpForm.querySelector("input[placeholder='Senha']").value;
 
-    if (username.length >= 6 && email && password.length >= 6) {
+    if (username.length >= 6 && email && password.length >= 6 && fullname.length >= 6) {
+        localStorage.setItem('fullname', fullname);
         localStorage.setItem('username', username);
         localStorage.setItem('email', email);
         localStorage.setItem('password', password);
         showMessage("Cadastro bem sucedido!");
+        window.location.reload();
     } else {
         showMessage("Todos os campos devem ser preenchidos com no mínimo 6 caracteres para nome de usuário e senha.");
     }
 });
+
 
 signUpInstForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -79,7 +83,8 @@ signUpInstForm.addEventListener("submit", (e) => {
         localStorage.setItem('cnpj', cnpj);
         localStorage.setItem('instEmail', email);
         localStorage.setItem('instPassword', password);
-        showMessage("Institution sign up successful!");
+        showMessage("Cadastro bem Sucedido");
+        window.location.reload();
     } else {
         showMessage("Todos os campos deverão ser preenchidos com no mínimo 6 caracteres para nome da instituição e senha.");
     }
@@ -99,6 +104,7 @@ signInForm.addEventListener("submit", (e) => {
     if ((username === storedUsername && password === storedPassword) || 
         (username === storedInstName && password === storedInstPassword)) {
         showMessage("Login bem-sucedido!");
+        window.location.href = "index.html";
     } else {
         showMessage("Usuário ou senha incorretos.");
     }
