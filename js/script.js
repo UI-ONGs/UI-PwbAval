@@ -1,3 +1,5 @@
+/*Define um Array de ONGS*/
+
 let ongs = [
     {
         "nome": "Educar para o Futuro",

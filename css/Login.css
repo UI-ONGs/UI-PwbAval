@@ -1,5 +1,7 @@
+/* Importando a fonte Poppins do Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+/* Resetando margens, preenchimentos e configurando a fonte */
 *{
     margin: 0;
     padding: 0;
@@ -7,6 +9,7 @@
     font-family: 'Poppins', sans-serif;
 }
 
+/* Estilos para o corpo da página */
 body{
     display: flex;
     align-items: center;
@@ -15,6 +18,7 @@ body{
     background: #f6f6f6;
 }
 
+/* Estilos para o container principal */
 .container{
     position: relative;
     width: 70vw;
@@ -25,6 +29,7 @@ body{
     overflow: hidden;
 }
 
+/* Pseudo-elemento para efeito de gradiente */
 .container::before{
     content: "";
     position: absolute;
@@ -38,6 +43,7 @@ body{
     transition: 1s ease-in-out;
 }
 
+/* Layout dos formulários de login e registro */
 .signin-signup{
     position: absolute;
     top: 0;
@@ -50,6 +56,7 @@ body{
     z-index: 5;
 }
 
+/* Estilos comuns para os formulários */
 form{
     display: flex;
     align-items: center;
@@ -59,6 +66,7 @@ form{
     padding: 0 10px;
 }
 
+/* Efeito de transição entre formulários */
 form.sign-in-form{
     opacity: 1;
     transition: 0.5s ease-in-out;
@@ -71,12 +79,14 @@ form.sign-up-form{
     transition-delay: 1s;
 }
 
+/* Estilos para o título dos formulários */
 .title{
     font-size: 35px;
     color: #45736A;
     margin-bottom: 10px;
 }
 
+/* Estilos para os campos de entrada */
 .input-field{
     width: 100%;
     height: 50px;
@@ -88,6 +98,7 @@ form.sign-up-form{
     align-items: center;
 }
 
+/* Ícones nos campos de entrada */
 .input-field i{
     flex: 1;
     text-align: center;
@@ -95,6 +106,7 @@ form.sign-up-form{
     font-size: 18px;
 }
 
+/* Entradas de texto */
 .input-field input{
     flex: 5;
     background: none;
@@ -106,6 +118,7 @@ form.sign-up-form{
     color: #444;
 }
 
+/* Botão de login e registro */
 .btn{
     width: 150px;
     height: 50px;
@@ -123,11 +136,13 @@ form.sign-up-form{
     background: #619986;
 }
 
+/* Texto de login social */
 .social-text{
     margin: 10px 0;
     font-size: 16px;
 }
 
+/* Ícones de mídia social */
 .social-media{
     display: flex;
     justify-content: center;
@@ -154,6 +169,7 @@ a{
     border-color: #45736A;
 }
 
+/* Layout dos painéis de login e registro */
 .panels-container{
     position: absolute;
     top: 0;
@@ -239,9 +255,7 @@ a{
     color: #37574c;
 }
 
-
-/*Animação*/
-
+/* Animação para mudança de modo entre sign-in e sign-up */
 .container.sign-up-mode::before{
     transform: translateX(0);
 }
@@ -282,7 +296,7 @@ a{
     font-size: 1.5rem;
 }
 
-/*Responsividade*/
+/* Responsividade */
 @media (max-width: 779px){
     .container{
         width: 100vw;

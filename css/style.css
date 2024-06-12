@@ -4,6 +4,7 @@
 /* Estilos globais */
 body {
     background: #f6f6f6;
+    overflow: hidden;
 }
 
 /* Estilo do conteúdo principal */
@@ -175,7 +176,7 @@ body {
     top: 0;
     left: 0;
     width: 20vw;
-    margin: 20px 110px;
+    margin: 30px 110px;
 }
 
 .search-container i{

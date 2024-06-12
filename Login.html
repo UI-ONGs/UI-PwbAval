@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Configurações da página e inclusão de estilos e scripts -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/Login.css">
     <script src="js/Login.js" defer></script>
     <script src="https://kit.fontawesome.com/0e6a916873.js" crossorigin="anonymous"></script>
-    <title>Login</title>
+    <link rel="icon" href="imagens/logo.png">
+    <title>Entrar</title>
 </head>
 <body>
-    <!-- Dentro dos formulários -->
+    <!-- Div para exibir mensagens -->
     <div class="message" id="message"></div>
+
+    <!-- Container principal -->
     <div class="container">
         <div class="signin-signup">
+            <!-- Formulário de login -->
             <form id="sign-in-form" class="sign-in-form">
                 <h2 class="title">Sign in</h2>
                 <div class="input-field">
@@ -25,6 +30,7 @@
                 </div>
                 <input type="submit" value="Login" class="btn">
                 <p class="social-text">Or Sign in with social platform</p>
+                <!-- Ícones para login social -->
                 <div class="social-media">
                     <a href="" class="social-icon">
                         <i class="fab fa-facebook"></i>
@@ -39,9 +45,11 @@
                         <i class="fab fa-linkedin"></i>
                     </a>
                 </div>
+                <!-- Link para mudar para o formulário de registro -->
                 <p class="account-text login">Don't have an account? <a href="#" id="sign-up-btn2">Sign up</a></p>
             </form>
 
+            <!-- Formulário de registro de usuário -->
             <form id="sign-up-form" class="sign-up-form">
                 <h2 class="title">Sign up</h2>
                 <div class="input-field">
@@ -62,6 +70,7 @@
                 </div>
                 <input type="submit" value="Sign UP" class="btn">
                 <p class="social-text">Or Sign in with social platform</p>
+                <!-- Ícones para login social -->
                 <div class="social-media">
                     <a href="" class="social-icon">
                         <i class="fab fa-facebook"></i>
@@ -76,10 +85,13 @@
                         <i class="fab fa-linkedin"></i>
                     </a>
                 </div>
+                <!-- Botão para alternar para o formulário de registro de instituição -->
                 <p class="goto-p">Are you an Institution? <button type="submit" class="goto-btn" id="goto-inst">Click Here</button></p>
+                <!-- Link para mudar para o formulário de login -->
                 <p class="account-text">Already have an account? <a href="#" id="sign-in-btn2">Sign in</a></p>
             </form>
-            
+
+            <!-- Formulário de registro de instituição -->
             <form id="sign-up-inst" class="sign-up-inst">
                 <h2 class="title">Sign Up</h2>
                 <div class="input-field">
@@ -104,6 +116,7 @@
                 </div>
                 <input type="submit" value="Sign UP" class="btn">
                 <p class="social-text">Or Sign in with social platform</p>
+                <!-- Ícones para login social -->
                 <div class="social-media">
                     <a href="" class="social-icon">
                         <i class="fab fa-facebook"></i>
@@ -118,10 +131,14 @@
                         <i class="fab fa-linkedin"></i>
                     </a>
                 </div>
+                <!-- Botão para alternar para o formulário de registro de voluntário -->
                 <p class="goto-p">Are you a Volunteer? <button type="submit" class="goto-btn" id="goto-vol">Click here</button></p>
+                <!-- Link para mudar para o formulário de login -->
                 <p class="account-text">Already have an account? <a href="#" id="sign-in-btn2">Sign in</a></p>
             </form>
         </div>
+
+        <!-- Painéis com conteúdo adicional -->
         <div class="panels-container">
             <div class="panel left-panel">
                 <div class="content">

@@ -1,27 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BRy">
 <head>
+    <!-- Configurações básicas da página -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link para o arquivo CSS principal -->
     <link rel="stylesheet" href="css/Geo-Map.css">
+    <!-- Link para o arquivo CSS da barra de navegação -->
     <link rel="stylesheet" href="css/NavBar.css">
+    <!-- Link para o kit Font Awesome -->
     <script src="https://kit.fontawesome.com/0e6a916873.js" crossorigin="anonymous"></script>
+    <!-- Link para o JavaScript do Google Maps -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABtMF7HLvrhCj2OgIiIcRlwurWBCUtWJA"></script>
+    <!-- Link para o Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Scripts necessários para o Bootstrap -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Link para o JavaScript específico da Geo-Map -->
     <script src="js/Geo-Map.js" defer></script>
-    <title>Document</title>
+    <!-- Link para o FavIcon -->
+    <link rel="icon" href="imagens/logo.png">
+    <!-- Título da página -->
+    <title>Insituições Próximas</title>
 </head>
 <body>
     <!-- Barra de navegação -->
     <nav class="nav">
         <ul>
+            <!-- Logo -->
             <li><a href="#" class="logo">
                 <img src="imagens/logo.png" alt="">
                 <span class="nav-item">Solidarize</span>
             </a></li>
+            <!-- Links da barra de navegação -->
             <li><a href="index.html">
                 <i class="fas fa-home"></i>
                 <span class="nav-item">Home</span>
@@ -55,7 +68,9 @@
                 <span class="nav-item">Sair</span>
             </a></li>
         </ul>
+        <!-- Divisor entre links e rodapé -->
         <div class="divisor"></div>
+        <!-- Rodapé da barra de navegação -->
         <div class="footer">
             <a href="#">Privacidade</a>
             <a href="#">Termos</a>
@@ -64,22 +79,28 @@
             <a href="#">© Todos os direitos reservados</a>
         </div>
     </nav>
+    <!-- Conteúdo da página -->
     <div class="content">
+        <!-- Lado esquerdo -->
         <div class="left">
+            <!-- Controles -->
             <div id="controls" class="controls">
                 <input type="text" id="searchBox" placeholder="Pesquisar localização">
                 <button id="go-to">Ir</button>
             </div>
+            <!-- Informações sobre o clique -->
             <div class="info">Clique em um Ponto do Mapa para Ver suas informações</div>
         </div>
+        <!-- Lado direito -->
         <div class="right">
+            <!-- Switch entre Instituições e Eventos -->
             <div class="switch">
                 <div class="btn" id="btn"></div>
                 <button type="button" class="toggle-btn">Instituições</button>
                 <button type="button" class="toggle-btn">Eventos</button>
             </div>
-            <div class="map" id="map">
-            </div>
+            <!-- Mapa -->
+            <div class="map" id="map"></div>
         </div>
     </div>
 </body>
