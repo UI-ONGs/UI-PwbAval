@@ -1,8 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
+    /* pega o forms */
     const form = document.getElementById('form');
 
     form.addEventListener('submit', (event) => {
         event.preventDefault();
+
+        /* pega os campos de entrada */
 
         const nome = document.getElementById('nome').value;
         const tipo = document.getElementById('tipo').value;
@@ -11,6 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const data = document.getElementById('data').value;
         const horarioI = document.getElementById('horarioI').value;
         const horarioF = document.getElementById('horarioF').value;
+
+        /* guarda em um objeto */
 
         const eventData = {
             nome,
@@ -21,6 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
             horarioI,
             horarioF
         };
+
+        /* guardano local storage */
 
         localStorage.setItem('eventData', JSON.stringify(eventData));
 

@@ -1,3 +1,4 @@
+/* Estilos globais */
 * {
     margin: 0;
     padding: 0;
@@ -5,7 +6,8 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-body{
+/* Estilos para o corpo da página */
+body {
     background-color: #f6f6f6;
     height: 100vh;
     display: flex;
@@ -13,14 +15,16 @@ body{
     align-items: center;
 }
 
-fieldset{
+/* Estilos para o conjunto de opções */
+fieldset {
     padding: 1em;
-    border:0.1em solid #f6f6f6;
+    border: 0.1em solid #f6f6f6;
     border-radius: 0.5em;
 }
 
-legend{
-    border:1px solid #f6f6f6;
+/* Estilos para a legenda do conjunto de opções */
+legend {
+    border: 1px solid #f6f6f6;
     padding: 1em;
     text-align: center;
     background-color: #f6f6f6;
@@ -29,32 +33,36 @@ legend{
     font-weight: bold;
 }
 
+/* Estilos para elementos em negrito */
 b {
     color: #f6f6f6;
 }
 
-.box{
+/* Estilos para a caixa de conteúdo */
+.box {
     width: 40%;
     position: absolute;
-    background-color:#45736A;
-    padding:1em;
+    background-color: #45736A;
+    padding: 1em;
     border-radius: 1em;
     color: rgb(0, 0, 0);
-
 }
 
-.conteudo-img{
+/* Estilos para a seção de conteúdo da imagem */
+.conteudo-img {
     width: 100%;
     display: flex;
     justify-content: center;
     padding-bottom: 1em;
 }
 
-.conteudo-img img{
+/* Estilos para a imagem na seção de conteúdo */
+.conteudo-img img {
     border-radius: 5%;
 }
 
-.Voltar{
+/* Estilos para o botão de voltar */
+.Voltar {
     background-color: #73f76e;
     text-decoration: none;
     font-weight: bold;
@@ -66,12 +74,14 @@ b {
     transition: 0.5s ease;
 }
 
-.Voltar:hover{
+/* Estilos para o botão de voltar quando passa o mouse */
+.Voltar:hover {
     border-radius: 2em;
     background-color: #1eff00;
 }
 
-.eventDataDisplay{
+/* Estilos para a exibição de dados do evento */
+.eventDataDisplay {
     display: flex;
     flex-direction: column;
 }
