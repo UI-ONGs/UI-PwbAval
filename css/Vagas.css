@@ -6,6 +6,11 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+body{
+    background-color: #f6f6f6;
+
+}
+
 /* Estilo para card de imagem */
 .cardImage {
     position: relative;
@@ -140,7 +145,6 @@
 header {
     display: flex;
     justify-content: center;
-    background-color: #f6f6f6;
     min-height: 10vh;
     overflow: hidden;
 }
@@ -152,9 +156,8 @@ header {
 
 /* Estilo para a seção principal */
 main {
-    min-height: 85vh;
+    min-height: 82vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #f6f6f6;
 }
