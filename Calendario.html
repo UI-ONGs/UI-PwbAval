@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <!-- Metadados básicos -->
     <meta charset="UTF-8">
@@ -51,10 +51,6 @@
                 <i class="fas fa-solid fa-users"></i>
                 <span class="nav-item">Sobre Nós</span>
             </a></li>
-            <li><a href="#">
-                <i class="fas fa-cog"></i>
-                <span class="nav-item">Configurações</span>
-            </a></li>
             <li><a href="index.html" class="logout">
                 <i class="fas fa-sign-out-alt"></i>
                 <span class="nav-item">Sair</span>
@@ -84,23 +80,23 @@
                 </div>
                 <!-- Dias da semana -->
                 <div class="weekdays">
-                    <div>sun</div>
-                    <div>mon</div>
-                    <div>tue</div>
-                    <div>wed</div>
-                    <div>thu</div>
-                    <div>fri</div>
-                    <div>sat</div>
+                    <div>dom</div>
+                    <div>seg</div>
+                    <div>ter</div>
+                    <div>qua</div>
+                    <div>qui</div>
+                    <div>sex</div>
+                    <div>sáb</div>
                 </div>
                 <!-- Dias do mês (adicionados via JS) -->
                 <div class="days"></div>
                 <!-- Seção de navegação rápida -->
                 <div class="goto-today">
                     <div class="goto">
-                        <input type="text" placeholder="mm/yyyy" class="date-input">
-                        <button class="goto-btn">go</button>
+                        <input type="text" placeholder="mm/aaaa" class="date-input">
+                        <button class="goto-btn">ir</button>
                     </div>
-                    <button class="today-btn">today</button>
+                    <button class="today-btn">hoje</button>
                 </div>
             </div>
         </div>
@@ -115,38 +111,38 @@
             <!-- Formulário para adicionar eventos -->
             <div class="add-event-wrapper">
                 <div class="add-event-header">
-                    <div class="title">Add Event</div>
+                    <div class="title">Adicionar Evento</div>
                     <i class="fas fa-times close"></i>
                 </div>
                 <div class="add-event-body">
                     <div class="add-event-input">
-                        <input type="text" placeholder="Event Name" class="event-name">
+                        <input type="text" placeholder="Nome do Evento" class="event-name">
                     </div>
                     <div class="add-event-input">
-                        <input type="text" placeholder="ONG Name" class="ong-name">
+                        <input type="text" placeholder="Nome da ONG" class="ong-name">
                     </div>
                     <div class="add-event-input">
-                        <input type="text" placeholder="Event Time From" class="event-time-from">
+                        <input type="text" placeholder="Horário Início" class="event-time-from">
                     </div>
                     <div class="add-event-input">
-                        <input type="text" placeholder="Event Time to" class="event-time-to">
+                        <input type="text" placeholder="Horário Final" class="event-time-to">
                     </div>
                     <div class="add-event-input">
                         <select class="event-category">
-                            <option value="" disabled selected>Select Category</option>
-                            <option value="Health">Health</option>
-                            <option value="Education">Education</option>
-                            <option value="Environment">Environment</option>
-                            <option value="Animal Welfare">Animal Welfare</option>
+                            <option value="" disabled selected>Selecione uma Categoria</option>
+                            <option value="Health">Saúde</option>
+                            <option value="Education">Educação</option>
+                            <option value="Environment">Meio Ambiente</option>
+                            <option value="Animal Welfare">Proteção Animal</option>
                         </select>
                     </div>
                     <div class="add-event-input">
                         <input id="file-upload" class="event-photos" type="file" multiple accept="image/*">
-                        <label for="file-upload" class="file-count">Select file</label>
+                        <label for="file-upload" class="file-count">Selecione um Arquivo</label>
                     </div>
                 </div>
                 <div class="add-event-footer">
-                    <button class="add-event-btn">Add Event</button>
+                    <button class="add-event-btn">Adicionar Evento</button>
                 </div>            
             </div>            
         </div>
@@ -160,7 +156,7 @@
     <div id="event-dialog" class="event-dialog">
         <div class="event-dialog-content">
             <span class="close-dialog">&times;</span>
-            <h2>Event Details</h2>
+            <h2>Detalhes Evento</h2>
             <p id="event-details"></p>
         </div>
     </div>

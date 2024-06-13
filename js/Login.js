@@ -102,8 +102,9 @@ signUpInstForm.addEventListener("submit", (e) => {
 signInForm.addEventListener("submit", (e) => {
     e.preventDefault(); // Evita o envio padrão do formulário
     // Obtenção dos dados armazenados localmente
-    const username = signInForm.querySelector("input[placeholder='Username']").value;
-    const password = signInForm.querySelector("input[placeholder='Password']").value;
+    console.log("oi");
+    const username = signInForm.querySelector("input[placeholder='Nome de Usuário']").value;
+    const password = signInForm.querySelector("input[placeholder='Senha']").value;
 
     const storedUsername = localStorage.getItem('username');
     const storedPassword = localStorage.getItem('password');

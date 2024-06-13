@@ -170,29 +170,34 @@ function displayResults(results) {
 }
 
 // Função para redirecionar para a página de detalhes da ONG selecionada
-/*function redirectToDetails(index) {
+// Função para redirecionar para a página de detalhes da ONG selecionada
+function redirectToDetails(index) {
     const ong = ongs[index];
-    const url = new URL('Detalhes-Instituicao.html', window.location.origin);
-    url.searchParams.set('nome', ong.nome);
-    url.searchParams.set('categoria', ong.categoria);
-    url.searchParams.set('descricao', ong.descricao_detalhada);
-    url.searchParams.set('endereco', ong.endereco);
-    url.searchParams.set('instagram', ong.contato.instagram);
-    url.searchParams.set('facebook', ong.contato.facebook);
-    url.searchParams.set('telefone', ong.contato.telefone);
-    url.searchParams.set('email', ong.contato.email);
-    window.location.href = url;
-}*/
+    
+    // Armazena os dados no sessionStorage
+    sessionStorage.setItem('ongNome', ong.nome);
+    sessionStorage.setItem('ongCategoria', ong.categoria);
+    sessionStorage.setItem('ongDescricao', ong.descricao_detalhada);
+    sessionStorage.setItem('ongEndereco', ong.endereco);
+    sessionStorage.setItem('ongInstagram', ong.contato.instagram);
+    sessionStorage.setItem('ongFacebook', ong.contato.facebook);
+    sessionStorage.setItem('ongTelefone', ong.contato.telefone);
+    sessionStorage.setItem('ongEmail', ong.contato.email);
+    
+    // Redireciona para a página de detalhes
+    window.location.href = 'Detalhes-Instituicao.html';
+}
+
 
 // Adiciona um listener ao documento para detectar cliques fora do contêiner de pesquisa
-/*document.addEventListener('click', function(event) {
+document.addEventListener('click', function(event) {
     let searchContainer = document.querySelector('.search-container');
     let resultsContainer = document.getElementById('results');
     // Verifica se o clique ocorreu fora do contêiner de pesquisa
     if (!searchContainer.contains(event.target)) {
         resultsContainer.style.display = 'none';  // Esconde os resultados
     }
-});*/
+});
 
 // Impede que o clique no campo de pesquisa feche os resultados
 document.getElementById('search').addEventListener('click', function(event) {

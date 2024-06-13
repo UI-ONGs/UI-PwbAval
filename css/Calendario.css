@@ -491,6 +491,7 @@ body {
 .add-event-input .event-category{
     font-size: 1rem;
     font-weight: 400;
+    margin-bottom: 30px;
     color: #373c4f;
 }
 
@@ -552,6 +553,7 @@ body {
 
 .add-event i{
     pointer-events: none;
+    margin-bottom: 5px;
 }
 
 .add-event-input select,
