@@ -1,7 +1,7 @@
 // Recupera os valores da sessionStorage
 var nome = localStorage.getItem("fullname");
 var email = localStorage.getItem("email");
-var nickname = localStorage.getItem("nickname");
+var nickname = localStorage.getItem("username");
 var senha = localStorage.getItem("password");
 
 
