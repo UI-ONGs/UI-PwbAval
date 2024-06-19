@@ -17,7 +17,7 @@
 .wrapper .left {
   width: 35%;
   background: linear-gradient(to right, #CCD9D5, #9ab1aa);
-  padding: 30px 25px;
+  padding: 1.88rem 1.56rem;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
   text-align: center;
@@ -29,24 +29,24 @@
 }
 
 .info-perfil {
- margin-top: -50px;
+ margin-top: -3.13rem;
 }
 
 .wrapper .left img {
   border-radius: 5px;
-  width: 200px;
-  height: 200px;
+  width: 12.5rem;
+  height: 12.5rem;
   object-fit: cover;
 }
 
 .wrapper .left h4 {
-  margin-bottom: 10px;
-  margin-top: 2px;
+  margin-bottom: 0.63rem;
+  margin-top: 0.13rem;
 
 }
 
 .wrapper .left p {
-  font-size: 12px;
+  font-size: 0.75rem;
 
 }
 
@@ -54,24 +54,24 @@
 .wrapper .right {
   width: 65%;
   background: #45736A;
-  padding: 30px 25px;
+  padding: 1.88rem 1.56rem;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
 
 .wrapper .right .info,
 .wrapper .right .projects {
-  margin-bottom: 25px;
+  margin-bottom: 1.56rem;
 }
 
 .wrapper .right h3,
 .wrapper .right .projects h3 {
-  margin-bottom: 15px;
-  padding-bottom: 5px;
-  border-bottom: 1px solid #fff;
+  margin-bottom: 0.94rem;
+  padding-bottom: 0.31rem;
+  border-bottom: 0.06rem solid #fff;
   color: #fff;
   text-transform: uppercase;
-  letter-spacing: 5px;
+  letter-spacing: 0.31rem;
 }
 
 .info{
@@ -83,13 +83,13 @@
 .wrapper .right .info_data .data h4,
 .wrapper .right .data h4 {
   color: #fff;
-  margin-bottom: 2px;
+  margin-bottom: 0.13rem;
 }
 
 .wrapper .right .info_data .data p,
 .wrapper .right .data p {
-  font-size: 14px;
-  margin-bottom: 10px;
+  font-size: 0.88rem;
+  margin-bottom: 0.63rem;
   color: #000000;  
 }
 
@@ -106,21 +106,21 @@
 }
 
 .wrapper .social_media ul li {
-  width: 45px;
-  height: 45px;
+  width: 2.81rem;
+  height: 2.81rem;
   background: #CCD9D5;
-  margin: 5px;
+  margin: 0.31rem;
   border-radius: 5px;
   text-align: center;
-  line-height: 45px;
+  line-height: 2.81rem;
   display: flex;
-  justify-content: center ;
+  justify-content: center;
 }
 
 .wrapper .social_media ul li a {
   color: #45736A;
-  font-size: 18px;
-  width: 45px;
+  font-size: 1.13rem;
+  width: 2.81rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -134,15 +134,15 @@
 
 .icone {
   position: absolute;
-  width: 25px;
-  height: 25px;
-  bottom: 15px;
-  right: 7px;
+  width: 1.56rem;
+  height: 1.56rem;
+  bottom: 0.94rem;
+  right: 0.44rem;
   background-color: #4a7b78;
 }
 
 /*Tornando Responsivo - Tela Maior*/
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 56.25rem) {
   .wrapper .left .right{
 
   grid-template-columns: repeat(2, 1fr);    
@@ -150,7 +150,7 @@
 }
 
 /*Tornando Responsivo - Tela Menor*/
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 48rem) {
   .wrapper .left .right{
 
   grid-template-columns: 1fr;    

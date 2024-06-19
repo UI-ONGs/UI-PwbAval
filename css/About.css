@@ -26,19 +26,19 @@ img {
 
 .team-section .container .row .title{
     text-align: center;
-    margin-top: 50px;
+    margin-top: 3.13rem;
 }
 
 .team-section .container .row .title h1{
-    font-size: 35px;
+    font-size: 2.19rem;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
+    letter-spacing: 0.09rem;
 }
 
 .team-section .container .row .title p{
     font-size: 18px;
     font-family: sans-serif;
-    margin: 30px 0px;
+    margin: 1.88rem 0;
 }
 
 /*Dividindo e estilizando os 3 cards principais*/
@@ -46,8 +46,8 @@ img {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 90px;
-    margin-top: 50px;
+    gap: 5.63rem;
+    margin-top: 3.13rem;
 }
 
 .team-section .container .team-card .card{
@@ -56,7 +56,7 @@ img {
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-    padding: 20px;
+    padding: 1.25rem;
     cursor: pointer;
     transition: background 1s ease-in-out;
 }
@@ -76,21 +76,29 @@ img {
 }
 
 .image-section img{
-    width: 150px;
-    height: 150px;
+    width: 9.38rem;
+    height: 9.38rem;
     border-radius: 50%;
+<<<<<<< HEAD
+    border: 0.38rem solid #45736A;
+}
+
+.image-section div{    
+    margin: 0.63rem 0.63rem;
+=======
     border: 6px solid #45736A;
     
 }
 
 .image-section div{    
     margin: 10px;
+>>>>>>> 9f8e143975d085f133861fc2dec31cc83dd5bde3
 }
 
 h4 {
     text-align: center;
-    margin-top: 10px;
-    max-width: 150px;
+    margin-top: 0.63rem;
+    max-width: 9.38rem;
 }
 
 /*Estilizando Cards Missão e App*/
@@ -107,14 +115,14 @@ h4 {
     font-size: 2vw;
     max-width: 100%;
     margin-top: 0.1vw;
-    letter-spacing: 1.5px;
+    letter-spacing: 0.09rem;
     color: #45736A;
 }
 
 .team-section .container .team-card .card .content p{
-    font-size: 15px;
-    margin: 16px 0px;
-    line-height: 1.5;
+    font-size: 0.94rem;
+    margin: 1rem 0;
+    
     color: black;
 }
 .team-section .container .team-card .card .content img{
@@ -130,7 +138,7 @@ p {
 }
 
 /*Tornando Responsivo - Tela Maior*/
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 56.25rem) {
     .team-section .container .team-card{
 
     grid-template-columns: repeat(2, 1fr);    
@@ -138,7 +146,7 @@ p {
 }
 
 /*Tornando Responsivo - Tela Menor*/
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 48rem) {
     .team-section .container .team-card{
  
     grid-template-columns: 1fr;    
