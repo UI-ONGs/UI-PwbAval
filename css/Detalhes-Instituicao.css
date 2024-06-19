@@ -70,13 +70,157 @@ body {
     border-radius: 5px;
 }
 
+.link{
+    display: flex;
+    justify-content: space-evenly;
+}
+
 /* Define estilos para os links */
 a {
     text-decoration: none;
     color: black;
+    font-size: 20px;
 }
 
 /* Define estilos para os elementos com IDs 'categoria-ong' e 'nome-ong' */
 #categoria-ong, #nome-ong {
     color: #fff;
+}
+
+/*CSS Comentários*/
+.main-container {
+    text-align: center;
+}
+
+button {
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    background-color: #243d38;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#sortRecent, #sortLiked{
+    background-color: transparent;
+    color: #243d38;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+#sortRecent:hover, #sortLiked:hover{
+    color: #45736A;
+}
+
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.container {
+    width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+}
+
+h1 {
+    text-align: center;
+}
+
+.controls {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#commentsModal {
+    margin: auto;
+    max-width: 650px;
+    max-height: 750px;
+    overflow: hidden;
+}
+
+#commentsContainer {
+    flex-grow: 1;
+    overflow-y: auto;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+}
+
+.comment {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.comment .author {
+    font-weight: bold;
+}
+
+.comment .date {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.comment .text {
+    margin: 5px 0;
+}
+
+.comment .likes {
+    color: #45736A;
+    cursor: pointer;
+}
+
+#commentForm {
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+}
+
+#commentForm input {
+    width: calc(100% - 50px);
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.comment-input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.send-button {
+    background-color: transparent;
+    color: #243d38;
+    font-size: 20px;
+    padding: 5px;
+}
+
+.send-button:hover {
+    color: #45736A;
+}
+
+.close-button {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #243d38;
+}
+
+.close-button:hover {
+    color: #c82333;
 }

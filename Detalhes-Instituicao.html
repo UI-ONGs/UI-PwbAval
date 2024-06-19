@@ -74,10 +74,7 @@
 
         <!-- Div que contém uma descrição da ONG -->
         <div class="description_content">
-            <h3>A Terra Verde é uma organização não governamental (ONG) apaixonada e comprometida com a proteção do meio ambiente e a promoção da sustentabilidade em todas as suas formas. Desde a sua fundação, nossa missão tem sido criar um impacto duradouro e positivo no mundo, através de iniciativas e projetos que visam conservar e restaurar os ecossistemas naturais, bem como fomentar práticas sustentáveis em comunidades locais e globais.
-                Nosso trabalho abrange uma variedade de áreas, desde a conservação de habitats naturais preciosos até o desenvolvimento de programas de educação ambiental. Estamos firmemente empenhados em proteger a biodiversidade do planeta, preservando espécies ameaçadas e ecossistemas vulneráveis.
-                Além disso, a Terra Verde desempenha um papel ativo na promoção de práticas sustentáveis em todas as esferas da sociedade. Colaboramos com empresas, governos e comunidades para desenvolver soluções inovadoras que reduzam o impacto ambiental e promovam o uso responsável dos recursos naturais.
-                </h3>
+            <h3></h3>
             <p id="descricao-ong"></p>
         </div>
 
@@ -100,6 +97,32 @@
                 <a href="#" id="email-link"><i class="fa-regular fa-envelope"></i></a>
             </div>
         </div>
+
+        <!-- Div que contém o botão para ver os comentários -->
+        <div class="main-container">
+            <button id="openComments">Ver Comentários</button>
+        </div>
+
+        <!-- Dialog que contém o modal dos comentários -->
+        <dialog id="commentsModal">
+            <!-- Div que possui os botões do Modal -->
+            <div class="container">
+                <button id="closeComments" class="close-button">&times;</button>
+                <div class="controls">
+                    <button id="sortRecent">Mais Recentes</button>
+                    <button id="sortLiked">Mais Curtidos</button>
+                </div>
+                <!-- Div que possui os comentários -->
+                <div id="commentsContainer"></div>
+                <!-- Div que possui os dados para input -->
+                <form id="commentForm">
+                    <div class="comment-input-container">
+                        <input id="comment" placeholder="Seu comentário" required></input>
+                        <button type="submit" class="send-button"><i class="fa-solid fa-paper-plane"></i></button>
+                    </div>
+                </form>
+            </div>
+        </dialog>
     </div>    
 </body>
 </html>
