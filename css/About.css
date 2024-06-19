@@ -79,11 +79,20 @@ img {
     width: 9.38rem;
     height: 9.38rem;
     border-radius: 50%;
+<<<<<<< HEAD
     border: 0.38rem solid #45736A;
 }
 
 .image-section div{    
     margin: 0.63rem 0.63rem;
+=======
+    border: 6px solid #45736A;
+    
+}
+
+.image-section div{    
+    margin: 10px;
+>>>>>>> 9f8e143975d085f133861fc2dec31cc83dd5bde3
 }
 
 h4 {
@@ -96,6 +105,10 @@ h4 {
 .team-section .container .team-card .card .content{
     width: 100%;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 .team-section .container .team-card .card .content h3{
@@ -111,6 +124,9 @@ h4 {
     margin: 1rem 0;
     
     color: black;
+}
+.team-section .container .team-card .card .content img{
+    width: 80%;
 }
 
 h3{

@@ -1,22 +1,32 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <!-- Configurações básicas da página -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link para o arquivo CSS principal -->
     <link rel="stylesheet" href="css/style.css">
+    <!-- Link para o arquivo CSS da barra de navegação -->
     <link rel="stylesheet" href="css/NavBar.css">
+    <!-- Link para o kit Font Awesome -->
     <script src="https://kit.fontawesome.com/0e6a916873.js" crossorigin="anonymous"></script>
+    <!-- Link para o FavIcon -->
+    <link rel="icon" href="imagens/logo.png">
+    <!-- Link para o arquivo JavaScript -->
     <script src="js/script.js" defer></script>
-    <title>Document</title>
+    fi
+    <!-- Título da página -->
+    <title>Solidarize</title>
 </head>
 <body>
+    <!-- Barra de navegação -->
     <nav class="nav">
         <ul>
             <li><a href="#" class="logo">
                 <img src="imagens/logo.png" alt="">
                 <span class="nav-item">Solidarize</span>
             </a></li>
-            <li><a href="Home.html">
+            <li><a href="index.html">
                 <i class="fas fa-home"></i>
                 <span class="nav-item">Home</span>
             </a></li>
@@ -40,44 +50,83 @@
                 <i class="fas fa-solid fa-users"></i>
                 <span class="nav-item">Sobre Nós</span>
             </a></li>
-            <li><a href="#">
-                <i class="fas fa-cog"></i>
-                <span class="nav-item">Configurações</span>
-            </a></li>
             <li><a href="index.html" class="logout">
                 <i class="fas fa-sign-out-alt"></i>
                 <span class="nav-item">Sair</span>
             </a></li>
         </ul>
-    </nav>
-    <div class="content">
-        <div class="left">
-            <div class="top">
-                <h1>Ajudar Ficou + Fácil Agora</h1>
-            </div>
-            <div class="bottom">
-                <h2>Cadastre-se:</h2>
-                <button>Sou um Voluntário</button>
-                <button>Sou uma Instituição</button>
-            </div>
+        <div class="divisor"></div>
+        <div class="footer">
+            <a href="#">Privacidade</a>
+            <a href="#">Termos</a>
+            <a href="#">Outros Projetos</a>
+            <a href="#">Ajudes</a>
+            <a href="#">© Todos os direitos reservados</a>
         </div>
-
-        <div class="right">
+    </nav>
+    <!-- Conteúdo principal -->
+    <div class="content">
+        <div class="top">
             <div class="search-container">
                 <input type="text" id="search" placeholder="Pesquise por uma ONG">
+                <i id="ver-mais" class="fa-solid fa-magnifying-glass"></i>
                 <div class="results-container" id="results"></div>
             </div>
-            <div class="info-container" id="info">
-                <h2 id="ong-nome">Detalhes da Instituição</h2>
-                <p id="ong-descricao">Selecione uma instituição para visualizar seus detalhes completos.</p>
-                <button id="ver-mais">Ver mais</button>
+            <!-- Informações principais -->
+            <div class="info">
+                <h1>Ajudar Ficou <br> + Fácil Agora</h1>
+                <p>Uma plataforma seletiva para conectar organizações não governamentais de todo o Espírito Santo, unindo esforços para causas globais.</p>
+                <div class="buttons">
+                    <button id="nearbyInst-btn">Instituições Próximas</button>
+                    <button id="login-btn">Login</button>
+                </div>
             </div>
-            <div class="social-media">
-                <ul>
-                    <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
-                    <li><a href=""><i class="fab fa-twitter"></i></a></li>
-                    <li><a href=""><i class="fab fa-instagram"></i></a></li>
-                </ul>
+            <!-- Imagem principal -->
+            <div class="img-home">
+                <img src="imagens/home.svg" alt="">
+            </div>
+        </div>
+        <div class="bottom">
+            <!-- Cartões de informação -->
+            <div class="cards">
+                <div class="card">
+                    <div class="card-img">
+                        <img src="imagens/logo-inst.svg" alt="">
+                    </div>
+                    <div class="card-info">
+                        <h2>Terra Verde</h2>
+                        <p>A Terra Verde é uma organização não governamental dedicada à preservação do meio ambiente e à promoção da sustentabilidade.</p>
+                        <a href="Detalhes-Instituicao.html">Clique aqui e veja mais</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img">
+                        <img src="imagens/logo-event.svg" alt="">
+                    </div>
+                    <div class="card-info">
+                        <h2>Festival EcoVida</h2>
+                        <p>O Festival EcoVida é o evento anual mais esperado da Terra Verde, dedicado a celebrar a vida e a natureza de maneira sustentável.</p>
+                        <a href="Geo-Map.html">Clique aqui e veja mais</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Redes sociais e ajuda -->
+            <div class="social-help">
+                <div class="social-media">
+                    <ul>
+                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+                <div class="help">
+                    <ul>
+                        <li><a href="#">Privacidade</a></li>
+                        <li><a href="#">Termos</a></li>
+                        <li><a href="#">Outros Projetos</a></li>
+                        <li><a href="#">Ajuda</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>

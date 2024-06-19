@@ -1,25 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
     <head>
         <meta charset="UTF-8">
         <meta class="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Aba de Vagas</title>
+        <title>Voluntariados</title>
         <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
         <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
         <link rel="stylesheet" href="css/NavBar.css">
         <!--link para utilizar os icones-->
         <script src="https://kit.fontawesome.com/0e6a916873.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="css/Vagas.css">
-        <script defer src="js/Vagas.js"></script>
+        <script src="js/Vagas.js"></script>
+        <!-- Link para o FavIcon -->
+        <link rel="icon" href="imagens/logo.png">
     </head>
     <body>
+        <!-- Barra de navegação -->
         <nav class="nav">
             <ul>
                 <li><a href="#" class="logo">
                     <img src="imagens/logo.png" alt="">
                     <span class="nav-item">Solidarize</span>
                 </a></li>
-                <li><a href="Home.html">
+                <li><a href="index.html">
                     <i class="fas fa-home"></i>
                     <span class="nav-item">Home</span>
                 </a></li>
@@ -43,32 +46,45 @@
                     <i class="fas fa-solid fa-users"></i>
                     <span class="nav-item">Sobre Nós</span>
                 </a></li>
-                <li><a href="#">
-                    <i class="fas fa-cog"></i>
-                    <span class="nav-item">Configurações</span>
-                </a></li>
                 <li><a href="index.html" class="logout">
                     <i class="fas fa-sign-out-alt"></i>
                     <span class="nav-item">Sair</span>
                 </a></li>
             </ul>
+            <div class="divisor"></div>
+            <div class="footer">
+                <a href="#">Privacidade</a>
+                <a href="#">Termos</a>
+                <a href="#">Outros Projetos</a>
+                <a href="#">Ajudes</a>
+                <a href="#">© Todos os direitos reservados</a>
+            </div>
         </nav>
         <main>
+            <!-- Criação do slide de conteúdo -->
             <div class="slide-container swiper">
+                <!-- local onde fica os cards conteúdo -->
                 <div class="conteudo">
+                    <!-- Carrossel -->
                     <div class="wrapper swiper-wrapper">
+                        <!-- card -->
                         <div class="card swiper-slide">
+                            <!-- Cocal onde fica a imagem -->
                             <div class="conteudoImg">
+                                <!-- Divisória do card para separação da imagem dos demais -->
                                 <span class="overlay"></span>
+                                <!-- Card da imagem -->
                                 <div class="cardImage">
+                                    <!-- Imagem -->
                                     <img src="imagens/floresta.jpg" alt="floresta" class="cardImg">
                                 </div>
                             </div>
+                            <!-- Conteúdo do Card em texto -->
                             <div class="conteudoCard">
                                 <h2 class="nome">Ong das arvores</h2>
                                 <p class="descricao">The lorem text the section that contains header with having open funcionality Lorem dolor sit amet consectetur adipiscing elit</p>
-
-                                <button class="botao">Ver Mais</button>
+                                <!-- botão ver mais -->
+                                <a href="https://ui-ongs.github.io/UI-PwbAval/Detalhe-Vagas.html"><button class="botao">Ver Mais</button></a>
                             </div>
                         </div>
                         <div class="card swiper-slide">
@@ -82,7 +98,7 @@
                                 <h2 class="nome">Ong das arvores</h2>
                                 <p class="descricao">The lorem text the section that contains header with having open funcionality Lorem dolor sit amet consectetur adipiscing elit</p>
 
-                                <button class="botao">Ver Mais</button>
+                                <a href="https://ui-ongs.github.io/UI-PwbAval/Detalhe-Vagas.html"><button class="botao">Ver Mais</button></a>
                             </div>
                         </div>
                         <div class="card swiper-slide">
@@ -96,7 +112,7 @@
                                 <h2 class="nome">Ong das arvores</h2>
                                 <p class="descricao">The lorem text the section that contains header with having open funcionality Lorem dolor sit amet consectetur adipiscing elit</p>
 
-                                <button class="botao">Ver Mais</button>
+                                <a href="https://ui-ongs.github.io/UI-PwbAval/Detalhe-Vagas.html"><button class="botao">Ver Mais</button></a>
                             </div>
                         </div>
                         <div class="card swiper-slide">
@@ -110,7 +126,7 @@
                                 <h2 class="nome">Ong das arvores</h2>
                                 <p class="descricao">The lorem text the section that contains header with having open funcionality Lorem dolor sit amet consectetur adipiscing elit</p>
 
-                                <button class="botao">Ver Mais</button>
+                                <a href="https://ui-ongs.github.io/UI-PwbAval/Detalhe-Vagas.html"><button class="botao">Ver Mais</button></a>
                             </div>
                         </div>
                         <div class="card swiper-slide">
@@ -124,7 +140,7 @@
                                 <h2 class="nome">Ong das arvores</h2>
                                 <p class="descricao">The lorem text the section that contains header with having open funcionality Lorem dolor sit amet consectetur adipiscing elit</p>
 
-                                <button class="botao">Ver Mais</button>
+                                <a href="https://ui-ongs.github.io/UI-PwbAval/Detalhe-Vagas.html"><button class="botao">Ver Mais</button></a>
                             </div>
                         </div>
                         
@@ -135,5 +151,8 @@
                 <div class="swiper-pagination"></div>
             </div>
         </main>
+        <a href="https://ui-ongs.github.io/UI-PwbAval/Cadastro-Vagas.html">
+            <button class="cadastrar botao">Cadastrar Vaga</button>
+        </a>
     </body>
 </html>

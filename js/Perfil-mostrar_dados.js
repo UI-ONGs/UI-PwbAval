@@ -1,8 +1,9 @@
 // Recupera os valores da sessionStorage
-var nome = sessionStorage.getItem("nome");
-var email = sessionStorage.getItem("email");
-var nickname = sessionStorage.getItem("nickname");
-var senha = sessionStorage.getItem("senha");
+var nome = localStorage.getItem("fullname");
+var email = localStorage.getItem("email");
+var nickname = localStorage.getItem("username");
+var senha = localStorage.getItem("password");
+
 
 // definição do elementos
 const nomeU = document.querySelector("#nome"),

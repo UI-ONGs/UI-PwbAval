@@ -1,23 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>detalhe</title>
+    <title>Informaçoes da Vaga</title>
     <link rel="stylesheet" href="css/Detalhe-Vagas.css">
     <link rel="stylesheet" href="css/NavBar.css">
     <!--link para utilizar os icones-->
     <script src="https://kit.fontawesome.com/0e6a916873.js" crossorigin="anonymous"></script>
     <script defer src="js/Detalhe-Vagas.js"></script>
+    <!-- Link para o FavIcon -->
+    <link rel="icon" href="imagens/logo.png">
 </head>
 <body>
+    <!-- Barra de navegação -->
     <nav class="nav">
         <ul>
             <li><a href="#" class="logo">
                 <img src="imagens/logo.png" alt="">
                 <span class="nav-item">Solidarize</span>
             </a></li>
-            <li><a href="Home.html">
+            <li><a href="index.html">
                 <i class="fas fa-home"></i>
                 <span class="nav-item">Home</span>
             </a></li>
@@ -41,23 +44,32 @@
                 <i class="fas fa-solid fa-users"></i>
                 <span class="nav-item">Sobre Nós</span>
             </a></li>
-            <li><a href="#">
-                <i class="fas fa-cog"></i>
-                <span class="nav-item">Configurações</span>
-            </a></li>
             <li><a href="index.html" class="logout">
                 <i class="fas fa-sign-out-alt"></i>
                 <span class="nav-item">Sair</span>
             </a></li>
         </ul>
+        <div class="divisor"></div>
+        <div class="footer">
+            <a href="#">Privacidade</a>
+            <a href="#">Termos</a>
+            <a href="#">Outros Projetos</a>
+            <a href="#">Ajudes</a>
+            <a href="#">© Todos os direitos reservados</a>
+        </div>
     </nav>
     <div class="box">
         <form action="">
             <fieldset>
                 <legend><a>Dados da Vaga</a></legend>
+                <!-- Dados puxados -->
+                <div class="conteudo-img"><img src="imagens/floresta.jpg" alt="Imagem"></div>
                 <div id="eventDataDisplay">
 
                 </div>
+                <br>
+                <!-- Botão de voltar -->
+                <a href="https://ui-ongs.github.io/UI-PwbAval/Vagas.html"><button type="button" class="Voltar">Voltar</button></a>
             </fieldset>
 
         </form>

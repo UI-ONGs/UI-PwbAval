@@ -1,11 +1,22 @@
+// Função para buscar os dados do sessionStorage e atualizar a página
 document.addEventListener('DOMContentLoaded', function () {
-    const params = new URLSearchParams(window.location.search);
-    document.getElementById('nome-ong').textContent = params.get('nome');
-    document.getElementById('categoria-ong').textContent = params.get('categoria');
-    document.getElementById('descricao-ong').textContent = params.get('descricao');
-    document.getElementById('endereco-ong').textContent = params.get('endereco');
-    document.getElementById('instagram-link').href = params.get('instagram');
-    document.getElementById('facebook-link').href = params.get('facebook');
-    document.getElementById('telefone-link').href = `tel:${params.get('telefone')}`;
-    document.getElementById('email-link').href = `mailto:${params.get('email')}`;
+    // Recupera os dados do sessionStorage
+    const nome = sessionStorage.getItem('ongNome');
+    const categoria = sessionStorage.getItem('ongCategoria');
+    const descricao = sessionStorage.getItem('ongDescricao');
+    const endereco = sessionStorage.getItem('ongEndereco');
+    const instagram = sessionStorage.getItem('ongInstagram');
+    const facebook = sessionStorage.getItem('ongFacebook');
+    const telefone = sessionStorage.getItem('ongTelefone');
+    const email = sessionStorage.getItem('ongEmail');
+
+    // Atualiza os elementos da página com os dados recuperados
+    document.getElementById('nome-ong').textContent = nome;
+    document.getElementById('categoria-ong').textContent = categoria;
+    document.getElementById('descricao-ong').textContent = descricao;
+    document.getElementById('endereco-ong').textContent = endereco;
+    document.getElementById('instagram-link').href = instagram;
+    document.getElementById('facebook-link').href = facebook;
+    document.getElementById('telefone-link').href = `tel:${telefone}`;
+    document.getElementById('email-link').href = `mailto:${email}`;
 });

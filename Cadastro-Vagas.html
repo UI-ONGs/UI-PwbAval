@@ -1,23 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
     <head>
         <meta charset="UTF-8">
         <meta class="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Aba de eventos</title>
+        <title>Cadastrar Nova Vaga</title>
         <link rel="stylesheet" href="css/Cadastro-Vagas.css">
         <link rel="stylesheet" href="css/NavBar.css">
         <!--link para utilizar os icones-->
         <script src="https://kit.fontawesome.com/0e6a916873.js" crossorigin="anonymous"></script>
         <script defer src="js/Cadastro-Vagas.js"></script>
+        <!-- Link para o FavIcon -->
+        <link rel="icon" href="imagens/logo.png">
     </head>
     <body>
+        <!-- Barra de navegação -->
         <nav class="nav">
             <ul>
                 <li><a href="#" class="logo">
                     <img src="imagens/logo.png" alt="">
                     <span class="nav-item">Solidarize</span>
                 </a></li>
-                <li><a href="Home.html">
+                <li><a href="index.html">
                     <i class="fas fa-home"></i>
                     <span class="nav-item">Home</span>
                 </a></li>
@@ -41,21 +44,26 @@
                     <i class="fas fa-solid fa-users"></i>
                     <span class="nav-item">Sobre Nós</span>
                 </a></li>
-                <li><a href="#">
-                    <i class="fas fa-cog"></i>
-                    <span class="nav-item">Configurações</span>
-                </a></li>
                 <li><a href="index.html" class="logout">
                     <i class="fas fa-sign-out-alt"></i>
                     <span class="nav-item">Sair</span>
                 </a></li>
             </ul>
+            <div class="divisor"></div>
+            <div class="footer">
+                <a href="#">Privacidade</a>
+                <a href="#">Termos</a>
+                <a href="#">Outros Projetos</a>
+                <a href="#">Ajudes</a>
+                <a href="#">© Todos os direitos reservados</a>
+            </div>
         </nav>
         <div class="box">
+            <!-- formulário -->
             <form id="form"> 
                 <fieldset>
                     <legend><b>Formulário de Vagas</b></legend>
-                        
+                            <!-- Inputs -->
                         <div class="inputBox">
                             <input type="text" name="nome" id="nome" class="inputUser" required>
                             <label for="nome" class="labelInput">Nome Completo</label>
