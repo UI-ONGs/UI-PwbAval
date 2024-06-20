@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta class="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cadastrar Nova Vaga</title>
+        <link rel="stylesheet" href="css/Cadastro-Vagas.css">
+        <link rel="stylesheet" href="css/NavBar.css">
+        <!--link para utilizar os icones-->
+        <script src="https://kit.fontawesome.com/0e6a916873.js" crossorigin="anonymous"></script>
+        <script defer src="js/Cadastro-Vagas.js"></script>
+        <!-- Link para o FavIcon -->
+        <link rel="icon" href="imagens/logo.png">
+    </head>
+    <body>
+        <!-- Barra de navegação -->
+        <nav class="nav">
+            <ul>
+                <li><a href="#" class="logo">
+                    <img src="imagens/logo.png" alt="">
+                    <span class="nav-item">Solidarize</span>
+                </a></li>
+                <li><a href="index.html">
+                    <i class="fas fa-home"></i>
+                    <span class="nav-item">Home</span>
+                </a></li>
+                <li><a href="Perfil.html">
+                    <i class="fas fa-user"></i>
+                    <span class="nav-item">Perfil</span>
+                </a></li>
+                <li><a href="Calendario.html">
+                    <i class="fas fa-wallet"></i>
+                    <span class="nav-item">Eventos</span>
+                </a></li>
+                <li><a href="Vagas.html">
+                    <i class="fas fa-solid fa-briefcase"></i>
+                    <span class="nav-item">Voluntariados</span>
+                </a></li>
+                <li><a href="Geo-Map.html">
+                    <i class="fas fa-solid fa-map-pin"></i>
+                    <span class="nav-item">Mapa</span>
+                </a></li>
+                <li><a href="About.html">
+                    <i class="fas fa-solid fa-users"></i>
+                    <span class="nav-item">Sobre Nós</span>
+                </a></li>
+                <li><a href="index.html" class="logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span class="nav-item">Sair</span>
+                </a></li>
+            </ul>
+            <div class="divisor"></div>
+            <div class="footer">
+                <a href="#">Privacidade</a>
+                <a href="#">Termos</a>
+                <a href="#">Outros Projetos</a>
+                <a href="#">Ajudes</a>
+                <a href="#">© Todos os direitos reservados</a>
+            </div>
+        </nav>
+        <div class="box">
+            <!-- formulário -->
+            <form id="form"> 
+                <fieldset>
+                    <legend><b>Formulário de Vagas</b></legend>
+                            <!-- Inputs -->
+                        <div class="inputBox">
+                            <input type="text" name="nome" id="nome" class="inputUser" required>
+                            <label for="nome" class="labelInput">Nome Completo</label>
+                        </div>
+                        <div class="inputBox">
+                            <input type="text" name="tipo" id="tipo" class="inputUser" required>
+                            <label for="tipo" class="labelInput">Tipo da Ong</label>
+                        </div>
+                        
+                        <div class="inputBox">
+                            <input type="text" name="desc" id="desc" class="inputUser" required>
+                            <label for="desc" class="labelInput">Descrição</label>
+                        </div>
+                        <div class="inputBox">
+                            <input type="text" name="Endereco" id="Endereco" class="inputUser" required>
+                            <label for="Endereco" class="labelInput">Local: </label>
+                        </div>
+
+                        <div class="inputBox">
+                            <b><label for="data">Data: </label></b>
+                            <input type="date" name="data" id="data" class="noWrite" required>
+                        </div>
+
+                        <div class="inputBox">
+                            <b><label for="horarioI">Horário de início: </label></b>
+                            <input type="time" name="horarioI" id="horarioI" class="noWrite" required>
+                        </div>
+                        
+                        <div class="inputBox">
+                            <b><label for="horarioF">Horário de término: </label></b>
+                            <input type="time" name="horarioF" id="horarioF" class="noWrite" required>
+                        </div>
+                        <div class="botao">
+                            <input type="submit" name="submit" id="submit">
+
+                        </div>
+                </fieldset>
+            </form>
+        </div>
+</body>
+</html>
+
+<!-- nome, tipo, descricao, data, horário de início e horário final -->
