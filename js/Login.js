@@ -77,11 +77,11 @@ signUpForm.addEventListener('submit', (e) => {
 // Event listener para o formulário de cadastro de instituições
 signUpInstForm.addEventListener("submit", (e) => {
     e.preventDefault(); // Evita o envio padrão do formulário
-    const instName = signUpInstForm.querySelector("input[placeholder='Institution Name']").value; 
-    const instCategory = signUpInstForm.querySelector("input[placeholder='Institution Category']").value; 
+    const instName = signUpInstForm.querySelector("input[placeholder='Nome da Instituição']").value; 
+    const instCategory = signUpInstForm.querySelector("input[placeholder='Categoria da Instituição']").value; 
     const cnpj = signUpInstForm.querySelector("input[placeholder='CNPJ']").value; 
     const email = signUpInstForm.querySelector("input[placeholder='Email']").value; 
-    const password = signUpInstForm.querySelector("input[placeholder='Password']").value; 
+    const password = signUpInstForm.querySelector("input[placeholder='Senha']").value; 
 
     // Validação dos campos
     if (instName.length >= 6 && instCategory && cnpj && email && password.length >= 6) { // Verifica se os campos têm os requisitos mínimos
