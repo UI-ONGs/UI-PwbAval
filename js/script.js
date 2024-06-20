@@ -155,11 +155,11 @@ function displayResults(results) {
     let resultsContainer = document.getElementById('results');
     resultsContainer.innerHTML = '';  // Limpa resultados anteriores
     if (results.length > 0) {
-        results.forEach((ong, index) => {
+        results.forEach(ong => {
             let div = document.createElement('div');
             div.textContent = ong.nome;
             div.addEventListener('click', () => {
-                redirectToDetails(index);  // Redireciona diretamente para a página de detalhes
+                redirectToDetails(ong);  // Passa o objeto ong diretamente
             });
             resultsContainer.appendChild(div);
         });
@@ -170,10 +170,8 @@ function displayResults(results) {
 }
 
 // Função para redirecionar para a página de detalhes da ONG selecionada
-// Função para redirecionar para a página de detalhes da ONG selecionada
-function redirectToDetails(index) {
-    const ong = ongs[index];
-    
+function redirectToDetails(ong) {
+    console.log(ong);
     // Armazena os dados no sessionStorage
     sessionStorage.setItem('ongNome', ong.nome);
     sessionStorage.setItem('ongCategoria', ong.categoria);

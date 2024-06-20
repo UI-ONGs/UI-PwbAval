@@ -24,8 +24,8 @@ body{
     width: 70vw;
     height: 80vh;
     background: #fff;
-    border-radius: 15px;
-    box-shadow: 0 4px 20px 0 #73a79cea, 6px 20px 0 #73a79cea;
+    border-radius: 0.9375rem;
+    box-shadow: 0 0.25rem 1.25rem 0 #73a79cea, 0.375rem 1.25rem 0 #73a79cea;
     overflow: hidden;
 }
 
@@ -62,8 +62,8 @@ form{
     align-items: center;
     flex-direction: column;
     width: 40%;
-    min-width: 238px;
-    padding: 0 10px;
+    min-width: 14.875rem;
+    padding: 0 0.625rem;
 }
 
 /* Efeito de transição entre formulários */
@@ -81,19 +81,19 @@ form.sign-up-form{
 
 /* Estilos para o título dos formulários */
 .title{
-    font-size: 35px;
+    font-size: 2.1875rem;
     color: #45736A;
-    margin-bottom: 10px;
+    margin-bottom: 0.625rem;
 }
 
 /* Estilos para os campos de entrada */
 .input-field{
     width: 100%;
-    height: 50px;
+    height: 3.125rem;
     background: #f0f0f0;
-    margin: 10px 0;
-    border: 2px solid #45736A;
-    border-radius: 50px;
+    margin: 0.625rem 0;
+    border: 0.125rem solid #45736A;
+    border-radius: 3.125rem;
     display: flex;
     align-items: center;
 }
@@ -103,7 +103,7 @@ form.sign-up-form{
     flex: 1;
     text-align: center;
     color: #619986;
-    font-size: 18px;
+    font-size: 1.125rem;
 }
 
 /* Entradas de texto */
@@ -113,21 +113,21 @@ form.sign-up-form{
     border: none;
     outline: none;
     width: 100%;
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: 600;
     color: #444;
 }
 
 /* Botão de login e registro */
 .btn{
-    width: 150px;
-    height: 50px;
+    width: 9.375rem;
+    height: 3.125rem;
     border: none;
-    border-radius: 50px;
+    border-radius: 3.125rem;
     background: #3f3f3f;
     color: #fff;
     font-weight: 600;
-    margin: 10px 0;
+    margin: 0.625rem 0;
     text-transform: uppercase;
     cursor: pointer;
 }
@@ -138,8 +138,8 @@ form.sign-up-form{
 
 /* Texto de login social */
 .social-text{
-    margin: 10px 0;
-    font-size: 16px;
+    margin: 0.625rem 0;
+    font-size: 1rem;
 }
 
 /* Ícones de mídia social */
@@ -149,15 +149,15 @@ form.sign-up-form{
 }
 
 .social-icon{
-    height: 45px;
-    width: 45px;
+    height: 2.8125rem;
+    width: 2.8125rem;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #444;
-    border: 1px solid #444;
-    border-radius: 50px;
-    margin: 0 5px;
+    border: 0.0625rem solid #444;
+    border-radius: 3.125rem;
+    margin: 0 0.3125rem;
 }
 
 a{
@@ -187,8 +187,8 @@ a{
     align-items: center;
     justify-content: space-around;
     width: 35%;
-    min-width: 238px;
-    padding: 0 10px;
+    min-width: 14.875rem;
+    padding: 0 0.625rem;
     text-align: center;
     z-index: 6;
 }
@@ -204,13 +204,13 @@ a{
 }
 
 .panel h3{
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 600;
 }
 
 .panel p{
-    font-size: 15px;
-    padding: 10px 0;
+    font-size: 0.9375rem;
+    padding: 0.625rem 0;
 }
 
 .image{
@@ -238,7 +238,7 @@ a{
 }
 
 .goto-p{
-    padding: 10px 10px 5px 10px;
+    padding: 0.625rem 0.625rem 0.3125rem 0.625rem;
     text-align: center;
 }
 
@@ -290,21 +290,21 @@ a{
 .message {
     position: absolute;
     top: 0;
-    margin: 30px auto;
+    margin: 1.875rem auto;
     color: #1f3b36;
     font-weight: bold;
     font-size: 1.5rem;
 }
 
 /* Responsividade */
-@media (max-width: 779px){
+@media (max-width: 48.6875rem){
     .container{
         width: 100vw;
         height: 100vh;
     }
 }
 
-@media (max-width: 635px){
+@media (max-width: 39.6875rem){
     .container::before{
         display: none;
     }
@@ -326,17 +326,17 @@ a{
     }
     .account-text{
         display: initial;
-        margin-top: 0px;
+        margin-top: 0rem;
         text-align: center;
         
     }
     .account-text.login{
-        margin-top: 15px;
+        margin-top: 0.9375rem;
 
     }
 }
 
-@media (max-width: 320px){
+@media (max-width: 20rem){
     form{
         width: 90%;
     }
