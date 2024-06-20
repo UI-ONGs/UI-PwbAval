@@ -63,7 +63,7 @@ b {
 
 /* Estilos para o botão de voltar */
 .Voltar {
-    background-color: #73f76e;
+    background-color: #5c9490;
     text-decoration: none;
     font-weight: bold;
     width: 100%;
@@ -77,7 +77,7 @@ b {
 /* Estilos para o botão de voltar quando passa o mouse */
 .Voltar:hover {
     border-radius: 2em;
-    background-color: #1eff00;
+    background-color: rgb(106, 173, 160);
 }
 
 /* Estilos para a exibição de dados do evento */
