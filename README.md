@@ -30,7 +30,27 @@ A instituição administra nenhuma ou várias atividades, que podem ser administ
 # Prototipação de Telas
 [Link do Protótipo](https://app.appsmith.com/app/projeto-solidarize/login-667b04a8aadff8332282933e)
 # Implementação
+[Link do WebSite](https://ui-ongs.github.io/UI-PwbAval/)
 Prints das telas principais
+## Tela de Cadastro/Login
+![image](https://github.com/user-attachments/assets/7eff092b-2897-401c-bc9f-3454ad98785f)
+## Tela Home
+![image](https://github.com/user-attachments/assets/64438a4a-41d6-4988-84ee-8530860702f3)
+## Tela de Perfil
+![image](https://github.com/user-attachments/assets/de33badd-56b5-4609-a0fe-a4e5138f5b36)
+## Tela de Eventos
+![image](https://github.com/user-attachments/assets/53437ad0-99eb-40fb-b932-da3290e36fa9)
+## Tela de Voluntariados
+![image](https://github.com/user-attachments/assets/fda0461e-17a9-4078-9ddf-83837120516f)
+## Tela GeoMap
+![image](https://github.com/user-attachments/assets/864eb96d-6063-4cb9-a8de-0cf329e87bdf)
+## Tela Sobre Nós
+![image](https://github.com/user-attachments/assets/4f64e07e-fbe4-40cd-a8fd-3b504268411e)
+
+
+
+
+
  
 
 
