@@ -31,7 +31,7 @@ A instituição administra nenhuma ou várias atividades, que podem ser administ
 [Link do Protótipo](https://app.appsmith.com/app/projeto-solidarize/login-667b04a8aadff8332282933e)
 # Implementação
 [Link do WebSite](https://ui-ongs.github.io/UI-PwbAval/)
-Prints das telas principais
+## Prints das telas principais
 ## Tela de Cadastro/Login
 ![image](https://github.com/user-attachments/assets/7eff092b-2897-401c-bc9f-3454ad98785f)
 ## Tela Home
