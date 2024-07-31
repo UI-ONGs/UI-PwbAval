@@ -27,7 +27,7 @@ A instituição administra nenhuma ou várias atividades, que podem ser administ
 ## Modelo Conceitual
 ![image](https://github.com/user-attachments/assets/16d95254-134a-40c7-b1eb-105f0c439714)
 ## Modelo Lógico
-![image](https://github.com/user-attachments/assets/04e0bfc4-daca-4975-a125-762dd7cc969d)
+![image](https://github.com/user-attachments/assets/8dde19f5-700b-4790-91f4-ffa5be41ff7f)
 # Prototipação de Telas
 [Link do Protótipo](https://app.appsmith.com/app/projeto-solidarize/login-667b04a8aadff8332282933e)
 # Implementação
