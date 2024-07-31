@@ -25,7 +25,7 @@ A instituição administra nenhuma ou várias atividades, que podem ser administ
 ![image](https://github.com/user-attachments/assets/36d845fe-4fee-4c4a-8868-032d1a2eb703)
 # Modelo de Dados
 ## Modelo Conceitual
-![image](https://github.com/user-attachments/assets/07b1af54-b303-49b7-b190-aa27c3bbc7ab)
+![image](https://github.com/user-attachments/assets/16d95254-134a-40c7-b1eb-105f0c439714)
 ## Modelo Lógico
 ![image](https://github.com/user-attachments/assets/04e0bfc4-daca-4975-a125-762dd7cc969d)
 # Prototipação de Telas
