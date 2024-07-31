@@ -1,0 +1,166 @@
+/* Reset básico e configurações globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-color: #f6f6f6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+/* Estilo para card de imagem */
+.cardImage {
+    position: relative;
+    width: 20vh;
+    height: 20vh;
+    background: #fff;
+    border-radius: 15%;
+    padding: 0.15em;
+}
+
+/* Estilo para imagem dentro do card */
+.cardImage .cardImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15%;
+    border: 0.2em solid #45736A;
+}
+
+/* Estilo para cards gerais */
+.card {
+    border-radius: 5%;
+    background-color: #fff;
+}
+
+/* Estilo para conteúdo */
+.conteudo {
+    margin: 0 12em;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+/* Estilo para sub-elementos de conteúdo */
+.conteudoImg,
+.conteudoCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.7em 0.9em;
+}
+
+/* Estilo específico para conteúdo de imagem */
+.conteudoImg {
+    position: relative;
+    row-gap: 5px;
+    padding: 1.2em 0;
+}
+
+/* Estilo para overlay (sobreposição/divisória) */
+.overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #45736A;
+    border-radius: 5%;
+}
+
+/* Estilo para o nome */
+.nome {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #45736A;
+}
+
+/* Estilo para a descrição */
+.descricao {
+    font-size: 0.9em;
+    color: black;
+    text-align: center;
+}
+
+/* Estilo para o botão */
+.botao {
+    border: none;
+    font-size: 1em;
+    color: #fff;
+    padding: 0.5em 1em;
+    background-color: #4D6E72;
+    border-radius: 0.5em;
+    margin: 0.9em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Estilo quando passa o mouse no botão */
+.botao:hover {
+    background-color: #619986;
+    border-radius: 1em;
+}
+
+/* Estilo para botões de navegação do swiper (setinhas) */
+.swiper-navBtn {
+    color: #4D6E72;
+    transition: color 0.3s ease;
+    padding: 2em;
+}
+
+/* Estilo quando passa o mouse nos botões de navegação do swiper (setinhas) */
+.swiper-navBtn:hover {
+    color: #4D6E72;
+    font-weight: bolder;
+}
+
+/* Estilo para bullets de paginação do swiper (bolinhas em baixo)*/
+.swiper-pagination-bullet {
+    background-color: #6DA0A6;
+    opacity: 1;
+}
+
+/* Estilo para bullets de paginação ativas do swiper(bolinhas em baixo[parte central]) */
+.swiper-pagination-bullet-active {
+    background-color: #4D6E72;
+}
+
+/* Estilo para container do slide */
+.slide-container {
+    max-width: 80vw;
+    padding: 2.5em 0;
+    width: 100%;
+}
+
+/* Estilo para imagem principal */
+.principal img {
+    max-height: 14vh;
+    width: 14vw;
+    border-radius: 1rem;
+}
+
+/* Estilo para header */
+header {
+    display: flex;
+    justify-content: center;
+    min-height: 10vh;
+    overflow: hidden;
+}
+
+/* Estilo para seção cadastrar */
+.cadastrar {
+    padding: 20px 50px;
+}
+
+/* Estilo para a seção principal */
+main {
+    min-height: 82vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
