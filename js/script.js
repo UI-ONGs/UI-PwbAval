@@ -143,72 +143,113 @@ let ongs = [
 
 console.log(ongs);
 
-// Adiciona um listener ao campo de pesquisa para capturar a entrada do usuário
-document.getElementById('search').addEventListener('input', function() {
-    let query = this.value.toLowerCase();
-    let results = ongs.filter(ong => ong.nome.toLowerCase().includes(query));
-    displayResults(results);
-});
+// script.js
 
-// Função para exibir os resultados da pesquisa
-function displayResults(results) {
-    let resultsContainer = document.getElementById('results');
-    resultsContainer.innerHTML = '';  // Limpa resultados anteriores
-    if (results.length > 0) {
-        results.forEach(ong => {
-            let div = document.createElement('div');
-            div.textContent = ong.nome;
-            div.addEventListener('click', () => {
-                redirectToDetails(ong);  // Passa o objeto ong diretamente
+document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.getElementById('search-input');
+    const searchResults = document.getElementById('search-results');
+    const searchBtn = document.getElementById('search-btn');
+    const orgCards = document.getElementById('org-cards');
+
+    // Function to display search results
+    function displayResults(results) {
+        searchResults.innerHTML = '';
+        if (results.length > 0) {
+            results.forEach(ong => {
+                const div = document.createElement('div');
+                div.textContent = ong.nome;
+                div.addEventListener('click', () => {
+                    // Redirect to ONG details page or show more info
+                    console.log('Selected ONG:', ong);
+                });
+                searchResults.appendChild(div);
             });
-            resultsContainer.appendChild(div);
+            searchResults.style.display = 'block';
+        } else {
+            searchResults.style.display = 'none';
+        }
+    }
+
+    // Search functionality
+    searchInput.addEventListener('input', function() {
+        const query = this.value.toLowerCase();
+        const results = ongs.filter(ong => ong.nome.toLowerCase().includes(query));
+        displayResults(results);
+    });
+
+    searchBtn.addEventListener('click', function() {
+        const query = searchInput.value.toLowerCase();
+        const results = ongs.filter(ong => ong.nome.toLowerCase().includes(query));
+        displayResults(results);
+    });
+
+    // Close search results when clicking outside
+    document.addEventListener('click', function(event) {
+        if (!event.target.closest('.search-container')) {
+            searchResults.style.display = 'none';
+        }
+    });
+
+    // Display featured ONGs
+    function displayFeaturedOngs() {
+        const featuredOngs = ongs.slice(0, 3); // Display first 3 ONGs
+        orgCards.innerHTML = '';
+        featuredOngs.forEach(ong => {
+            const card = document.createElement('div');
+            card.className = 'org-card animate-on-scroll';
+            card.innerHTML = `
+                <div class="org-card-image">
+                    <img src="imagens/${ong.nome.toLowerCase().replace(/\s+/g, '-')}.jpg" alt="${ong.nome}">
+                </div>
+                <div class="org-card-content">
+                    <h3>${ong.nome}</h3>
+                    <p>${ong.descricao}</p>
+                    <a href="#" class="btn btn-tertiary">Saiba mais</a>
+                </div>
+            `;
+            orgCards.appendChild(card);
         });
-        resultsContainer.style.display = 'block';  // Exibe a lista de resultados
-    } else {
-        resultsContainer.style.display = 'none';  // Esconde a lista se não houver resultados
     }
-}
 
-// Função para redirecionar para a página de detalhes da ONG selecionada
-function redirectToDetails(ong) {
-    console.log(ong);
-    // Armazena os dados no sessionStorage
-    sessionStorage.setItem('ongNome', ong.nome);
-    sessionStorage.setItem('ongCategoria', ong.categoria);
-    sessionStorage.setItem('ongDescricao', ong.descricao_detalhada);
-    sessionStorage.setItem('ongEndereco', ong.endereco);
-    sessionStorage.setItem('ongInstagram', ong.contato.instagram);
-    sessionStorage.setItem('ongFacebook', ong.contato.facebook);
-    sessionStorage.setItem('ongTelefone', ong.contato.telefone);
-    sessionStorage.setItem('ongEmail', ong.contato.email);
-    
-    // Redireciona para a página de detalhes
-    window.location.href = 'Detalhes-Instituicao.html';
-}
+    displayFeaturedOngs();
 
-
-// Adiciona um listener ao documento para detectar cliques fora do contêiner de pesquisa
-document.addEventListener('click', function(event) {
-    let searchContainer = document.querySelector('.search-container');
-    let resultsContainer = document.getElementById('results');
-    // Verifica se o clique ocorreu fora do contêiner de pesquisa
-    if (!searchContainer.contains(event.target)) {
-        resultsContainer.style.display = 'none';  // Esconde os resultados
+    // Animate elements on scroll
+    function animateOnScroll() {
+        const elements = document.querySelectorAll('.animate-on-scroll');
+        elements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+            if (elementTop < windowHeight - 50) {
+                element.classList.add('show');
+            }
+        });
     }
-});
 
-// Impede que o clique no campo de pesquisa feche os resultados
-document.getElementById('search').addEventListener('click', function(event) {
-    event.stopPropagation();
-});
+    window.addEventListener('scroll', animateOnScroll);
+    animateOnScroll(); // Initial check on page load
 
-//Adiciona o evento de troca de página para quando o botão for clicado
-document.getElementById("login-btn").addEventListener("click", function() {
-    window.location.href = "Login.html";
-});
+    // Newsletter form submission
+    const newsletterForm = document.getElementById('newsletter-form');
+    newsletterForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const email = document.getElementById('newsletter-email').value;
+        console.log('Newsletter subscription:', email);
+        // Here you would typically send this to your backend
+        alert('Obrigado por se inscrever em nossa newsletter!');
+        newsletterForm.reset();
+    });
 
+    // Button click handlers
+    document.getElementById('nearbyInst-btn').addEventListener('click', function() {
+        window.location.href = 'Geo-Map.html';
+    });
 
-//Adiciona o evento de troca de página para quando o botão for clicado
-document.getElementById("nearbyInst-btn").addEventListener("click", function() {
-    window.location.href = "Geo-Map.html";
+    document.getElementById('login-btn').addEventListener('click', function() {
+        window.location.href = 'Login.html';
+    });
+
+    document.getElementById('join-btn').addEventListener('click', function() {
+        // Redirect to sign up page or show sign up modal
+        console.log('Join button clicked');
+    });
 });

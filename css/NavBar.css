@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     outline: none;
@@ -21,7 +21,7 @@
     --gray: #cccccc;
     --transition: all 0.3s ease;
 }
-/* navbar.css */
+
 .navbar {
     position: fixed;
     top: 0;
@@ -36,7 +36,7 @@
     transition: width 0.3s ease;
     z-index: 1000;
     overflow-x: hidden;
-    overflow-y: auto;
+    overflow-y: hidden;
 }
 
 .navbar:hover {
@@ -109,61 +109,31 @@
     opacity: 1;
 }
 
-.navbar-footer {
+.navbar-user {
     margin-top: auto;
-    font-size: 0.8rem;
     padding: 1rem;
+    display: flex;
+    align-items: center;
     opacity: 0;
     transition: opacity 0.3s ease;
 }
 
-.navbar:hover .navbar-footer {
+.navbar:hover .navbar-user {
     opacity: 1;
 }
 
-.navbar-footer a {
-    color: var(--gray);
-    display: block;
-    margin-bottom: 0.5rem;
+.navbar-user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 1rem;
 }
 
-.navbar-footer p {
-    color: var(--gray);
-    margin-top: 1rem;
+.navbar-user-name {
+    white-space: nowrap;
+    font-size: 0.9rem;
 }
 
-@media (max-width: 768px) {
-    .navbar {
-        width: 100%;
-        height: 60px;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 1rem;
-    }
-
-    .navbar:hover {
-        width: 100%;
-    }
-
-    .navbar-logo {
-        margin-bottom: 0;
-    }
-
-    .navbar-menu {
-        display: none;
-    }
-
-    .navbar-footer {
-        display: none;
-    }
-
-    .content {
-        margin-top: 60px;
-    }
-}
-
-/*Mobile*/
 .navbar-mobile {
     display: none;
     position: fixed;
@@ -256,6 +226,10 @@
 }
 
 @media (max-width: 768px) {
+    .navbar {
+        display: none;
+    }
+
     .navbar-mobile {
         display: block;
     }
