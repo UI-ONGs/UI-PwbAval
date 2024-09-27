@@ -1,175 +1,297 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8">
-        <meta class="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Voluntariados</title>
-        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-        <link rel="stylesheet" href="css/NavBar.css">
-        <!--link para utilizar os icones-->
-        <script src="https://kit.fontawesome.com/0e6a916873.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="css/Vagas.css">
-        <script src="js/Vagas.js"></script>
-        <script src="js/NavBar.js" defer></script>
-        
-        <!-- Link para o FavIcon -->
-        <link rel="icon" href="imagens/logo.png">
-    </head>
-    <body>
-        <nav class="navbar">
-            <div class="navbar-logo">
-                <img src="imagens/logo.png" alt="Solidarize Logo">
-                <span class="navbar-logo-text">Solidarize</span>
-            </div>
-            <ul class="navbar-menu">
-                <li><a href="index.html"><i class="fas fa-home"></i><span>Home</span></a></li>
-                <li><a href="Perfil.html"><i class="fas fa-user"></i><span>Perfil</span></a></li>
-                <li><a href="Calendario.html"><i class="fas fa-calendar-alt"></i><span>Eventos</span></a></li>
-                <li><a href="Vagas.html"><i class="fas fa-hands-helping"></i><span>Voluntariados</span></a></li>
-                <li><a href="Geo-Map.html"><i class="fas fa-map-marked-alt"></i><span>Mapa</span></a></li>
-                <li><a href="About.html"><i class="fas fa-info-circle"></i><span>Sobre Nós</span></a></li>
-            </ul>
-            <div class="navbar-user">
-                <img src="imagens/user-avatar.png" alt="User Avatar" class="navbar-user-avatar">
-                <span class="navbar-user-name">Nome do Usuário</span>
-            </div>
-        </nav>
-    
-        <div class="navbar-mobile">
-            <div class="navbar-mobile-header">
-                <img src="imagens/logo.png" alt="Solidarize Logo" class="navbar-mobile-logo">
-                <button class="navbar-mobile-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-            <ul class="navbar-mobile-menu">
-                <li><a href="index.html"><i class="fas fa-home"></i><span>Home</span></a></li>
-                <li><a href="Perfil.html"><i class="fas fa-user"></i><span>Perfil</span></a></li>
-                <li><a href="Calendario.html"><i class="fas fa-calendar-alt"></i><span>Eventos</span></a></li>
-                <li><a href="Vagas.html"><i class="fas fa-hands-helping"></i><span>Voluntariados</span></a></li>
-                <li><a href="Geo-Map.html"><i class="fas fa-map-marked-alt"></i><span>Mapa</span></a></li>
-                <li><a href="About.html"><i class="fas fa-info-circle"></i><span>Sobre Nós</span></a></li>
-            </ul>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solidarize - Conectando ONGs para Causas Globais</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="icon" href="imagens/logo.png">
+    <script src="https://kit.fontawesome.com/0e6a916873.js" crossorigin="anonymous"></script>
+    <script src="js/script.js" defer></script>
+    <script src="js/NavBar.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <img src="imagens/logo.png" alt="Solidarize Logo">
+            <span class="navbar-logo-text">Solidarize</span>
         </div>
-        <main>
-            <header>
-                <form class="form">
-                  <button>
-                      <svg width="17" height="16" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="search">
-                          <path d="M7.667 12.667A5.333 5.333 0 107.667 2a5.333 5.333 0 000 10.667zM14.334 14l-2.9-2.9" stroke="currentColor" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
-                      </svg>
-                  </button>
-                  <input class="input" placeholder="Pesquisar..." required="" type="text">
-                  <button class="reset" type="reset">
-                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
-                      </svg>
-                  </button>
-               </form>
-                <button class="button" data-text="Awesome">        
-                    <span class="actual-text">&nbsp;Solidarize&nbsp;</span>
-                    <a class="linkBtn" href="http://https://ui-ongs.github.io/UI-PwbAval/">
-                        <span aria-hidden="true" class="hover-text">&nbsp;Solidarize&nbsp;</span>
-                    </a>
-                </button>
-            </header>
-            
-            <!-- Criação do slide de conteúdo -->
-            <div class="slide-container swiper">
-                <!-- local onde fica os cards conteúdo -->
-                <div class="conteudo">
-                    <!-- Carrossel -->
-                    <div class="wrapper swiper-wrapper">
-                        <!-- card -->
-                        <div class="card swiper-slide">
-                            <!-- Cocal onde fica a imagem -->
-                            <div class="conteudoImg">
-                                <!-- Divisória do card para separação da imagem dos demais -->
-                                <span class="overlay"></span>
-                                <!-- Card da imagem -->
-                                <div class="cardImage">
-                                    <!-- Imagem -->
-                                    <img src="imagens/floresta.jpg" alt="floresta" class="cardImg">
-                                </div>
-                            </div>
-                            <!-- Conteúdo do Card em texto -->
-                            <div class="conteudoCard">
-                                <h2 class="nome">Ong das arvores</h2>
-                                <p class="descricao">The lorem text the section that contains header with having open funcionality Lorem dolor sit amet consectetur adipiscing elit</p>
-                                <!-- botão ver mais -->
-                                <a href="https://ui-ongs.github.io/UI-PwbAval/Detalhe-Vagas.html"><button class="botao">Ver Mais</button></a>
-                            </div>
-                        </div>
-                        <div class="card swiper-slide">
-                            <div class="conteudoImg">
-                                <span class="overlay"></span>
-                                <div class="cardImage">
-                                    <img src="imagens/floresta.jpg" alt="floresta" class="cardImg">
-                                </div>
-                            </div>
-                            <div class="conteudoCard">
-                                <h2 class="nome">Ong das arvores</h2>
-                                <p class="descricao">The lorem text the section that contains header with having open funcionality Lorem dolor sit amet consectetur adipiscing elit</p>
+        <ul class="navbar-menu">
+            <li><a href="index.html"><i class="fas fa-home"></i><span>Home</span></a></li>
+            <li><a href="Perfil.html"><i class="fas fa-user"></i><span>Perfil</span></a></li>
+            <li><a href="Calendario.html"><i class="fas fa-calendar-alt"></i><span>Eventos</span></a></li>
+            <li><a href="Vagas.html"><i class="fas fa-hands-helping"></i><span>Voluntariados</span></a></li>
+            <li><a href="Geo-Map.html"><i class="fas fa-map-marked-alt"></i><span>Mapa</span></a></li>
+            <li><a href="About.html"><i class="fas fa-info-circle"></i><span>Sobre Nós</span></a></li>
+        </ul>
+        <div class="navbar-user">
+            <img src="imagens/user-avatar.png" alt="User Avatar" class="navbar-user-avatar">
+            <span class="navbar-user-name">Nome do Usuário</span>
+        </div>
+    </nav>
 
-                                <a href="https://ui-ongs.github.io/UI-PwbAval/Detalhe-Vagas.html"><button class="botao">Ver Mais</button></a>
-                            </div>
-                        </div>
-                        <div class="card swiper-slide">
-                            <div class="conteudoImg">
-                                <span class="overlay"></span>
-                                <div class="cardImage">
-                                    <img src="imagens/floresta.jpg" alt="floresta" class="cardImg">
-                                </div>
-                            </div>
-                            <div class="conteudoCard">
-                                <h2 class="nome">Ong das arvores</h2>
-                                <p class="descricao">The lorem text the section that contains header with having open funcionality Lorem dolor sit amet consectetur adipiscing elit</p>
+    <div class="navbar-mobile">
+        <div class="navbar-mobile-header">
+            <img src="imagens/logo.png" alt="Solidarize Logo" class="navbar-mobile-logo">
+            <button class="navbar-mobile-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <ul class="navbar-mobile-menu">
+            <li><a href="index.html"><i class="fas fa-home"></i><span>Home</span></a></li>
+            <li><a href="Perfil.html"><i class="fas fa-user"></i><span>Perfil</span></a></li>
+            <li><a href="Calendario.html"><i class="fas fa-calendar-alt"></i><span>Eventos</span></a></li>
+            <li><a href="Vagas.html"><i class="fas fa-hands-helping"></i><span>Voluntariados</span></a></li>
+            <li><a href="Geo-Map.html"><i class="fas fa-map-marked-alt"></i><span>Mapa</span></a></li>
+            <li><a href="About.html"><i class="fas fa-info-circle"></i><span>Sobre Nós</span></a></li>
+        </ul>
+    </div>
+    
+    <main class="main-content">
+        <header class="top-bar">
+            <div class="search-container">
+                <input type="text" placeholder="Pesquisar ONGs, eventos, causas..." class="search-input">
+                <button class="search-button"><i class="fas fa-search"></i></button>
+                <div id="search-results" class="search-results"></div>
 
-                                <a href="https://ui-ongs.github.io/UI-PwbAval/Detalhe-Vagas.html"><button class="botao">Ver Mais</button></a>
-                            </div>
-                        </div>
-                        <div class="card swiper-slide">
-                            <div class="conteudoImg">
-                                <span class="overlay"></span>
-                                <div class="cardImage">
-                                    <img src="imagens/floresta.jpg" alt="floresta" class="cardImg">
-                                </div>
-                            </div>
-                            <div class="conteudoCard">
-                                <h2 class="nome">Ong das arvores</h2>
-                                <p class="descricao">The lorem text the section that contains header with having open funcionality Lorem dolor sit amet consectetur adipiscing elit</p>
+            </div>
 
-                                <a href="https://ui-ongs.github.io/UI-PwbAval/Detalhe-Vagas.html"><button class="botao">Ver Mais</button></a>
-                            </div>
-                        </div>
-                        <div class="card swiper-slide">
-                            <div class="conteudoImg">
-                                <span class="overlay"></span>
-                                <div class="cardImage">
-                                    <img src="imagens/floresta.jpg" alt="floresta" class="cardImg">
-                                </div>
-                            </div>
-                            <div class="conteudoCard">
-                                <h2 class="nome">Ong das arvores</h2>
-                                <p class="descricao">The lorem text the section that contains header with having open funcionality Lorem dolor sit amet consectetur adipiscing elit</p>
 
-                                <a href="https://ui-ongs.github.io/UI-PwbAval/Detalhe-Vagas.html"><button class="botao">Ver Mais</button></a>
-                            </div>
-                        </div>
-                        
+
+            <div class="user-menu">
+                <img src="/placeholder.svg?height=40&width=40" alt="Foto do usuário" class="user-avatar">
+                <span class="user-name">Olá, Voluntário</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </header>
+        <div class="content-area">
+            <section class="welcome-section">
+                <h2>Bem-vindo ao Portal ONGs</h2>
+                <p>Conectando pessoas a causas que transformam o mundo. Descubra como você pode fazer a diferença hoje!</p>
+                <div class="cta-buttons">
+                    <a href="#register" class="cta-button primary">Cadastre sua ONG</a>
+                    <a href="#explore" class="cta-button secondary">Explorar Causas</a>
+                </div>
+            </section>
+            <section class="featured-causes">
+                <h3>Causas em Destaque</h3>
+                <div class="cause-slider">
+                    <div class="cause-item">
+                        <img src="/placeholder.svg?height=200&width=300" alt="Causa 1" class="cause-image">
+                        <h4>Preservação Ambiental</h4>
+                        <p>Protegendo nossas florestas e oceanos para as futuras gerações.</p>
+                        <a href="#cause1" class="learn-more">Saiba mais</a>
+                    </div>
+                    <div class="cause-item">
+                        <img src="/placeholder.svg?height=200&width=300" alt="Causa 2" class="cause-image">
+                        <h4>Educação para Todos</h4>
+                        <p>Garantindo acesso à educação de qualidade em comunidades carentes.</p>
+                        <a href="#cause2" class="learn-more">Saiba mais</a>
+                    </div>
+                    <div class="cause-item">
+                        <img src="/placeholder.svg?height=200&width=300" alt="Causa 3" class="cause-image">
+                        <h4>Combate à Fome</h4>
+                        <p>Trabalhando para erradicar a fome e promover a segurança alimentar.</p>
+                        <a href="#cause3" class="learn-more">Saiba mais</a>
                     </div>
                 </div>
-                <div class="swiper-button-next swiper-navBtn"></div>
-                <div class="swiper-button-prev swiper-navBtn"></div>
-                <div class="swiper-pagination"></div>
+            </section>
+            <div class="two-column-layout">
+                <section class="upcoming-events">
+                    <h3>Próximos Eventos</h3>
+                    <div class="calendar-widget">
+                        <div class="calendar-header">
+                            <button id="prevMonth"><i class="fas fa-chevron-left"></i></button>
+                            <h4 id="currentMonth">Setembro 2023</h4>
+                            <button id="nextMonth"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                        <table class="calendar-table">
+                            <thead>
+                                <tr>
+                                    <th>Dom</th>
+                                    <th>Seg</th>
+                                    <th>Ter</th>
+                                    <th>Qua</th>
+                                    <th>Qui</th>
+                                    <th>Sex</th>
+                                    <th>Sáb</th>
+                                </tr>
+                            </thead>
+                            <tbody id="calendarBody">
+                                <!-- Dias do calendário serão inseridos via JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <ul class="event-list">
+                        <li class="event-item">
+                            <div class="event-date">
+                                <span class="day">15</span>
+                                <span class="month">SET</span>
+                            </div>
+                            <div class="event-details">
+                                <h5>Dia Mundial da Limpeza</h5>
+                                <p>Junte-se a nós para limpar praias e parques em sua cidade.</p>
+                                <a href="#event1" class="event-link">Participar</a>
+                            </div>
+                        </li>
+                        <li class="event-item">
+                            <div class="event-date">
+                                <span class="day">22</span>
+                                <span class="month">SET</span>
+                            </div>
+                            <div class="event-details">
+                                <h5>Maratona Solidária</h5>
+                                <p>Corra por uma causa! Arrecadação para projetos educacionais.</p>
+                                <a href="#event2" class="event-link">Inscrever-se</a>
+                            </div>
+                        </li>
+                        <li class="event-item">
+                            <div class="event-date">
+                                <span class="day">01</span>
+                                <span class="month">OUT</span>
+                            </div>
+                            <div class="event-details">
+                                <h5>Feira de ONGs</h5>
+                                <p>Conheça e apoie diversas organizações em um só lugar.</p>
+                                <a href="#event3" class="event-link">Mais informações</a>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+                <section class="nearby-organizations">
+                    <h3>ONGs Próximas a Você</h3>
+                    <div class="org-map">
+                        <img src="/placeholder.svg?height=300&width=500" alt="Mapa de ONGs" class="map-image">
+                        <div class="map-overlay">
+                            <p>Mapa interativo será carregado aqui</p>
+                        </div>
+                    </div>
+                    <ul class="org-list">
+                        <li class="org-item">
+                            <img src="/placeholder.svg?height=60&width=60" alt="ONG 1" class="org-logo">
+                            <div class="org-info">
+                                <h5>Amigos da Natureza</h5>
+                                <p>Conservação ambiental e educação ecológica</p>
+                                <span class="distance">2.5 km</span>
+                            </div>
+                            <a href="#org1" class="org-link">Ver perfil</a>
+                        </li>
+                        <li class="org-item">
+                            <img src="/placeholder.svg?height=60&width=60" alt="ONG 2" class="org-logo">
+                            <div class="org-info">
+                                <h5>Educação para Todos</h5>
+                                <p>Promovendo acesso à educação de qualidade</p>
+                                <span class="distance">3.7 km</span>
+                            </div>
+                            <a href="#org2" class="org-link">Ver perfil</a>
+                        </li>
+                        <li class="org-item">
+                            <img src="/placeholder.svg?height=60&width=60" alt="ONG 3" class="org-logo">
+                            <div class="org-info">
+                                <h5>Abrigo Esperança</h5>
+                                <p>Cuidando de animais abandonados</p>
+                                <span class="distance">5.1 km</span>
+                            </div>
+                            <a href="#org3" class="org-link">Ver perfil</a>
+                        </li>
+                    </ul>
+                </section>
             </div>
-            <a href="https://ui-ongs.github.io/UI-PwbAval/Cadastro-Vagas.html">
-                <button class="cadastrar botao">Cadastrar Vaga</button>
-            </a>
-        </main>
-        
-    </body>
+            <section class="impact-stats">
+                <h3>Nosso Impacto</h3>
+                <div class="stats-container">
+                    <div class="stat-item">
+                        <i class="fas fa-users"></i>
+                        <span class="stat-number">10,000+</span>
+                        <span class="stat-label">Voluntários Ativos</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-hand-holding-heart"></i>
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">ONGs Cadastradas</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-globe-americas"></i>
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Cidades Alcançadas</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-seedling"></i>
+                        <span class="stat-number">1M+</span>
+                        <span class="stat-label">Árvores Plantadas</span>
+                    </div>
+                </div>
+            </section>
+            <section class="testimonials">
+                <h3>O Que Dizem Sobre Nós</h3>
+                <div class="testimonial-slider">
+                    <div class="testimonial-item">
+                        <p>"O Portal ONGs transformou a maneira como nossa organização se conecta com voluntários. É uma ferramenta incrível!"</p>
+                        <div class="testimonial-author">
+                            <img src="/placeholder.svg?height=50&width=50" alt="Autor 1" class="author-image">
+                            <div class="author-info">
+                                <span class="author-name">Maria Silva</span>
+                                <span class="author-role">Diretora, Amigos da Natureza</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item">
+                        <p>"Graças ao Portal ONGs, conseguimos aumentar nossas doações em 200% no último ano. É uma plataforma essencial!"</p>
+                        <div class="testimonial-author">
+                            <img src="/placeholder.svg?height=50&width=50" alt="Autor 2" class="author-image">
+                            <div class="author-info">
+                                <span class="author-name">João Santos</span>
+                                <span class="author-role">Coordenador, Educação para Todos</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="newsletter">
+                <h3>Fique por Dentro</h3>
+                <p>Receba atualizações sobre eventos, oportunidades de voluntariado e histórias inspiradoras.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Seu melhor e-mail" required>
+                    <button type="submit">Inscrever-se</button>
+                </form>
+            </section>
+        </div>
+    </main>
+</div>
+<footer class="main-footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h4>Sobre o Portal ONGs</h4>
+            <p>Conectando pessoas e organizações para um mundo melhor. Junte-se a nós nessa jornada de transformação social.</p>
+        </div>
+        <div class="footer-section">
+            <h4>Links Rápidos</h4>
+            <ul>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#events">Eventos</a></li>
+                <li><a href="#organizations">Organizações</a></li>
+                <li><a href="#volunteer">Voluntariado</a></li>
+                <li><a href="#donate">Doações</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>Contato</h4>
+            <p>Email: contato@portalongs.org</p>
+            <p>Telefone: (11) 1234-5678</p>
+            <div class="social-icons">
+                <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2023 Portal ONGs. Todos os direitos reservados.</p>
+    </div>
+</footer>
+</body>
 </html>
