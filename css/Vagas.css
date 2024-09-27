@@ -309,6 +309,3 @@ input:not(:placeholder-shown) ~ .reset {
     justify-content: space-between;
   }
 
-  .linkBtn{
-    text-decoration: none;
-  }
