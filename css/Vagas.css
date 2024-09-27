@@ -170,13 +170,16 @@ header {
 
 /* Estilo para a seção principal */
 main {
-    background-color: #BFDED2;
+    background-color: #44b88b8f;
     min-height: 100vh;
     width: 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.171) 2px, transparent 0);
+    background-size: 30px 30px;
+    background-position: -5px -5px
 }
 
 .form button {
@@ -187,13 +190,13 @@ main {
 
 .form {
   --timing: 0.3s;
-  --width-of-input: 200px;
-  --height-of-input: 40px;
-  --border-height: 2px;
+  --width-of-input: 25vw;
+  --height-of-input: 5vh;
+  --border-height: 0.1em;
   --input-bg: #fff;
   --border-color: #2f2ee9;
-  --border-radius: 30px;
-  --after-border-radius: 1px;
+  --border-radius: 5em;
+  --after-border-radius: 0.01em;
   position: relative;
   width: var(--width-of-input);
   height: var(--height-of-input);
@@ -257,3 +260,55 @@ input:not(:placeholder-shown) ~ .reset {
   width: 17px;
   margin-top: 3px;
 }
+
+.button {
+    margin: 0;
+    height: auto;
+    background: transparent;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+  }
+  
+
+  .button {
+    --border-right: 6px;
+    --text-stroke-color: rgba(255,255,255,0.8);
+    --animation-color: #37ff69;
+    --fs-size: 2em;
+    letter-spacing: 3px;
+    text-decoration: none;
+    font-size: var(--fs-size);
+    font-family: "Arial";
+    position: relative;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--text-stroke-color);
+  }
+  .hover-text {
+    position: absolute;
+    box-sizing: border-box;
+    content: attr(data-text);
+    color: var(--animation-color);
+    width: 0%;
+    inset: 0;
+    border-right: var(--border-right) solid var(--animation-color);
+    overflow: hidden;
+    transition: 1s;
+    -webkit-text-stroke: 1px var(--animation-color);
+  }
+  .button:hover .hover-text {
+    width: 100%;
+    filter: drop-shadow(0 0 23px var(--animation-color))
+  }
+
+  header{
+    min-height: 16vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .linkBtn{
+    text-decoration: none;
+  }
