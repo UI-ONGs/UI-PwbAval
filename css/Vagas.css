@@ -3,7 +3,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 body{
@@ -35,6 +34,7 @@ body{
 
 /* Estilo para cards gerais */
 .card {
+    min-height: 250px;
     border-radius: 5%;
     background-color: #fff;
 }
@@ -75,6 +75,7 @@ body{
 
 /* Estilo para o nome */
 .nome {
+  font-family: Arial, Helvetica, sans-serif;
     font-size: 1.1em;
     font-weight: bold;
     color: #45736A;
@@ -82,6 +83,7 @@ body{
 
 /* Estilo para a descrição */
 .descricao {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 0.9em;
     color: black;
     text-align: center;
@@ -121,6 +123,7 @@ body{
 
 /* Estilo para bullets de paginação do swiper (bolinhas em baixo)*/
 .swiper-pagination-bullet {
+    
     background-color: #6DA0A6;
     opacity: 1;
 }
@@ -135,6 +138,7 @@ body{
     max-width: 80vw;
     padding: 2.5em 0;
     width: 100%;
+
 }
 
 /* Estilo para imagem principal */
@@ -156,11 +160,21 @@ header {
 .cadastrar {
     padding: 20px 50px;
 }
+.relative{
+  margin-top: 1em;
+}
+
+.swiper-pagination{
+  margin: 1em;
+}
 
 /* Estilo para a seção principal */
 main {
-    min-height: 82vh;
+    background-color: #BFDED2;
+    min-height: 100vh;
+    width: 100vw;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
