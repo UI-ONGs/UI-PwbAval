@@ -1,126 +1,472 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Perfil</title>
-    <!--chamando o css-->
-    <link rel="stylesheet" href="css/Perfil.css">
-    <link rel="stylesheet" href="css/NavBar.css">
-    <!--links para permitir o uso dos icones-->
-    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
-    <script src="https://kit.fontawesome.com/0e6a916873.js" crossorigin="anonymous"></script>
-    <!--chamando o js-->
-    <script src="js/Perfil-addFoto.js" defer></script>
-    <script src="js/Perfil-mostrar_dados.js" defer></script>
-    <script src="js/Perfil-redes_sociais.js" defer></script>
-    <script src="js/NavBar.js" defer></script>
+    <title>Perfil de Betinha da Silva</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    <!-- Link para o FavIcon -->
-    <link rel="icon" href="imagens/logo.png">
-    
-    
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            color: #1c1e21;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        .profile {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .wallpaper {
+            height: 200px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .wallpaper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .profile-info {
+            padding: 20px;
+            position: relative;
+        }
+
+        .profile-photo-container {
+            position: absolute;
+            top: -60px;
+            left: 20px;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid white;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .name-username {
+            margin-left: 140px;
+            padding-top: 10px;
+        }
+
+        .name {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .username {
+            font-size: 16px;
+            color: #65676b;
+        }
+
+        .bio {
+            margin-top: 20px;
+            background-color: #f7f8fa;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .social-icons {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .social-icons a {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #65676b;
+            transition: color 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-icons a:hover {
+            color: #1877f2;
+        }
+
+        .edit-profile {
+            position: absolute;
+            top: 20px;
+            right: 60px;
+            background-color: #1877f2;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .edit-profile:hover {
+            background-color: #166fe5;
+        }
+
+        .collaborator {
+            margin-top: 20px;
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .collaborator h2 {
+            margin-bottom: 15px;
+            font-size: 18px;
+            color: #1c1e21;
+        }
+
+        .collaborator-slider {
+            display: flex;
+            overflow-x: auto;
+            gap: 15px;
+            padding: 10px;
+        }
+
+        .collaborator-item {
+            flex: 0 0 auto;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .collaborator-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .collaborator-item:hover {
+            transform: scale(1.1);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+            animation: fadeIn 0.3s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 10% auto;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            width: 90%;
+            max-width: 500px;
+            animation: slideIn 0.3s;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #1877f2;
+        }
+
+        .modal-content h2 {
+            margin-bottom: 20px;
+            color: #1c1e21;
+        }
+
+        .modal-content input,
+        .modal-content textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #dddfe2;
+            border-radius: 6px;
+            font-size: 14px;
+            resize: none;
+        }
+
+        .modal-content input:focus,
+        .modal-content textarea:focus {
+            outline: none;
+            border-color: #1877f2;
+            box-shadow: 0 0 0 2px rgba(24, 119, 242, 0.2);
+        }
+
+        .modal-content button {
+            background-color: #1877f2;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .modal-content button:hover {
+            background-color: #166fe5;
+        }
+
+        .image-upload {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+        .image-upload input[type="file"] {
+            display: none;
+        }
+
+        .image-upload label {
+            background-color: #e4e6eb;
+            color: #1c1e21;
+            padding: 8px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s ease;
+        }
+
+        .image-upload label:hover {
+            background-color: #d8dadf;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+
+            .profile-photo-container {
+                width: 120px;
+                height: 120px;
+                top: -40px;
+                left: 5px;
+            }
+
+            .name-username {
+                margin-left: 120px;
+            }
+
+            .name {
+                font-size: 20px;
+            }
+
+            .username {
+                font-size: 14px;
+            }
+
+            .edit-profile {
+                position: static;
+                margin-top: 15px;
+                display: block;
+                width: 100%;
+            }
+
+            .social-icons {
+                position: static;
+                flex-direction: row;
+                justify-content: flex-end;
+                margin-top: 15px;
+            }
+
+            .social-icons a {
+                margin-left: 15px;
+                margin-bottom: 0;
+            }
+
+            .modal-content {
+                margin: 20% auto;
+                padding: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
-
-    <!-- Barra de navegação -->
-    <nav class="navbar">
-        <div class="navbar-logo">
-            <img src="imagens/logo.png" alt="Solidarize Logo">
-            <span class="navbar-logo-text">Solidarize</span>
-        </div>
-        <ul class="navbar-menu">
-            <li><a href="index.html"><i class="fas fa-home"></i><span>Home</span></a></li>
-            <li><a href="Perfil.html"><i class="fas fa-user"></i><span>Perfil</span></a></li>
-            <li><a href="Calendario.html"><i class="fas fa-calendar-alt"></i><span>Eventos</span></a></li>
-            <li><a href="Vagas.html"><i class="fas fa-hands-helping"></i><span>Voluntariados</span></a></li>
-            <li><a href="Geo-Map.html"><i class="fas fa-map-marked-alt"></i><span>Mapa</span></a></li>
-            <li><a href="About.html"><i class="fas fa-info-circle"></i><span>Sobre Nós</span></a></li>
-        </ul>
-        <div class="navbar-user">
-            <img src="imagens/user-avatar.png" alt="User Avatar" class="navbar-user-avatar">
-            <span class="navbar-user-name">Nome do Usuário</span>
-        </div>
-    </nav>
-
-    <div class="navbar-mobile">
-        <div class="navbar-mobile-header">
-            <img src="imagens/logo.png" alt="Solidarize Logo" class="navbar-mobile-logo">
-            <button class="navbar-mobile-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-        <ul class="navbar-mobile-menu">
-            <li><a href="index.html"><i class="fas fa-home"></i><span>Home</span></a></li>
-            <li><a href="Perfil.html"><i class="fas fa-user"></i><span>Perfil</span></a></li>
-            <li><a href="Calendario.html"><i class="fas fa-calendar-alt"></i><span>Eventos</span></a></li>
-            <li><a href="Vagas.html"><i class="fas fa-hands-helping"></i><span>Voluntariados</span></a></li>
-            <li><a href="Geo-Map.html"><i class="fas fa-map-marked-alt"></i><span>Mapa</span></a></li>
-            <li><a href="About.html"><i class="fas fa-info-circle"></i><span>Sobre Nós</span></a></li>
-        </ul>
-    </div>
-    <!--Criando a div geral-->
-    <div class="wrapper">
-        <!--Criando a div esquerda-->
-        <div class="left">
-            <div class="preview-img">
-                <!--permitindo que o usuário adicione uma foto de perfil-->
-                <img src="imagens/seletor.png" alt="selecione uma foto" width="200">
-                <input type="file" class="file-input" accept="image/*" hidden>
-                <div class="icone">
-                    <i class="fa-solid fa-image" id="iconeFoto"></i>
-                </div>
+    <div class="container">
+        <div class="profile">
+            <div class="wallpaper">
+                <img src="header.jpg" alt="Wallpaper" id="wallpaperImg">
             </div>
-
-            <div class="info-perfil">
-                <h4 id="nickname">nickname</h4>
-                <p>Voluntariado</p>   
+            <div class="profile-info">
+                <div class="profile-photo-container">
+                    <img src="gui_perfil.png" alt="Foto de perfil" class="profile-photo" id="profileImg">
+                </div>
+                <div class="name-username">
+                    <h1 class="name">Betinha da Silva</h1>
+                    <p class="username">@betinha_silva</p>
+                </div>
+                <div class="social-icons">
+                    <a href="#" id="instagramLink" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="#" id="facebookLink" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="#" id="whatsappLink" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+                <button class="edit-profile">Editar Perfil</button>
+                <div class="bio">
+                    <p>Sou uma descobridora de novas aventuras, gosto de ajudar ao próximo, principalmente os bichinhos de rua.</p>
+                </div>
             </div>
         </div>
 
-        <!--Criando a div direita-->
-        <div class="right">
-            <!--mostrando os dados informados pelo usuário no cadastro-->
-            <h3>Minhas Informações</h3>
-            <div class="info">
-                <div class="info_data">
-                    <div class="data" id="dados">
-                        <h4>Nome Completo</h4>
-                        <p id="nome">Fulano da Silva</p>
-                    </div>
-                    <div class="data">
-                        <h4>Email</h4>
-                        <p id="email">fulaninho@gmail.com</p>
-                    </div>
-                    <div class="data">
-                        <h4>Senha</h4>
-                        <p id="senha">123456</p>
-                    </div>
-                </div>
-                <!--tags para habilitar as redes sociais-->
-                <div class="social_media">
-                    <ul>
-                        <li><a id="link1" href="#"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a id="link2" href="#"><i class="fab fa-twitter"></i></a></li>
-                        <li><a id="link3" href="#"><i class="fab fa-instagram"></i></a></li>
-                    </ul>
-                </div>
+        <div class="collaborator">
+            <h2>Colaboradores</h2>
+            <div class="collaborator-slider">
+                <div class="collaborator-item"><img src="gui_perfil.png" alt="Colaborador 1"></div>
+                <div class="collaborator-item"><img src="gui_perfil.png" alt="Colaborador 2"></div>
+                <div class="collaborator-item"><img src="gui_perfil.png" alt="Colaborador 3"></div>
+                <div class="collaborator-item"><img src="gui_perfil.png" alt="Colaborador 4"></div>
+                <div class="collaborator-item"><img src="gui_perfil.png" alt="Colaborador 5"></div>
             </div>
-            <!--parte para aprensentar as instuições-->
-            <div class="projects">
-                <h3>projetos</h3>
-                <div class="projects_data">
-                    <div class="data">
-                        <h4>Participações Recentes</h4>
-                        <p>Aqui vai aparecer o nome das Instituições/projetos que o usuário participou.</p>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </div>
 
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Editar Perfil</h2>
+            <div class="image-upload">
+                <label for="profileImageUpload">Alterar foto de perfil</label>
+                <input type="file" id="profileImageUpload" accept="image/*">
+                <label for="wallpaperImageUpload">Alterar wallpaper</label>
+                <input type="file" id="wallpaperImageUpload" accept="image/*">
+            </div>
+            <input type="text" id="editName" placeholder="Nome Completo">
+            <input type="text" id="editUsername" placeholder="Username">
+            <textarea id="editBio" placeholder="Bio" rows="4"></textarea>
+            <input type="url" id="editInstagram" placeholder="Link do Instagram">
+            <input type="url" id="editFacebook" placeholder="Link do Facebook">
+            <input type="url" id="editWhatsapp" placeholder="Link do WhatsApp">
+            <button id="saveProfile">Salvar</button>
+        </div>
+    </div>
+
+    <script>
+
+        // Estamos pegando todos os elementos que podem ser alterados
+        const modal = document.getElementById("editModal");
+        const btn = document.querySelector(".edit-profile");
+        const span = document.getElementsByClassName("close")[0];
+        const saveBtn = document.getElementById("saveProfile");
+        const profileImageUpload = document.getElementById("profileImageUpload");
+        const wallpaperImageUpload = document.getElementById("wallpaperImageUpload");
+
+        // Tela de alteração abre e é possível modificar os dados
+        btn.onclick = function() {
+            modal.style.display = "block";
+            document.getElementById("editName").value = document.querySelector(".name").textContent;
+            document.getElementById("editUsername").value = document.querySelector(".username").textContent.slice(1);
+            document.getElementById("editBio").value = document.querySelector(".bio p").textContent;
+            document.getElementById("editInstagram").value = document.getElementById("instagramLink").href;
+            document.getElementById("editFacebook").value = document.getElementById("facebookLink").href;
+            document.getElementById("editWhatsapp").value = document.getElementById("whatsappLink").href;
+        }
+
+        // Ao abertar o botão  de sair da tela altereação, ela fechará
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // Caso o usuário clique fora da janela de alteração, ela é fechada
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // Salvando as alterações e as exibindo 
+        saveBtn.onclick = function() {
+            const name = document.getElementById("editName").value;
+            const username = document.getElementById("editUsername").value;
+            const bio = document.getElementById("editBio").value;
+            const instagramLink = document.getElementById("editInstagram").value;
+            const facebookLink = document.getElementById("editFacebook").value;
+            const whatsappLink = document.getElementById("editWhatsapp").value;
+
+            document.querySelector(".name").textContent = name;
+            document.querySelector(".username").textContent = "@" + username;
+            document.querySelector(".bio p").textContent = bio;
+            document.getElementById("instagramLink").href = instagramLink;
+            document.getElementById("facebookLink").href = facebookLink;
+            document.getElementById("whatsappLink").href = whatsappLink;
+
+            modal.style.display = "none";
+        }
+
+        // Função pronta para alteração da imagem de perfil
+        profileImageUpload.onchange = function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById("profileImg").src = e.target.result;
+                }
+                reader.readAsDataURL(file);
+                
+            }
+        }
+
+        // Função pronta para alteração da imagem de fundo
+        wallpaperImageUpload.onchange = function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById("wallpaperImg").src = e.target.result;
+                }
+                reader.readAsDataURL(file);
+            }
+        }
+    </script>
 </body>
 </html>
