@@ -5,6 +5,11 @@
     box-sizing: border-box;
 }
 
+:root{
+    
+    --cor-primaria: #7cf0d3;
+}
+
 body{
     background-color: #f6f6f6;
     display: flex;
@@ -261,51 +266,42 @@ input:not(:placeholder-shown) ~ .reset {
   margin-top: 3px;
 }
 
-.button {
-    margin: 0;
-    height: auto;
-    background: transparent;
-    padding: 0;
+.shadow__btn {
+    min-width: 15vw;
+    min-height: 7vh;
+    padding: 10px 20px;
     border: none;
+    font-size: 25px;
+    color: #fff;
+    border-radius: 7px;
+    letter-spacing: 4px;
+    font-weight: 700;
+    text-transform: uppercase;
     cursor: pointer;
+    transition: 0.5s ease-in-out;
   }
   
-
-  .button {
-    --border-right: 6px;
-    --text-stroke-color: rgba(255,255,255,0.8);
-    --animation-color: #37ff69;
-    --fs-size: 2em;
-    letter-spacing: 3px;
-    text-decoration: none;
-    font-size: var(--fs-size);
-    font-family: "Arial";
-    position: relative;
-    text-transform: uppercase;
-    color: transparent;
-    -webkit-text-stroke: 1px var(--text-stroke-color);
+  .shadow__btn {
+    background: var(--cor-primaria);
+    box-shadow: 0 0 25px var(--cor-primaria);
   }
-  .hover-text {
-    position: absolute;
-    box-sizing: border-box;
-    content: attr(data-text);
-    color: var(--animation-color);
-    width: 0%;
-    inset: 0;
-    border-right: var(--border-right) solid var(--animation-color);
-    overflow: hidden;
-    transition: 1s;
-    -webkit-text-stroke: 1px var(--animation-color);
-  }
-  .button:hover .hover-text {
-    width: 100%;
-    filter: drop-shadow(0 0 23px var(--animation-color))
+  
+  .shadow__btn:hover {
+    min-width: 16vw;
+    min-height: 8vh;
+    font-size: 30px;
+    font-weight:900;
+    box-shadow: 0 0 5px var(--cor-primaria),
+                0 0 20px var(--cor-primaria),
+                0 0 40px var(--cor-primaria),
+                0 0 10px var(--cor-primaria);
   }
 
   header{
-    min-height: 16vh;
+    min-width: 100vw;
+    min-height: 22vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: space-around;
   }
-
