@@ -146,12 +146,13 @@ console.log(ongs);
 // script.js
 
 document.addEventListener('DOMContentLoaded', function() {
-    const searchInput = document.getElementById('search-input');
+    const searchInput = document.querySelector('.search-input');
     const searchResults = document.getElementById('search-results');
-    const searchBtn = document.getElementById('search-btn');
+    const searchBtn = document.querySelector('.search-button');
     const orgCards = document.getElementById('org-cards');
 
     // Function to display search results
+    // Função para exibir resultados de busca
     function displayResults(results) {
         searchResults.innerHTML = '';
         if (results.length > 0) {
@@ -159,8 +160,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 const div = document.createElement('div');
                 div.textContent = ong.nome;
                 div.addEventListener('click', () => {
-                    // Redirect to ONG details page or show more info
-                    console.log('Selected ONG:', ong);
+                    // Redirecionar para a página de detalhes da ONG
+                    navigateToOngDetails(ong);
                 });
                 searchResults.appendChild(div);
             });
@@ -170,29 +171,64 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Search functionality
+    // Função para exibir resultados de busca
+    function displayResults(results) {
+        searchResults.innerHTML = '';
+        if (results.length > 0) {
+            results.forEach(ong => {
+                const div = document.createElement('div');
+                div.textContent = ong.nome;
+                div.addEventListener('click', () => {
+                    // Navegar para a página de detalhes da ONG
+                    navigateToOngDetails(ong);
+                });
+                searchResults.appendChild(div);
+            });
+            searchResults.style.display = 'block';
+        } else {
+            searchResults.style.display = 'none';
+        }
+    }
+
+    // Função para navegar para a página de detalhes da ONG
+    function navigateToOngDetails(ong) {
+        // Armazenar os dados da ONG no sessionStorage
+        sessionStorage.setItem('selectedOng', JSON.stringify(ong));
+        // Redirecionar para a página de detalhes
+        window.location.href = 'Detalhes-Instituicao.html';
+    }
+
+    // Funcionalidade de busca
     searchInput.addEventListener('input', function() {
         const query = this.value.toLowerCase();
+        if (query.trim() === '') {
+            searchResults.style.display = 'none';
+            return;
+        }
         const results = ongs.filter(ong => ong.nome.toLowerCase().includes(query));
         displayResults(results);
     });
 
     searchBtn.addEventListener('click', function() {
         const query = searchInput.value.toLowerCase();
+        if (query.trim() === '') {
+            searchResults.style.display = 'none';
+            return;
+        }
         const results = ongs.filter(ong => ong.nome.toLowerCase().includes(query));
         displayResults(results);
     });
 
-    // Close search results when clicking outside
+    // Fechar resultados de busca ao clicar fora
     document.addEventListener('click', function(event) {
         if (!event.target.closest('.search-container')) {
             searchResults.style.display = 'none';
         }
     });
 
-    // Display featured ONGs
+    // Exibir ONGs em destaque
     function displayFeaturedOngs() {
-        const featuredOngs = ongs.slice(0, 3); // Display first 3 ONGs
+        const featuredOngs = ongs.slice(0, 3); // Exibir as primeiras 3 ONGs
         orgCards.innerHTML = '';
         featuredOngs.forEach(ong => {
             const card = document.createElement('div');
@@ -210,6 +246,9 @@ document.addEventListener('DOMContentLoaded', function() {
             orgCards.appendChild(card);
         });
     }
+
+    // Inicialmente, ocultar resultados de busca
+    searchResults.style.display = 'none';
 
     displayFeaturedOngs();
 
@@ -252,4 +291,276 @@ document.addEventListener('DOMContentLoaded', function() {
         // Redirect to sign up page or show sign up modal
         console.log('Join button clicked');
     });
+});
+
+/*TESTES*/
+document.addEventListener('DOMContentLoaded', function() {
+    // Funcionalidade do calendário
+    const calendarBody = document.getElementById('calendarBody');
+    const currentMonthElement = document.getElementById('currentMonth');
+    const prevMonthButton = document.getElementById('prevMonth');
+    const nextMonthButton = document.getElementById('nextMonth');
+    const eventList = document.getElementById('eventList');
+
+    let currentDate = new Date();
+    let events = [
+        { date: new Date(2023, 8, 15), title: "Dia Mundial da Limpeza", description: "Junte-se a nós para limpar praias e parques em sua cidade.", organizer: "Amigos da Natureza" },
+        { date: new Date(2023, 8, 22), title: "Maratona Solidária", description: "Corra por uma causa! Arrecadação para projetos educacionais.", organizer: "Educação para Todos" },
+        { date: new Date(2023, 9, 1), title: "Feira de ONGs", description: "Conheça e apoie diversas organizações em um só lugar.", organizer: "Solidarize" }
+    ];
+
+    function generateCalendar(year, month) {
+        const firstDay = new Date(year, month, 1);
+        const lastDay = new Date(year, month + 1, 0);
+        const daysInMonth = lastDay.getDate();
+        const startingDay = firstDay.getDay();
+
+        currentMonthElement.textContent = new Intl.DateTimeFormat('pt-BR', { month: 'long', year: 'numeric' }).format(firstDay);
+
+        let calendarHTML = '';
+        let dayCount = 1;
+
+        for (let i = 0; i < 6; i++) {
+            calendarHTML += '<tr>';
+            for (let j = 0; j < 7; j++) {
+                if (i === 0 && j < startingDay) {
+                    calendarHTML += '<td></td>';
+                } else if (dayCount > daysInMonth) {
+                    calendarHTML += '<td></td>';
+                } else {
+                    const currentDateString = `${year}-${(month + 1).toString().padStart(2, '0')}-${dayCount.toString().padStart(2, '0')}`;
+                    const isToday = dayCount === currentDate.getDate() && month === currentDate.getMonth() && year === currentDate.getFullYear();
+                    const hasEvent = events.some(event => event.date.toDateString() === new Date(year, month, dayCount).toDateString());
+                    calendarHTML += `<td class="${isToday ? 'today' : ''} ${hasEvent ? 'has-event' : ''}" data-date="${currentDateString}">${dayCount}</td>`;
+                    dayCount++;
+                }
+            }
+            calendarHTML += '</tr>';
+            if (dayCount > daysInMonth) break;
+        }
+
+        calendarBody.innerHTML = calendarHTML;
+        addCalendarClickListeners();
+        updateEventList(year, month);
+    }
+
+    function addCalendarClickListeners() {
+        const calendarCells = calendarBody.querySelectorAll('td');
+        calendarCells.forEach(cell => {
+            cell.addEventListener('click', function() {
+                const clickedDate = this.dataset.date;
+                if (clickedDate) {
+                    const event = events.find(e => e.date.toDateString() === new Date(clickedDate).toDateString());
+                    if (event) {
+                        showEventModal(event);
+                    }
+                }
+            });
+        });
+    }
+
+    function updateEventList(year, month) {
+        const monthEvents = events.filter(event => event.date.getFullYear() === year && event.date.getMonth() === month);
+        eventList.innerHTML = '';
+        monthEvents.forEach(event => {
+            const listItem = document.createElement('li');
+            listItem.className = 'event-item';
+            listItem.innerHTML = `
+                <div class="event-date">
+                    <span class="day">${event.date.getDate()}</span>
+                    <span class="month">${new Intl.DateTimeFormat('pt-BR', { month: 'short' }).format(event.date)}</span>
+                </div>
+                <div class="event-details">
+                    <h5>${event.title}</h5>
+                    <p>${event.description}</p>
+                    <a href="#" class="event-link">Saiba mais</a>
+                </div>
+            `;
+            listItem.querySelector('.event-link').addEventListener('click', (e) => {
+                e.preventDefault();
+                showEventModal(event);
+            });
+            eventList.appendChild(listItem);
+        });
+    }
+
+    generateCalendar(currentDate.getFullYear(), currentDate.getMonth());
+
+    prevMonthButton.addEventListener('click', function() {
+        currentDate.setMonth(currentDate.getMonth() - 1);
+        generateCalendar(currentDate.getFullYear(), currentDate.getMonth());
+    });
+
+    nextMonthButton.addEventListener('click', function() {
+        currentDate.setMonth(currentDate.getMonth() + 1);
+        generateCalendar(currentDate.getFullYear(), currentDate.getMonth());
+    });
+
+    // Modal para eventos
+    const modal = document.getElementById('eventModal');
+    const modalTitle = document.getElementById('modalEventTitle');
+    const modalDescription = document.getElementById('modalEventDescription');
+    const modalOrganizer = document.getElementById('modalEventOrganizer');
+    const modalRegisterButton = document.getElementById('modalEventRegister');
+    const closeModal = document.getElementsByClassName('close')[0];
+    const carousel = document.getElementById('eventCarousel');
+
+    function showEventModal(event) {
+        modalTitle.textContent = event.title;
+        modalDescription.textContent = event.description;
+        modalOrganizer.textContent = `Organizado por: ${event.organizer}`;
+        
+        // Simular imagens para o carrossel
+        carousel.innerHTML = `
+            <img src="/placeholder.svg?height=300&width=500" alt="Imagem do evento 1">
+            <img src="/placeholder.svg?height=300&width=500" alt="Imagem do evento 2">
+            <img src="/placeholder.svg?height=300&width=500" alt="Imagem do evento 3">
+        `;
+        
+        modal.style.display = 'block';
+    }
+
+    closeModal.onclick = function() {
+        modal.style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    }
+
+    modalRegisterButton.onclick = function() {
+        alert('Inscrição realizada com sucesso!');
+        modal.style.display = 'none';
+    }
+
+    // Animação de contagem para as estatísticas
+    const stats = document.querySelectorAll('.stat-number');
+    const statsSection = document.querySelector('.impact-stats');
+
+    const animateStats = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                stats.forEach(stat => {
+                    const target = parseInt(stat.getAttribute('data-target'));
+                    let count = 0;
+                    const updateCount = () => {
+                        const increment = target / 200;
+                        if (count < target) {
+                            count += increment;
+                            stat.innerText = Math.ceil(count).toLocaleString();
+                            requestAnimationFrame(updateCount);
+                        } else {
+                            stat.innerText = target.toLocaleString();
+                        }
+                    };
+                    updateCount();
+                });
+                observer.unobserve(entry.target);
+            }
+        });
+    };
+
+    const statsObserver = new IntersectionObserver(animateStats, { threshold: 0.5 });
+    statsObserver.observe(statsSection);
+
+    // Slider para depoimentos
+    const testimonialSlider = document.querySelector('.testimonial-slider');
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    testimonialSlider.addEventListener('mousedown', (e) => {
+        isDown = true;
+        startX = e.pageX - testimonialSlider.offsetLeft;
+        scrollLeft = testimonialSlider.scrollLeft;
+    });
+
+    testimonialSlider.addEventListener('mouseleave', () => {
+        isDown = false;
+    });
+
+    testimonialSlider.addEventListener('mouseup', () => {
+        isDown = false;
+    });
+
+    testimonialSlider.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - testimonialSlider.offsetLeft;
+        const walk = (x - startX) * 3;
+        testimonialSlider.scrollLeft = scrollLeft - walk;
+    });
+
+    // Formulário de newsletter
+    const newsletterForm = document.querySelector('.newsletter-form');
+    newsletterForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const email = this.querySelector('input[type="email"]').value;
+        alert(`Obrigado por se inscrever! Você receberá nossas atualizações em ${email}`);
+        this.reset();
+    });
+
+    // Simulação de carregamento do mapa
+    const mapOverlay = document.querySelector('.map-overlay');
+    setTimeout(() => {
+        mapOverlay.style.display = 'none';
+    }, 2000);
+
+    // Funcionalidade de pesquisa (simulada)
+    const searchInput = document.querySelector('.search-input');
+    const searchButton = document.querySelector('.search-button');
+
+    searchButton.addEventListener('click', performSearch);
+    searchInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            performSearch();
+        }
+    });
+
+    function performSearch() {
+        const searchTerm = searchInput.value.trim();
+        if (searchTerm) {
+            alert(`Pesquisando por: ${searchTerm}`);
+            // Aqui você implementaria a lógica real de pesquisa
+        }
+    }
+
+    // Animação de fade-in para elementos quando entram na viewport
+    const fadeElements = document.querySelectorAll('.fade-in');
+    const fadeObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                fadeObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    fadeElements.forEach(element => {
+        fadeObserver.observe(element);
+    });
+
+    // Animação suave de rolagem para links internos
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+});
+
+const searchResults = document.getElementById('search-results');
+const initialOffsetTop = searchResults.offsetTop;
+
+/*Função para esconder o container de resultados quando houver rolagem*/
+document.addEventListener('scroll', () => {
+    if (window.scrollY > initialOffsetTop) {
+        searchResults.classList.add('hidden');
+    } else {
+        searchResults.classList.remove('hidden');
+    }
 });

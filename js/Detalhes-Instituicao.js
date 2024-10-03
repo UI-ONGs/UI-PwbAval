@@ -1,23 +1,28 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Recupera os dados do sessionStorage
-    const nome = sessionStorage.getItem('ongNome');
-    const categoria = sessionStorage.getItem('ongCategoria');
-    const descricao = sessionStorage.getItem('ongDescricao');
-    const endereco = sessionStorage.getItem('ongEndereco');
-    const instagram = sessionStorage.getItem('ongInstagram');
-    const facebook = sessionStorage.getItem('ongFacebook');
-    const telefone = sessionStorage.getItem('ongTelefone');
-    const email = sessionStorage.getItem('ongEmail');
+    const storedOng = sessionStorage.getItem('selectedOng');
+    let ongData;
 
-    // Atualiza os elementos da página com os dados recuperados
-    document.getElementById('nome-ong').textContent = nome;
-    document.getElementById('categoria-ong').textContent = categoria;
-    document.getElementById('descricao-ong').textContent = descricao;
-    document.getElementById('endereco-ong').textContent = endereco;
-    document.getElementById('instagram-link').href = instagram;
-    document.getElementById('facebook-link').href = facebook;
-    document.getElementById('telefone-link').href = `tel:${telefone}`;
-    document.getElementById('email-link').href = `mailto:${email}`;
+    if (storedOng) {
+        ongData = JSON.parse(storedOng);
+
+        // Função para atualizar os elementos da página com os dados da ONG
+        function updateOngDetails() {
+            document.getElementById('nome-ong').textContent = ongData.nome || 'Nome não disponível';
+            document.getElementById('categoria-ong').textContent = ongData.categoria || 'Categoria não disponível';
+            document.getElementById('descricao-ong').textContent = ongData.descricao || 'Descrição não disponível';
+            document.getElementById('endereco-ong').textContent = ongData.endereco || 'Endereço não disponível';
+            document.getElementById('instagram-link').href = ongData.contato.instagram || '#';
+            document.getElementById('facebook-link').href = ongData.contato.facebook || '#';
+            document.getElementById('telefone-link').href = ongData.contato.telefone ? `tel:${ongData.telefone}` : '#';
+            document.getElementById('email-link').href = ongData.contato.email ? `mailto:${ongData.email}` : '#';
+        }
+
+        updateOngDetails();
+    } else {
+        console.error('Dados da ONG não encontrados no sessionStorage');
+        document.querySelector('.card').innerHTML = '<p class="error-message">Informações da ONG não encontradas ou incompletas.</p>';
+    }
 });
 
 // Aguarda até que o DOM esteja totalmente carregado para executar o script

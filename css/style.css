@@ -17,6 +17,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: var(--transition);
 }
 
 body, html {
@@ -91,6 +92,10 @@ body, html {
     padding: 1rem;
     position: fixed;
     top: 5%;
+}
+
+.hidden {
+    opacity: 0; /* Define a opacidade como 0 para esconder o container */
 }
 
 .user-menu {
