@@ -8,6 +8,7 @@ const wallpaperImageUpload = document.getElementById("wallpaperImageUpload");
 
 // Tela de alteração abre e é possível modificar os dados
 btn.onclick = function() {
+    console.log("a");
     modal.style.display = "block";
     document.getElementById("editName").value = document.querySelector(".name").textContent;
     document.getElementById("editUsername").value = document.querySelector(".username").textContent.slice(1);
