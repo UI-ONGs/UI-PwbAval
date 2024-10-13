@@ -133,6 +133,19 @@ let ongs = [
     }
 ];
 
+  // Lista de eventos
+  const events = [
+    { date: new Date(2024, 9, 15), title: 'Dia Mundial da Limpeza', description: 'Junte-se a nós para limpar praias e parques em sua cidade.', action: 'Participar' },
+    { date: new Date(2024, 9, 22), title: 'Maratona Solidária', description: 'Corra por uma causa! Arrecadação para projetos educacionais.', action: 'Inscrever-se' },
+    { date: new Date(2024, 9, 1), title: 'Feira de ONGs', description: 'Conheça e apoie diversas organizações em um só lugar.', action: 'Mais informações' },
+    { date: new Date(2024, 9, 5), title: 'Workshop de Reciclagem', description: 'Aprenda técnicas criativas de reciclagem.', action: 'Reservar vaga' },
+    { date: new Date(2024, 9, 5), title: 'Palestra sobre Sustentabilidade', description: 'Descubra como tornar sua vida mais sustentável.', action: 'Assistir online' },
+    { date: new Date(2024, 9, 10), title: 'Doação de Sangue', description: 'Doe sangue e salve vidas.', action: 'Agendar doação' },
+    { date: new Date(2024, 9, 18), title: 'Plantio de Árvores', description: 'Ajude a reflorestar áreas urbanas.', action: 'Voluntariar-se' },
+    { date: new Date(2024, 9, 25), title: 'Bazar Beneficente', description: 'Compre itens usados e ajude instituições de caridade.', action: 'Ver itens' },
+    { date: new Date(2024, 9, 30), title: 'Concerto Solidário', description: 'Show beneficente com artistas locais.', action: 'Comprar ingresso' }
+];
+
 // Carrega os dados das ONGs do arquivo JSON
 /*fetch('../json/ongs.json')
     .then(response => response.json())
@@ -143,420 +156,228 @@ let ongs = [
 
 console.log(ongs);
 
-// script.js
-
+// Função principal executada quando o DOM é carregado
 document.addEventListener('DOMContentLoaded', function() {
+    // Elementos do DOM
     const searchInput = document.querySelector('.search-input');
     const searchResults = document.getElementById('search-results');
     const searchBtn = document.querySelector('.search-button');
-    const orgCards = document.getElementById('org-cards');
-
-    // Function to display search results
-    // Função para exibir resultados de busca
-    function displayResults(results) {
-        searchResults.innerHTML = '';
-        if (results.length > 0) {
-            results.forEach(ong => {
-                const div = document.createElement('div');
-                div.textContent = ong.nome;
-                div.addEventListener('click', () => {
-                    // Redirecionar para a página de detalhes da ONG
-                    navigateToOngDetails(ong);
-                });
-                searchResults.appendChild(div);
-            });
-            searchResults.style.display = 'block';
-        } else {
-            searchResults.style.display = 'none';
-        }
-    }
-
-    // Função para exibir resultados de busca
-    function displayResults(results) {
-        searchResults.innerHTML = '';
-        if (results.length > 0) {
-            results.forEach(ong => {
-                const div = document.createElement('div');
-                div.textContent = ong.nome;
-                div.addEventListener('click', () => {
-                    // Navegar para a página de detalhes da ONG
-                    navigateToOngDetails(ong);
-                });
-                searchResults.appendChild(div);
-            });
-            searchResults.style.display = 'block';
-        } else {
-            searchResults.style.display = 'none';
-        }
-    }
-
-    // Função para navegar para a página de detalhes da ONG
-    function navigateToOngDetails(ong) {
-        // Armazenar os dados da ONG no sessionStorage
-        sessionStorage.setItem('selectedOng', JSON.stringify(ong));
-        // Redirecionar para a página de detalhes
-        window.location.href = 'Detalhes-Instituicao.html';
-    }
-
-    // Funcionalidade de busca
-    searchInput.addEventListener('input', function() {
-        const query = this.value.toLowerCase();
-        if (query.trim() === '') {
-            searchResults.style.display = 'none';
-            return;
-        }
-        const results = ongs.filter(ong => ong.nome.toLowerCase().includes(query));
-        displayResults(results);
-    });
-
-    searchBtn.addEventListener('click', function() {
-        const query = searchInput.value.toLowerCase();
-        if (query.trim() === '') {
-            searchResults.style.display = 'none';
-            return;
-        }
-        const results = ongs.filter(ong => ong.nome.toLowerCase().includes(query));
-        displayResults(results);
-    });
-
-    // Fechar resultados de busca ao clicar fora
-    document.addEventListener('click', function(event) {
-        if (!event.target.closest('.search-container')) {
-            searchResults.style.display = 'none';
-        }
-    });
-
-    // Exibir ONGs em destaque
-    function displayFeaturedOngs() {
-        const featuredOngs = ongs.slice(0, 3); // Exibir as primeiras 3 ONGs
-        orgCards.innerHTML = '';
-        featuredOngs.forEach(ong => {
-            const card = document.createElement('div');
-            card.className = 'org-card animate-on-scroll';
-            card.innerHTML = `
-                <div class="org-card-image">
-                    <img src="imagens/${ong.nome.toLowerCase().replace(/\s+/g, '-')}.jpg" alt="${ong.nome}">
-                </div>
-                <div class="org-card-content">
-                    <h3>${ong.nome}</h3>
-                    <p>${ong.descricao}</p>
-                    <a href="#" class="btn btn-tertiary">Saiba mais</a>
-                </div>
-            `;
-            orgCards.appendChild(card);
-        });
-    }
-
-    // Inicialmente, ocultar resultados de busca
-    searchResults.style.display = 'none';
-
-    displayFeaturedOngs();
-
-    // Animate elements on scroll
-    function animateOnScroll() {
-        const elements = document.querySelectorAll('.animate-on-scroll');
-        elements.forEach(element => {
-            const elementTop = element.getBoundingClientRect().top;
-            const windowHeight = window.innerHeight;
-            if (elementTop < windowHeight - 50) {
-                element.classList.add('show');
-            }
-        });
-    }
-
-    window.addEventListener('scroll', animateOnScroll);
-    animateOnScroll(); // Initial check on page load
-
-    // Newsletter form submission
-    const newsletterForm = document.getElementById('newsletter-form');
-    newsletterForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const email = document.getElementById('newsletter-email').value;
-        console.log('Newsletter subscription:', email);
-        // Here you would typically send this to your backend
-        alert('Obrigado por se inscrever em nossa newsletter!');
-        newsletterForm.reset();
-    });
-
-    // Button click handlers
-    document.getElementById('nearbyInst-btn').addEventListener('click', function() {
-        window.location.href = 'Geo-Map.html';
-    });
-
-    document.getElementById('login-btn').addEventListener('click', function() {
-        window.location.href = 'Login.html';
-    });
-
-    document.getElementById('join-btn').addEventListener('click', function() {
-        // Redirect to sign up page or show sign up modal
-        console.log('Join button clicked');
-    });
-});
-
-/*TESTES*/
-document.addEventListener('DOMContentLoaded', function() {
-    // Funcionalidade do calendário
-    const calendarBody = document.getElementById('calendarBody');
+    const calendarGrid = document.getElementById('calendarGrid');
+    const eventList = document.getElementById('eventList');
     const currentMonthElement = document.getElementById('currentMonth');
     const prevMonthButton = document.getElementById('prevMonth');
     const nextMonthButton = document.getElementById('nextMonth');
-    const eventList = document.getElementById('eventList');
 
+    let selectedCell = null;
     let currentDate = new Date();
-    let events = [
-        { date: new Date(2023, 8, 15), title: "Dia Mundial da Limpeza", description: "Junte-se a nós para limpar praias e parques em sua cidade.", organizer: "Amigos da Natureza" },
-        { date: new Date(2023, 8, 22), title: "Maratona Solidária", description: "Corra por uma causa! Arrecadação para projetos educacionais.", organizer: "Educação para Todos" },
-        { date: new Date(2023, 9, 1), title: "Feira de ONGs", description: "Conheça e apoie diversas organizações em um só lugar.", organizer: "Solidarize" }
-    ];
 
-    function generateCalendar(year, month) {
-        const firstDay = new Date(year, month, 1);
-        const lastDay = new Date(year, month + 1, 0);
-        const daysInMonth = lastDay.getDate();
-        const startingDay = firstDay.getDay();
+    // Inicialização
+    initializeSearch();
+    initializeCalendar();
+    updateStats();
+    initializeNewsletterForm();
+    initializeFadeInAnimation();
 
-        currentMonthElement.textContent = new Intl.DateTimeFormat('pt-BR', { month: 'long', year: 'numeric' }).format(firstDay);
+    // Funções de inicialização
 
-        let calendarHTML = '';
-        let dayCount = 1;
-
-        for (let i = 0; i < 6; i++) {
-            calendarHTML += '<tr>';
-            for (let j = 0; j < 7; j++) {
-                if (i === 0 && j < startingDay) {
-                    calendarHTML += '<td></td>';
-                } else if (dayCount > daysInMonth) {
-                    calendarHTML += '<td></td>';
-                } else {
-                    const currentDateString = `${year}-${(month + 1).toString().padStart(2, '0')}-${dayCount.toString().padStart(2, '0')}`;
-                    const isToday = dayCount === currentDate.getDate() && month === currentDate.getMonth() && year === currentDate.getFullYear();
-                    const hasEvent = events.some(event => event.date.toDateString() === new Date(year, month, dayCount).toDateString());
-                    calendarHTML += `<td class="${isToday ? 'today' : ''} ${hasEvent ? 'has-event' : ''}" data-date="${currentDateString}">${dayCount}</td>`;
-                    dayCount++;
-                }
-            }
-            calendarHTML += '</tr>';
-            if (dayCount > daysInMonth) break;
-        }
-
-        calendarBody.innerHTML = calendarHTML;
-        addCalendarClickListeners();
-        updateEventList(year, month);
+    function initializeSearch() {
+        searchInput.addEventListener('input', handleSearch);
+        searchBtn.addEventListener('click', handleSearch);
+        document.addEventListener('click', closeSearchResults);
     }
 
-    function addCalendarClickListeners() {
-        const calendarCells = calendarBody.querySelectorAll('td');
-        calendarCells.forEach(cell => {
-            cell.addEventListener('click', function() {
-                const clickedDate = this.dataset.date;
-                if (clickedDate) {
-                    const event = events.find(e => e.date.toDateString() === new Date(clickedDate).toDateString());
-                    if (event) {
-                        showEventModal(event);
+    function initializeCalendar() {
+        renderCalendar();
+        prevMonthButton.addEventListener('click', () => navigateMonth('prev'));
+        nextMonthButton.addEventListener('click', () => navigateMonth('next'));
+    }
+
+    function initializeNewsletterForm() {
+        const newsletterForm = document.querySelector('.newsletter-form');
+        newsletterForm.addEventListener('submit', handleNewsletterSubmit);
+    }
+
+    function initializeFadeInAnimation() {
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    fadeObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        fadeElements.forEach(element => {
+            fadeObserver.observe(element);
+        });
+    }
+
+    // Funções de manipulação
+
+    function handleSearch() {
+        const query = searchInput.value.toLowerCase().trim();
+        if (query === '') {
+            searchResults.style.display = 'none';
+            return;
+        }
+        const results = ongs.filter(ong => 
+            ong.nome.toLowerCase().includes(query) ||
+            ong.descricao.toLowerCase().includes(query) ||
+            ong.categoria.toLowerCase().includes(query)
+        );
+        displayResults(results);
+    }
+
+    function displayResults(results) {
+        searchResults.innerHTML = '';
+        if (results.length > 0) {
+            results.forEach(ong => {
+                const div = document.createElement('div');
+                div.textContent = ong.nome;
+                div.addEventListener('click', () => navigateToOngDetails(ong));
+                searchResults.appendChild(div);
+            });
+            searchResults.style.display = 'block';
+        } else {
+            searchResults.innerHTML = '<div>Nenhum resultado encontrado.</div>';
+            searchResults.style.display = 'block';
+        }
+    }
+
+    function closeSearchResults(event) {
+        if (!event.target.closest('.search-container')) {
+            searchResults.style.display = 'none';
+        }
+    }
+
+    function navigateToOngDetails(ong) {
+        sessionStorage.setItem('selectedOng', JSON.stringify(ong));
+        window.location.href = 'Detalhes-Instituicao.html';
+    }
+
+    function renderCalendar(direction = '') {
+        calendarGrid.innerHTML = '';
+        const year = currentDate.getFullYear();
+        const month = currentDate.getMonth();
+
+        currentMonthElement.textContent = new Date(year, month, 1).toLocaleString('default', { month: 'long', year: 'numeric' });
+
+        const firstDay = new Date(year, month, 1).getDay();
+        const daysInMonth = new Date(year, month + 1, 0).getDate();
+        const totalDays = firstDay + daysInMonth;
+        const rows = Math.ceil(totalDays / 7);
+
+        calendarGrid.classList.remove('slide-left', 'slide-right');
+        if (direction) {
+            calendarGrid.classList.add(`slide-${direction}`);
+        }
+
+        for (let i = 0; i < rows * 7; i++) {
+            const cell = document.createElement('div');
+            cell.classList.add('calendar-cell');
+
+            const cellDate = i - firstDay + 1;
+            if (cellDate > 0 && cellDate <= daysInMonth) {
+                cell.textContent = cellDate;
+                const fullDate = new Date(year, month, cellDate);
+                
+                if (fullDate.toDateString() === new Date().toDateString()) {
+                    cell.classList.add('today');
+                    showEvents(fullDate);
+                }
+
+                const dayEvents = events.filter(event => event.date.toDateString() === fullDate.toDateString());
+                if (dayEvents.length > 0) {
+                    cell.classList.add('has-event');
+                }
+
+                cell.addEventListener('click', () => {
+                    showEvents(fullDate);
+                    if (selectedCell) {
+                        selectedCell.style.border = '';
                     }
-                }
-            });
-        });
-    }
+                    cell.style.border = '2px solid #68a19d';
+                    selectedCell = cell;
+                });
+            } else {
+                cell.style.visibility = 'hidden';
+            }
 
-    function updateEventList(year, month) {
-        const monthEvents = events.filter(event => event.date.getFullYear() === year && event.date.getMonth() === month);
-        eventList.innerHTML = '';
-        monthEvents.forEach(event => {
-            const listItem = document.createElement('li');
-            listItem.className = 'event-item';
-            listItem.innerHTML = `
-                <div class="event-date">
-                    <span class="day">${event.date.getDate()}</span>
-                    <span class="month">${new Intl.DateTimeFormat('pt-BR', { month: 'short' }).format(event.date)}</span>
-                </div>
-                <div class="event-details">
-                    <h5>${event.title}</h5>
-                    <p>${event.description}</p>
-                    <a href="#" class="event-link">Saiba mais</a>
-                </div>
-            `;
-            listItem.querySelector('.event-link').addEventListener('click', (e) => {
-                e.preventDefault();
-                showEventModal(event);
-            });
-            eventList.appendChild(listItem);
-        });
-    }
-
-    generateCalendar(currentDate.getFullYear(), currentDate.getMonth());
-
-    prevMonthButton.addEventListener('click', function() {
-        currentDate.setMonth(currentDate.getMonth() - 1);
-        generateCalendar(currentDate.getFullYear(), currentDate.getMonth());
-    });
-
-    nextMonthButton.addEventListener('click', function() {
-        currentDate.setMonth(currentDate.getMonth() + 1);
-        generateCalendar(currentDate.getFullYear(), currentDate.getMonth());
-    });
-
-    // Modal para eventos
-    const modal = document.getElementById('eventModal');
-    const modalTitle = document.getElementById('modalEventTitle');
-    const modalDescription = document.getElementById('modalEventDescription');
-    const modalOrganizer = document.getElementById('modalEventOrganizer');
-    const modalRegisterButton = document.getElementById('modalEventRegister');
-    const closeModal = document.getElementsByClassName('close')[0];
-    const carousel = document.getElementById('eventCarousel');
-
-    function showEventModal(event) {
-        modalTitle.textContent = event.title;
-        modalDescription.textContent = event.description;
-        modalOrganizer.textContent = `Organizado por: ${event.organizer}`;
-        
-        // Simular imagens para o carrossel
-        carousel.innerHTML = `
-            <img src="/placeholder.svg?height=300&width=500" alt="Imagem do evento 1">
-            <img src="/placeholder.svg?height=300&width=500" alt="Imagem do evento 2">
-            <img src="/placeholder.svg?height=300&width=500" alt="Imagem do evento 3">
-        `;
-        
-        modal.style.display = 'block';
-    }
-
-    closeModal.onclick = function() {
-        modal.style.display = 'none';
-    }
-
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = 'none';
+            calendarGrid.appendChild(cell);
         }
     }
 
-    modalRegisterButton.onclick = function() {
-        alert('Inscrição realizada com sucesso!');
-        modal.style.display = 'none';
+    function showEvents(date) {
+        const dayEvents = events.filter(event => event.date.toDateString() === date.toDateString());
+        eventList.innerHTML = '';
+
+        if (dayEvents.length > 0) {
+            dayEvents.forEach(event => {
+                const eventElement = document.createElement('div');
+                eventElement.classList.add('event-item');
+                eventElement.innerHTML = `
+                    <div class="event-date">
+                        <div class="event-day">${event.date.getDate()}</div>
+                        <div class="event-month">${event.date.toLocaleString('default', { month: 'short' })}</div>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-title">${event.title}</div>
+                        <div class="event-description">${event.description}</div>
+                        <a href="#" class="event-action">${event.action}</a>
+                    </div>
+                `;
+                eventList.appendChild(eventElement);
+            });
+        } else {
+            eventList.innerHTML = '<p>Nenhum evento neste dia.</p>';
+        }
     }
 
-    // Animação de contagem para as estatísticas
-    const stats = document.querySelectorAll('.stat-number');
-    const statsSection = document.querySelector('.impact-stats');
+    function navigateMonth(direction) {
+        currentDate.setMonth(currentDate.getMonth() + (direction === 'prev' ? -1 : 1));
+        renderCalendar(direction === 'prev' ? 'right' : 'left');
+    }
 
-    const animateStats = (entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                stats.forEach(stat => {
-                    const target = parseInt(stat.getAttribute('data-target'));
-                    let count = 0;
-                    const updateCount = () => {
-                        const increment = target / 200;
-                        if (count < target) {
-                            count += increment;
-                            stat.innerText = Math.ceil(count).toLocaleString();
-                            requestAnimationFrame(updateCount);
-                        } else {
-                            stat.innerText = target.toLocaleString();
-                        }
-                    };
-                    updateCount();
-                });
-                observer.unobserve(entry.target);
-            }
+    function updateStats() {
+        const stats = {
+            voluntarios: 10000,
+            ongs: 500,
+            cidades: 50,
+            arvores: 1000000
+        };
+    
+        const duration = 2000;
+        Object.keys(stats).forEach(key => {
+            animateValue(document.querySelector(`.stat-number[data-stat="${key}"]`), 0, stats[key], duration);
         });
-    };
+    }
 
-    const statsObserver = new IntersectionObserver(animateStats, { threshold: 0.5 });
-    statsObserver.observe(statsSection);
+    function animateValue(obj, start, end, duration) {
+        let startTimestamp = null;
+        const step = (timestamp) => {
+            if (!startTimestamp) startTimestamp = timestamp;
+            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            obj.textContent = Math.floor(progress * (end - start) + start).toLocaleString();
+            if (progress < 1) {
+                window.requestAnimationFrame(step);
+            }
+        };
+        window.requestAnimationFrame(step);
+    }
 
-    // Slider para depoimentos
-    const testimonialSlider = document.querySelector('.testimonial-slider');
-    let isDown = false;
-    let startX;
-    let scrollLeft;
-
-    testimonialSlider.addEventListener('mousedown', (e) => {
-        isDown = true;
-        startX = e.pageX - testimonialSlider.offsetLeft;
-        scrollLeft = testimonialSlider.scrollLeft;
-    });
-
-    testimonialSlider.addEventListener('mouseleave', () => {
-        isDown = false;
-    });
-
-    testimonialSlider.addEventListener('mouseup', () => {
-        isDown = false;
-    });
-
-    testimonialSlider.addEventListener('mousemove', (e) => {
-        if (!isDown) return;
-        e.preventDefault();
-        const x = e.pageX - testimonialSlider.offsetLeft;
-        const walk = (x - startX) * 3;
-        testimonialSlider.scrollLeft = scrollLeft - walk;
-    });
-
-    // Formulário de newsletter
-    const newsletterForm = document.querySelector('.newsletter-form');
-    newsletterForm.addEventListener('submit', function(e) {
+    function handleNewsletterSubmit(e) {
         e.preventDefault();
         const email = this.querySelector('input[type="email"]').value;
         alert(`Obrigado por se inscrever! Você receberá nossas atualizações em ${email}`);
         this.reset();
-    });
-
-    // Simulação de carregamento do mapa
-    const mapOverlay = document.querySelector('.map-overlay');
-    setTimeout(() => {
-        mapOverlay.style.display = 'none';
-    }, 2000);
-
-    // Funcionalidade de pesquisa (simulada)
-    const searchInput = document.querySelector('.search-input');
-    const searchButton = document.querySelector('.search-button');
-
-    searchButton.addEventListener('click', performSearch);
-    searchInput.addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') {
-            performSearch();
-        }
-    });
-
-    function performSearch() {
-        const searchTerm = searchInput.value.trim();
-        if (searchTerm) {
-            alert(`Pesquisando por: ${searchTerm}`);
-            // Aqui você implementaria a lógica real de pesquisa
-        }
     }
-
-    // Animação de fade-in para elementos quando entram na viewport
-    const fadeElements = document.querySelectorAll('.fade-in');
-    const fadeObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                fadeObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.1 });
-
-    fadeElements.forEach(element => {
-        fadeObserver.observe(element);
-    });
-
-    // Animação suave de rolagem para links internos
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
 });
 
+// Ocultar resultados de pesquisa ao rolar a página
 const searchResults = document.getElementById('search-results');
 const initialOffsetTop = searchResults.offsetTop;
 
-/*Função para esconder o container de resultados quando houver rolagem*/
 document.addEventListener('scroll', () => {
     if (window.scrollY > initialOffsetTop) {
         searchResults.classList.add('hidden');
