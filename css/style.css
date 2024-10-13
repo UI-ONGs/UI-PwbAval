@@ -91,7 +91,9 @@ body, html {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 1rem;
     position: fixed;
-    top: 5%;
+    top: 7%;
+    cursor: pointer;
+    display: none;
 }
 
 .hidden {
@@ -243,132 +245,184 @@ h2, h3, h4 {
 }
 
 /* Estilos do calendário */
-.calendar-widget {
-    background-color: #fff;
-    border-radius: 8px;
+.calendar-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
     overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
+/* Estilos do cabeçalho do calendário */
 .calendar-header {
+    background-color: var(--secondary-color);
+    color:  var(--white);
+    text-align: center;
+    padding: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--primary-color);
-    color: #fff;
-    padding: 10px;
 }
 
 .calendar-header button {
     background: none;
     border: none;
-    color: #fff;
+    color:  var(--white);
+    font-size: 24px;
     cursor: pointer;
-    font-size: 1.2rem;
+    transition: transform 0.3s ease;
 }
 
-.calendar-table {
-    width: 100%;
-    border-collapse: collapse;
+.calendar-header button:hover {
+    transform: scale(1.2);
 }
 
-.calendar-table th, .calendar-table td {
+/* Estilos da grade do calendário */
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1px;
+    background-color: #e0e0e0;
+}
+
+.calendar-cell {
+    background-color: var(--white);
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/*.calendar-cell:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.05);
+}*/
+
+.calendar-cell.today {
+    font-weight: bold;
+    color:  var(--secondary-color);
+}
+
+.calendar-cell.has-event::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 5px;
+    height: 5px;
+    background-color:  var(--secondary-color);
+    border-radius: 50%;
+}
+
+.calendar-cell.has-multiple-events::after {
+    width: 10px;
+}
+
+/* Estilos dos dias da semana */
+.calendar-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    background-color:  var(--secondary-color);
+    color: var(--white);
+    font-weight: bold;
+}
+
+.calendar-weekdays div {
     text-align: center;
     padding: 10px;
 }
 
-.calendar-table th {
-    background-color: #f1f3f5;
-    font-weight: 600;
-}
-
-.calendar-table td {
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-}
-
-.calendar-table td:hover {
-    background-color: #e8f4fd;
-}
-
-.calendar-table .today {
-    background-color: var(--primary-color);
-    color: #fff;
-    font-weight: bold;
-}
-
-.calendar-table .has-event {
-    position: relative;
-}
-
-.calendar-table .has-event::after {
-    content: '';
-    position: absolute;
-    bottom: 2px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 4px;
-    height: 4px;
-    background-color: var(--tertiary-color);
-    border-radius: 50%;
-}
-
 /* Estilos da lista de eventos */
 .event-list {
-    list-style: none;
-    padding: 0;
+    padding: 20px;
+    max-height: 300px;
+    overflow-y: auto;
 }
 
 .event-item {
     display: flex;
-    align-items: center;
-    padding: 15px 0;
-    border-bottom: 1px solid #ecf0f1;
-}
-
-.event-item:last-child {
-    border-bottom: none;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    animation: fadeIn 0.5s ease;
 }
 
 .event-date {
-    background-color: var(--primary-color);
-    color: #fff;
-    text-align: center;
-    padding: 5px 10px;
+    background-color:  var(--secondary-color);
+    color: var(--white);
+    padding: 10px;
     border-radius: 5px;
+    text-align: center;
     margin-right: 15px;
+    min-width: 60px;
 }
 
-.event-date .day {
-    font-size: 1.5rem;
+.event-day {
+    font-size: 1.5em;
     font-weight: bold;
-    display: block;
 }
 
-.event-date .month {
-    font-size: 0.8rem;
+.event-month {
     text-transform: uppercase;
+    font-size: 0.8em;
 }
 
-.event-details {
-    flex: 1;
+.event-content {
+    flex-grow: 1;
 }
 
-.event-details h5 {
+.event-title {
+    font-weight: bold;
     margin-bottom: 5px;
 }
 
-.event-details p {
-    color: var(--text-color);
-    font-size: 0.9rem;
-    margin-bottom: 5px;
+.event-description {
+    font-size: 0.9em;
+    color: #555;
+    margin-bottom: 10px;
 }
 
-.event-link {
-    color: var(--primary-color);
+.event-action {
+    color:  var(--secondary-color);
     text-decoration: none;
-    font-weight: 600;
+    font-weight: bold;
+    transition: color 0.3s ease;
 }
+
+.event-action:hover {
+    color: var(--tertiary-color);
+}
+
+ /* Animações */
+.calendar-grid.slide-left {
+    animation: slideLeft 0.5s ease;
+}
+
+.calendar-grid.slide-right {
+    animation: slideRight 0.5s ease;
+}
+
+@keyframes slideLeft {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideRight {
+    from { transform: translateX(-100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* Estilos responsivos */
+@media (max-width: 600px) {
+    .calendar-cell {
+        font-size: 0.8em;
+    }
+}
+
 
 /* Estilos do mapa e lista de organizações */
 .org-map {
@@ -383,20 +437,6 @@ h2, h3, h4 {
     object-fit: cover;
 }
 
-.map-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0,0,0,0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    font-weight: bold;
-}
-
 .org-list {
     list-style: none;
     padding: 0;
@@ -405,7 +445,7 @@ h2, h3, h4 {
 .org-item {
     display: flex;
     align-items: center;
-    padding: 15px 0;
+    padding: 15px 10px;
     border-bottom: 1px solid #ecf0f1;
 }
 
@@ -661,7 +701,7 @@ h2, h3, h4 {
     }
 
     .search-results{
-        top: 14%
+        top: 20%;
     }
 
     .user-name {
@@ -770,7 +810,6 @@ h2, h3, h4 {
 
 /* Estilos para foco visível */
 a:focus, button:focus, input:focus {
-    outline: 2px solid var(--primary-color);
     outline-offset: 2px;
 }
 
