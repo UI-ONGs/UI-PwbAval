@@ -26,8 +26,8 @@
             <li><a href="About.html"><i class="fas fa-info-circle"></i><span>Sobre Nós</span></a></li>
         </ul>
         <div class="navbar-user">
-            <img src="imagens/user-avatar.png" alt="User Avatar" class="navbar-user-avatar">
-            <span class="navbar-user-name">Nome do Usuário</span>
+            <img src="imagens/gui_perfil.png" alt="User Avatar" class="navbar-user-avatar">
+            <span class="navbar-user-name">guilermekkj</span>
         </div>
     </nav>
 
@@ -59,10 +59,8 @@
 
             </div>
 
-
-
             <div class="user-menu">
-                <img src="/placeholder.svg?height=40&width=40" alt="Foto do usuário" class="user-avatar">
+                <img src="imagens/gui_perfil.png" alt="Foto do usuário" class="user-avatar">
                 <span class="user-name">Olá, Voluntário</span>
                 <i class="fas fa-chevron-down"></i>
             </div>
@@ -80,19 +78,19 @@
                 <h3>Causas em Destaque</h3>
                 <div class="cause-slider">
                     <div class="cause-item">
-                        <img src="/placeholder.svg?height=200&width=300" alt="Causa 1" class="cause-image">
+                        <img src="imagens/floresta.jpg" alt="Causa 1" class="cause-image">
                         <h4>Preservação Ambiental</h4>
                         <p>Protegendo nossas florestas e oceanos para as futuras gerações.</p>
                         <a href="#cause1" class="learn-more">Saiba mais</a>
                     </div>
                     <div class="cause-item">
-                        <img src="/placeholder.svg?height=200&width=300" alt="Causa 2" class="cause-image">
+                        <img src="imagens/floresta.jpg" alt="Causa 2" class="cause-image">
                         <h4>Educação para Todos</h4>
                         <p>Garantindo acesso à educação de qualidade em comunidades carentes.</p>
                         <a href="#cause2" class="learn-more">Saiba mais</a>
                     </div>
                     <div class="cause-item">
-                        <img src="/placeholder.svg?height=200&width=300" alt="Causa 3" class="cause-image">
+                        <img src="imagens/floresta.jpg" alt="Causa 3" class="cause-image">
                         <h4>Combate à Fome</h4>
                         <p>Trabalhando para erradicar a fome e promover a segurança alimentar.</p>
                         <a href="#cause3" class="learn-more">Saiba mais</a>
@@ -102,76 +100,38 @@
             <div class="two-column-layout">
                 <section class="upcoming-events">
                     <h3>Próximos Eventos</h3>
-                    <div class="calendar-widget">
-                        <div class="calendar-header">
-                            <button id="prevMonth"><i class="fas fa-chevron-left"></i></button>
-                            <h4 id="currentMonth">Setembro 2023</h4>
-                            <button id="nextMonth"><i class="fas fa-chevron-right"></i></button>
-                        </div>
-                        <table class="calendar-table">
-                            <thead>
-                                <tr>
-                                    <th>Dom</th>
-                                    <th>Seg</th>
-                                    <th>Ter</th>
-                                    <th>Qua</th>
-                                    <th>Qui</th>
-                                    <th>Sex</th>
-                                    <th>Sáb</th>
-                                </tr>
-                            </thead>
-                            <tbody id="calendarBody">
-                                <!-- Dias do calendário serão inseridos via JavaScript -->
-                            </tbody>
-                        </table>
+                    <!-- Container principal do calendário -->
+                <div class="calendar-container">
+                    <!-- Cabeçalho do calendário com botões de navegação -->
+                    <div class="calendar-header">
+                        <button id="prevMonth">&lt;</button>
+                        <h2 id="currentMonth">Outubro 2024</h2>
+                        <button id="nextMonth">&gt;</button>
                     </div>
-                    <ul class="event-list">
-                        <li class="event-item">
-                            <div class="event-date">
-                                <span class="day">15</span>
-                                <span class="month">SET</span>
-                            </div>
-                            <div class="event-details">
-                                <h5>Dia Mundial da Limpeza</h5>
-                                <p>Junte-se a nós para limpar praias e parques em sua cidade.</p>
-                                <a href="#event1" class="event-link">Participar</a>
-                            </div>
-                        </li>
-                        <li class="event-item">
-                            <div class="event-date">
-                                <span class="day">22</span>
-                                <span class="month">SET</span>
-                            </div>
-                            <div class="event-details">
-                                <h5>Maratona Solidária</h5>
-                                <p>Corra por uma causa! Arrecadação para projetos educacionais.</p>
-                                <a href="#event2" class="event-link">Inscrever-se</a>
-                            </div>
-                        </li>
-                        <li class="event-item">
-                            <div class="event-date">
-                                <span class="day">01</span>
-                                <span class="month">OUT</span>
-                            </div>
-                            <div class="event-details">
-                                <h5>Feira de ONGs</h5>
-                                <p>Conheça e apoie diversas organizações em um só lugar.</p>
-                                <a href="#event3" class="event-link">Mais informações</a>
-                            </div>
-                        </li>
-                    </ul>
+                    <!-- Dias da semana -->
+                    <div class="calendar-weekdays">
+                        <div>Dom</div>
+                        <div>Seg</div>
+                        <div>Ter</div>
+                        <div>Qua</div>
+                        <div>Qui</div>
+                        <div>Sex</div>
+                        <div>Sáb</div>
+                    </div>
+                    <!-- Grade do calendário (preenchida via JavaScript) -->
+                    <div id="calendarGrid" class="calendar-grid"></div>
+                    <!-- Lista de eventos (preenchida via JavaScript) -->
+                    <div id="eventList" class="event-list"></div>
+                </div>
                 </section>
                 <section class="nearby-organizations">
                     <h3>ONGs Próximas a Você</h3>
                     <div class="org-map">
-                        <img src="/placeholder.svg?height=300&width=500" alt="Mapa de ONGs" class="map-image">
-                        <div class="map-overlay">
-                            <p>Mapa interativo será carregado aqui</p>
-                        </div>
+                        <img src="imagens/header.webp" alt="Mapa de ONGs" class="map-image">
                     </div>
                     <ul class="org-list">
                         <li class="org-item">
-                            <img src="/placeholder.svg?height=60&width=60" alt="ONG 1" class="org-logo">
+                            <img src="imagens/floresta.jpg" alt="ONG 1" class="org-logo">
                             <div class="org-info">
                                 <h5>Amigos da Natureza</h5>
                                 <p>Conservação ambiental e educação ecológica</p>
@@ -180,7 +140,7 @@
                             <a href="#org1" class="org-link">Ver perfil</a>
                         </li>
                         <li class="org-item">
-                            <img src="/placeholder.svg?height=60&width=60" alt="ONG 2" class="org-logo">
+                            <img src="imagens/floresta.jpg" alt="ONG 2" class="org-logo">
                             <div class="org-info">
                                 <h5>Educação para Todos</h5>
                                 <p>Promovendo acesso à educação de qualidade</p>
@@ -189,7 +149,7 @@
                             <a href="#org2" class="org-link">Ver perfil</a>
                         </li>
                         <li class="org-item">
-                            <img src="/placeholder.svg?height=60&width=60" alt="ONG 3" class="org-logo">
+                            <img src="imagens/floresta.jpg" alt="ONG 3" class="org-logo">
                             <div class="org-info">
                                 <h5>Abrigo Esperança</h5>
                                 <p>Cuidando de animais abandonados</p>
@@ -205,22 +165,22 @@
                 <div class="stats-container">
                     <div class="stat-item">
                         <i class="fas fa-users"></i>
-                        <span class="stat-number">10,000+</span>
+                        <span class="stat-number" data-stat="voluntarios">0</span>
                         <span class="stat-label">Voluntários Ativos</span>
                     </div>
                     <div class="stat-item">
                         <i class="fas fa-hand-holding-heart"></i>
-                        <span class="stat-number">500+</span>
+                        <span class="stat-number" data-stat="ongs">0</span>
                         <span class="stat-label">ONGs Cadastradas</span>
                     </div>
                     <div class="stat-item">
                         <i class="fas fa-globe-americas"></i>
-                        <span class="stat-number">50+</span>
+                        <span class="stat-number" data-stat="cidades">0</span>
                         <span class="stat-label">Cidades Alcançadas</span>
                     </div>
                     <div class="stat-item">
                         <i class="fas fa-seedling"></i>
-                        <span class="stat-number">1M+</span>
+                        <span class="stat-number" data-stat="arvores">0</span>
                         <span class="stat-label">Árvores Plantadas</span>
                     </div>
                 </div>
@@ -231,9 +191,9 @@
                     <div class="testimonial-item">
                         <p>"O Portal ONGs transformou a maneira como nossa organização se conecta com voluntários. É uma ferramenta incrível!"</p>
                         <div class="testimonial-author">
-                            <img src="/placeholder.svg?height=50&width=50" alt="Autor 1" class="author-image">
+                            <img src="imagens/malu_perfil.png" alt="Autor 1" class="author-image">
                             <div class="author-info">
-                                <span class="author-name">Maria Silva</span>
+                                <span class="author-name">Maria Luiza</span>
                                 <span class="author-role">Diretora, Amigos da Natureza</span>
                             </div>
                         </div>
@@ -241,9 +201,9 @@
                     <div class="testimonial-item">
                         <p>"Graças ao Portal ONGs, conseguimos aumentar nossas doações em 200% no último ano. É uma plataforma essencial!"</p>
                         <div class="testimonial-author">
-                            <img src="/placeholder.svg?height=50&width=50" alt="Autor 2" class="author-image">
+                            <img src="imagens/dani_perfil.png" alt="Autor 2" class="author-image">
                             <div class="author-info">
-                                <span class="author-name">João Santos</span>
+                                <span class="author-name">Daniel Haddad</span>
                                 <span class="author-role">Coordenador, Educação para Todos</span>
                             </div>
                         </div>
