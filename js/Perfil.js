@@ -19,7 +19,7 @@ btn.onclick = function() {
 }
 // Verificação do dominio da pagina
 function removeDomain(url) {
-    const domain = window.location.origin + '/';
+    const domain = window.location.origin + '/Perfil.html';
     return url.startsWith(domain) ? url.replace(domain, '') : url;
 }
 
