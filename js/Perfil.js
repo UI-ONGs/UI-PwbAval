@@ -13,9 +13,14 @@ btn.onclick = function() {
     document.getElementById("editName").value = document.querySelector(".name").textContent;
     document.getElementById("editUsername").value = document.querySelector(".username").textContent.slice(1);
     document.getElementById("editBio").value = document.querySelector(".bio p").textContent;
-    document.getElementById("editInstagram").value = document.getElementById("instagramLink").href;
-    document.getElementById("editFacebook").value = document.getElementById("facebookLink").href;
-    document.getElementById("editWhatsapp").value = document.getElementById("whatsappLink").href;
+    document.getElementById("editInstagram").value = removeDomain(document.getElementById("instagramLink").href);
+    document.getElementById("editFacebook").value = removeDomain(document.getElementById("facebookLink").href);
+    document.getElementById("editWhatsapp").value = removeDomain(document.getElementById("whatsappLink").href);
+}
+// Verificação do dominio da pagina
+function removeDomain(url) {
+    const domain = window.location.origin + '/';
+    return url.startsWith(domain) ? url.replace(domain, '') : url;
 }
 
 // Ao abertar o botão  de sair da tela altereação, ela fechará
@@ -35,9 +40,10 @@ saveBtn.onclick = function() {
     const name = document.getElementById("editName").value;
     const username = document.getElementById("editUsername").value;
     const bio = document.getElementById("editBio").value;
-    const instagramLink = document.getElementById("editInstagram").value;
-    const facebookLink = document.getElementById("editFacebook").value;
-    const whatsappLink = document.getElementById("editWhatsapp").value;
+    // verifica se já tem "https", caso não, adiciona
+    const instagramLink = document.getElementById("editInstagram").value.startsWith('http') ? document.getElementById("editInstagram").value : 'https://' + document.getElementById("editInstagram").value;
+    const facebookLink = document.getElementById("editFacebook").value.startsWith('http') ? document.getElementById("editFacebook").value : 'https://' + document.getElementById("editFacebook").value;
+    const whatsappLink = document.getElementById("editWhatsapp").value.startsWith('http') ? document.getElementById("editWhatsapp").value : 'https://' + document.getElementById("editWhatsapp").value;
 
     document.querySelector(".name").textContent = name;
     document.querySelector(".username").textContent = "@" + username;
