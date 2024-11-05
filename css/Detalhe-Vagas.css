@@ -13,6 +13,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow:hidden ;
 }
 
 /* Estilos para o conjunto de opções */
@@ -20,6 +21,7 @@ fieldset {
     padding: 1em;
     border: 0.1em solid #f6f6f6;
     border-radius: 0.5em;
+
 }
 
 /* Estilos para a legenda do conjunto de opções */
@@ -40,12 +42,28 @@ b {
 
 /* Estilos para a caixa de conteúdo */
 .box {
-    width: 40%;
+    width: 60vw;
+    min-width: 30rem;
     position: absolute;
     background-color: #45736A;
     padding: 1em;
     border-radius: 1em;
     color: rgb(0, 0, 0);
+    animation: boxMove ease-in-out;
+    animation-duration: 5s;
+}
+
+@media only screen and (max-width: 768px) {
+    .box {
+        width: 95vw;
+        min-height: 40vh;
+        min-width: 15rem;
+    }
+}
+
+@keyframes boxMove{
+    from {bottom: -50vh;}
+    to {bottom: calc(50vh - 20vh - 2em);}
 }
 
 /* Estilos para a seção de conteúdo da imagem */
@@ -54,11 +72,14 @@ b {
     display: flex;
     justify-content: center;
     padding-bottom: 1em;
+    
 }
 
 /* Estilos para a imagem na seção de conteúdo */
 .conteudo-img img {
     border-radius: 5%;
+    width: 15rem;
+    height: 11.25rem;
 }
 
 /* Estilos para o botão de voltar */
@@ -78,6 +99,8 @@ b {
 .Voltar:hover {
     border-radius: 2em;
     background-color: rgb(106, 173, 160);
+    height: 6vh;
+    font-size: large;
 }
 
 /* Estilos para a exibição de dados do evento */
