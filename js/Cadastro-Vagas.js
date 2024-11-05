@@ -1,12 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
     /* pega o forms */
-    const form = document.getElementById('form');
+    const desc = document.getElementById('desc'); // textarea
+    const contador = document.querySelector('.counter'); // contador
+
+    desc.addEventListener('input', () => {
+        const maximo = desc.getAttribute('maxlength'); // número máximo de caracteres
+        const tamanho = desc.value.length; // número de caracteres digitados
+        
+        // Atualiza o contador com o número de caracteres restantes
+        contador.innerText = `${tamanho}/${maximo}`; 
+    });
+
+    
+    
 
     form.addEventListener('submit', (event) => {
         event.preventDefault();
 
         /* pega os campos de entrada */
-
         const nome = document.getElementById('nome').value;
         const tipo = document.getElementById('tipo').value;
         const desc = document.getElementById('desc').value;
