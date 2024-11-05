@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="css/Vagas.css">
         <script src="js/Vagas.js"></script>
         <script src="js/NavBar.js" defer></script>
+        <script src="js/teste.js" defer></script>
         
         <!-- Link para o FavIcon -->
         <link rel="icon" href="imagens/logo.png">
@@ -35,7 +36,7 @@
                 <span class="navbar-user-name">Nome do Usuário</span>
             </div>
         </nav>
-    
+        
         <div class="navbar-mobile">
             <div class="navbar-mobile-header">
                 <img src="imagens/logo.png" alt="Solidarize Logo" class="navbar-mobile-logo">
@@ -55,33 +56,29 @@
             </ul>
         </div>
         <main>
-            <header>
+            <header class="blurElem">
                 <form class="form">
-                  <button>
+                  <button class="segurar">
                       <svg width="17" height="16" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="search">
                           <path d="M7.667 12.667A5.333 5.333 0 107.667 2a5.333 5.333 0 000 10.667zM14.334 14l-2.9-2.9" stroke="currentColor" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
                       </svg>
                   </button>
                   <input class="input" placeholder="Pesquisar..." required="" type="text">
-                  <button class="reset" type="reset">
+                  <button class="reset segurar" type="reset">
                       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                           <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
                       </svg>
                   </button>
                </form>
-
-                <a href="index.html">
-                    <button class="shadow__btn">
-                        SOLIDARIZE
-                    </button>
-                </a>
-                
+                   <a href="index.html">
+                       <button class="shadow__btn">
+                           SOLIDARIZE
+                       </button>
+                   </a>
             </header>
             
             <!-- Criação do slide de conteúdo -->
             <div class="slide-container swiper">
-                <!-- local onde fica os cards conteúdo -->
-                <div class="conteudo">
                     <!-- Carrossel -->
                     <div class="wrapper swiper-wrapper">
                         <!-- card -->
@@ -160,17 +157,20 @@
                                 <a href="https://ui-ongs.github.io/UI-PwbAval/Detalhe-Vagas.html"><button class="botao">Ver Mais</button></a>
                             </div>
                         </div>
-                        
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    
+                </div>
+                <div class="swiper-button-next swiper-navBtn blurElem"></div>
+                <div class="swiper-button-prev swiper-navBtn blurElem"></div>
+                
+                <div class="footer blurElem">
+                    <div class="btn_cadastrar">
+                        <a href="https://ui-ongs.github.io/UI-PwbAval/Cadastro-Vagas.html">
+                            <button class="cadastrar botao">Cadastrar Vaga</button>
+                        </a>
                     </div>
                 </div>
-                <div class="swiper-button-next swiper-navBtn"></div>
-                <div class="swiper-button-prev swiper-navBtn"></div>
-                <div class="swiper-pagination"></div>
-            </div>
-            <a href="https://ui-ongs.github.io/UI-PwbAval/Cadastro-Vagas.html">
-                <button class="cadastrar botao">Cadastrar Vaga</button>
-            </a>
         </main>
-        
     </body>
 </html>
