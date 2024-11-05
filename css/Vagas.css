@@ -42,13 +42,7 @@ body{
     min-height: 250px;
     border-radius: 5%;
     background-color: #fff;
-}
-
-/* Estilo para conteúdo */
-.conteudo {
-    margin: 0 12em;
     overflow: hidden;
-    border-radius: 15px;
 }
 
 /* Estilo para sub-elementos de conteúdo */
@@ -104,7 +98,7 @@ body{
     border-radius: 0.5em;
     margin: 0.9em;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease-in-out;
 }
 
 /* Estilo quando passa o mouse no botão */
@@ -116,8 +110,7 @@ body{
 /* Estilo para botões de navegação do swiper (setinhas) */
 .swiper-navBtn {
     color: #4D6E72;
-    transition: color 0.3s ease;
-    padding: 2em;
+    transition: color 0.3s ease-in-out;
 }
 
 /* Estilo quando passa o mouse nos botões de navegação do swiper (setinhas) */
@@ -126,9 +119,59 @@ body{
     font-weight: bolder;
 }
 
+header{
+  position: relative;
+  animation: mymove ease-in-out;
+  animation-duration: 4s;
+}
+
+.footer{
+  display: flex;
+  justify-content: center;
+  position: relative;
+  animation: mymove ease-in-out;
+  animation-duration: 10s;
+  width: 100vw;
+  padding-bottom: 8vh;
+}
+
+@keyframes mymove {
+  0% {bottom: -50vh;
+  }
+  50%{bottom: 0;
+  }
+}
+
+
+.swiper-button-prev{
+  animation: btnPrev ease-in-out;
+  animation-duration: 7s;
+  top: 55vh;
+  position: absolute;
+  padding-left: 10vw;
+}
+
+.swiper-button-next{
+  padding-right: 10vw;
+  top: 55vh;
+  animation: btnNext ease-in-out;
+  animation-duration: 7s;
+  position: absolute;
+}
+
+@keyframes btnPrev{
+  from {left: -9vw;}
+  to {left: 0;}
+}
+
+@keyframes btnNext{
+  from {right: -9vw;
+  }
+  to {right: 0;}
+}
+
 /* Estilo para bullets de paginação do swiper (bolinhas em baixo)*/
 .swiper-pagination-bullet {
-    
     background-color: #6DA0A6;
     opacity: 1;
 }
@@ -140,9 +183,66 @@ body{
 
 /* Estilo para container do slide */
 .slide-container {
-    max-width: 80vw;
+    /*background-image: url('imagens/paisagem.jpeg');
+    background-size: cover;
+    border: 2px solid white;
+    border-radius: 2em;
+    backdrop-filter: blur(10px);
+    background-position: center;*/
+    max-width: 60vw;
     padding: 2.5em 0;
     width: 100%;
+    min-height: 52vh;
+    position: relative;
+    animation: mymove ease-in-out;
+    animation-duration: 7s;
+    display: flex;
+}
+
+@media only screen and (max-width: 768px) {
+  .swiper-navBtn {
+    display: none;
+  }
+  .wrapper{
+    max-height: 30vh;
+  }
+  .navbar-mobile{
+    position: relative;
+  }
+  header{
+    min-height: 0;
+    height: 1vh;
+    justify-content: center;
+  }
+
+  .slide-container{
+    justify-content: center;
+  }
+
+  .form{
+    min-width: 10rem;
+  }
+
+  .cardImage{
+    height: 8em;
+    width: 8em;
+  }
+
+  .conteudoCard a{
+    position: absolute;
+    bottom: 0;
+  }
+  .card{
+    border-radius: 1em;
+  }
+
+@media only screen and (max-width: 300px){
+  .slide-container{
+    padding: 0;
+    max-width: 100vw;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
 
 }
 
@@ -151,19 +251,23 @@ body{
     max-height: 14vh;
     width: 14vw;
     border-radius: 1rem;
+  }
 }
 
 /* Estilo para header */
 header {
-    display: flex;
-    justify-content: center;
-    min-height: 10vh;
-    overflow: hidden;
+  display: flex;
+  overflow: hidden;
+  min-width: 100vw;
+  min-height: 22vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }
 
 /* Estilo para seção cadastrar */
 .cadastrar {
-    padding: 20px 50px;
+  padding: 20px 50px;
 }
 .relative{
   margin-top: 1em;
@@ -175,16 +279,21 @@ header {
 
 /* Estilo para a seção principal */
 main {
-    background-color: #44b88b8f;
-    min-height: 100vh;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    background-image: radial-gradient(rgba(255, 255, 255, 0.171) 2px, transparent 0);
-    background-size: 30px 30px;
-    background-position: -5px -5px
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+body{
+  background-color: #44b88b8f;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.171) 2px, transparent 0);
+  background-size: 30px 30px;
+  background-position: -5px -5px;
+  max-height: 100vh;
+  overflow: hidden;
 }
 
 .form button {
@@ -298,11 +407,12 @@ input:not(:placeholder-shown) ~ .reset {
                 0 0 10px var(--cor-primaria);
   }
 
-  header{
-    min-width: 100vw;
-    min-height: 22vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-  }
+.segurar{
+  cursor: pointer;
+}
+
+  /* Estilo para aplicar o blur */
+.blur {
+  backdrop-filter: blur(5px);
+  transition: filter 1s ease-in-out;
+}
