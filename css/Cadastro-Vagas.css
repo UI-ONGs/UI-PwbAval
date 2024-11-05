@@ -62,12 +62,28 @@ body {
 
 /* Estilos para a caixa de conteúdo */
 .box {
-    width: 40%;
+    height: auto;
+    width: 70%;
     position: absolute;
     background-color: #45736A;
     padding: 1em;
     border-radius: 1em;
     color: white;
+    animation: boxMove ease-in-out;
+    animation-duration: 5s;
+}
+
+@media only screen and (max-width: 600px) {
+    .box{
+        width: 95vw;
+        min-width: 15rem;
+        top:5em;
+    }
+}
+
+@keyframes boxMove{
+    from {bottom: -50vh;}
+    to {bottom: 6vh;}
 }
 
 /* Estilos para o botão */
@@ -88,12 +104,19 @@ body {
     width: 100%;
     border-radius: 1em;
     font-weight: bold;
+    transition: 0.5s ease-in-out;
+}
+
+.counter{
+    font-size:x-small;
 }
 
 /* Estilos para o botão de enviar quando passa o mouse */
 #submit:hover {
-    transition: 0.3s ease;
     background-color: #dfdddd;
+    padding: 1.5em;
+    font-size: 1.2em;
+    font-weight: bolder;
 }
 
 /* Estilos para o conjunto de opções */
