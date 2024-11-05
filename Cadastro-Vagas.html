@@ -87,19 +87,15 @@
                         </div>
                         
                         <div class="inputBox">
-                            <input type="text" name="desc" id="desc" class="inputUser" required>
-                            <label for="desc" class="labelInput">Descrição</label>
-                        </div>
-                        <div class="inputBox">
                             <input type="text" name="Endereco" id="Endereco" class="inputUser" required>
                             <label for="Endereco" class="labelInput">Local: </label>
                         </div>
-
+                        
                         <div class="inputBox">
                             <b><label for="data">Data: </label></b>
                             <input type="date" name="data" id="data" class="noWrite" required>
                         </div>
-
+                        
                         <div class="inputBox">
                             <b><label for="horarioI">Horário de início: </label></b>
                             <input type="time" name="horarioI" id="horarioI" class="noWrite" required>
@@ -109,9 +105,13 @@
                             <b><label for="horarioF">Horário de término: </label></b>
                             <input type="time" name="horarioF" id="horarioF" class="noWrite" required>
                         </div>
+                        <div class="inputBox">
+                            <label for="desc" class="labelInput">Descrição</label>
+                            <span class="counter">0/1000</span>
+                            <textarea name="desc" id="desc" class="inputUser" cols="30" rows="10" required maxlength="1000"></textarea>
+                        </div>
                         <div class="botao">
                             <input type="submit" name="submit" id="submit">
-
                         </div>
                 </fieldset>
             </form>
