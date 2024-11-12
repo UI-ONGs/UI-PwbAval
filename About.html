@@ -7,6 +7,7 @@
     <!--chamando o css-->
     <link rel="stylesheet" href="css/About.css"> 
     <link rel="stylesheet" href="css/NavBar.css">
+    <script src="js/About.js" defer></script>
     <!--link para utilizar os icones-->
     <script src="https://kit.fontawesome.com/0e6a916873.js" crossorigin="anonymous"></script>
     <!-- Link para o FavIcon -->
@@ -71,62 +72,113 @@
         </ul>
     </nav>
 
-    <!--Texto Introdutório-->
-    <div class="team-section">
-        <div class="container">
-            <div class="row">
-                <div class="title">
-                    <h1>Um pouco sobre a gente...</h1>
-                    <p>A equipe da Solidarize tem o prazer de apresentar-lhes uma breve visão sobre nossa organização. Com o intuito de oferecer clareza e transparência, específicando a seguir informações que consideramos relevantes para nossos usuários.
-                    </p>
+    <main class="main-content">
+        <section id="home" class="hero">
+            <h1>Um pouco sobre a Solizarize</h1>
+        </section>
+
+        <section id="about" class="about">
+            <div class="about-text">
+                <h2>"Conexão + Otimização"</h2>
+                <p>Dado que o Espírito Santo abriga uma comunidade composta por mais de 18 mil Organizações Não Governamentais registradas, surgiu a necessidade de desenvolver uma plataforma que reúna todas essas instituições, as quais já se encontram cadastradas em nosso aplicativo. Tal iniciativa visa proporcionar praticidade e eficiência na localização dessas informações.</p>
+            </div>
+            <div class="about-image">
+                <img src="imagens/img_contextualizacao.png" alt="Conexão e Otimização">
+            </div>
+        </section>
+
+        <section id="sponsors" class="sponsors">
+            <h2>PATROCINADORES</h2>
+            <div class="sponsor-grid">
+                <img src="sponsor1.png" alt="Patrocinador 1">
+                <img src="sponsor2.png" alt="Patrocinador 2">
+                <img src="sponsor3.png" alt="Patrocinador 3">
+                <img src="sponsor4.png" alt="Patrocinador 4">
+                <img src="sponsor5.png" alt="Patrocinador 5">
+                <img src="sponsor6.png" alt="Patrocinador 6">
+                <img src="sponsor7.png" alt="Patrocinador 7">
+                <img src="sponsor8.png" alt="Patrocinador 8">
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <div class="feature-slider">
+                <div class="feature-item active" data-slide="1">
+                    <h3>PESQUISAR POR EVENTOS</h3>
+                    <p>Através do calendário você poderá conferir os eventos próximos, também podendo filtrar por localização ou categoria.</p>
+                    <a href="#calendar" class="feature-link">Ir para o Calendário</a>
+                </div>
+                <div class="feature-item" data-slide="2">
+                    <h3>PESQUISAR POR EVENTOS</h3>
+                    <p>Através do calendário você poderá conferir os eventos próximos, também podendo filtrar por localização ou categoria.</p>
+                    <a href="#calendar" class="feature-link">Ir para o Calendário</a>
                 </div>
             </div>
+            <div class="feature-text">
+                <h2>Funcionalidades da plataforma</h2>
+                <p>como <span id="feature-type">voluntário</span></p>
+            </div>
+        </section>
 
-            <!--Caixa Integrantes da Equipe-->
-            <div class="team-card">
-                <div class="card">
-                    <div class="content">
-                        <h3>Nossa Equipe</h3>
-                    </div>
-                    <div class="image-section">
-                        <div>
-                            <img src="imagens/dani_perfil.png" alt="pessoa"> 
-                            <h4>Daniel Haddad</h4>
-                        </div> 
-                        <div>
-                            <img src="imagens/gui_perfil.png" alt="pessoa">
-                            <h4>Guilherme do Carmo</h4>
-                        </div>
-                        <div>
-                            <img src="imagens/isa_perfil2.png" alt="pessoa">
-                            <h4>Isabelly Buge</h4>
-                        </div>
-                        <div>
-                            <img src="imagens/malu_perfil.png" alt="pessoa">
-                            <h4>Maria Arnhold</h4>
-                        </div>
-                    </div>
+        <section id="values" class="values">
+            <h2>VALORES</h2>
+            <div class="value-grid">
+                <div class="value-item">
+                    <img src="imagens/img_solidariedade-removebg-preview.png" alt="Solidariedade">
+                    <h3>Solidariedade</h3>
+                    <p>Caminhamos em busca de um bem comum e contra as injustiças e desigualdades.</p>
                 </div>
-
-                <!--Caixa Missão da Equipe-->
-                <div class="card">
-                    <div class="content">
-                        <h3>Nossa Missão</h3>
-                        <p>Dado que o Espírito Santo abriga uma comunidade composta por mais de 18 mil Organizações Não Governamentais registradas, surgiu a necessidade de desenvolver uma plataforma que reúna todas essas instituições, as quais já se encontram cadastradas em nosso aplicativo. Tal iniciativa visa proporcionar praticidade e eficiência na localização dessas informações.</p>
-                        <img src="imagens/mission.svg" alt="nossa missao">
-                    </div>
+                <div class="value-item">
+                    <img src="imagens/img_diversidade.png" alt="Diversidade">
+                    <h3>Diversidade</h3>
+                    <p>Valorizamos as diferenças e promovemos um ambiente inclusivo, onde todos têm voz e oportunidades iguais para participarem do melhor lugar.</p>
                 </div>
-
-                <!--Caixa App da Equipe-->
-                <div class="card">
-                    <div class="content">
-                        <h3>Nosso App</h3>
-                        <p>Nosso site oferece uma plataforma completa, permitindo o cadastro tanto de voluntários quanto de ONGs. Como voluntário você pode pesquisar por instituições de forma segura e rápida. Já as organizações cadastradas têm a oportunidade de recrutar novos voluntários por meio de uma página dedicada exclusivamente a elas. Experimente agora a Solidarize!</p>
-                        <img src="imagens/pc.svg" alt="computador">
-                    </div>
+                <div class="value-item">
+                    <img src="imagens/img_praticidade.png" alt="Praticidade">
+                    <h3>Praticidade</h3>
+                    <p>Priorizamos soluções eficientes e descomplicadas para atender rapidamente às necessidades dos nossos usuários.</p>
+                </div>
+                <div class="value-item">
+                    <img src="imagens/img_transparencia.png" alt="Transparência">
+                    <h3>Transparência</h3>
+                    <p>Atuamos de forma clara e aberta, garantindo confiança e alinhamento em todas as nossas ações e comunicações.</p>
+                </div>
+                <div class="value-item">
+                    <img src="imagens/img_responsabilidade.png" alt="Responsabilidade">
+                    <h3>Responsabilidade</h3>
+                    <p>Assumimos o compromisso com nossos usuários, patrocinadores e o meio digital, agindo de forma ética e segura.</p>
                 </div>
             </div>
-        </div>
-    </div>
+        </section>
+
+        <section id="faq" class="faq">
+            <h2>Perguntas Frequentes</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">pergunta 1</div>
+                    <div class="faq-answer">Resposta para a pergunta 1</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">pergunta 2</div>
+                    <div class="faq-answer">Resposta para a pergunta 2</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">pergunta 3</div>
+                    <div class="faq-answer">Resposta para a pergunta 3</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="newsletter" class="newsletter">
+            <h2>Fique por Dentro</h2>
+            <p>Receba atualizações sobre eventos, oportunidades de voluntariado e histórias inspiradoras.</p>
+            <form id="newsletter-form">
+                <input type="email" placeholder="Seu melhor e-mail" required>
+                <button type="submit">Inscrever-se</button>
+            </form>
+        </section>
+    </main>
+
+
 </body>
 </html>
