@@ -61,7 +61,7 @@ body {
     text-align: right; 
 }
 
-.about, .sponsors, .features, .values, .faq, .newsletter {
+.about, .sponsors, .features, .values, .faq-se, .newsletter {
     padding: 50px;
     background-color: white;
     margin-bottom: 20px;
@@ -76,29 +76,34 @@ body {
 
 .about-text {
     flex: 1;
-    padding-right: 50px;
+    padding-right: 100px;
+    text-align: justify; /* Justificar o texto */
+}
+
+.about-text p {
+    font-weight: bold;
 }
 
 .about-image {
     flex: 1;
     display: flex;
-    flex-direction: column; 
-    align-items: flex-start; 
-    gap: 10px; 
-    margin-left: 20%;
+    flex-direction: column;
+    align-items: center; /* Centralizar a imagem e o h2 verticalmente */
+    gap: 10px; /* Espaço entre o h2 e a imagem */
+    margin-left: 10%; /* Ajustar margem para melhor centralização */
 }
 
 .about-image h2 {
-    margin: 0; 
-    font-size: 24px; 
+    margin: 0;
+    font-size: 32px; /* Aumentar o tamanho do h2 */
+    text-align: center; /* Centralizar o texto do h2 */
 }
 
 .about-image img {
     max-width: 80%; 
-    height: auto; 
+    height: auto;
+    display: block; /* Garante que a imagem seja centralizada */
 }
-
-
 
 .sponsor-grid {
     display: grid;
@@ -148,12 +153,13 @@ body {
 .value-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 20px;
+    gap: 40px;
     margin-top: 30px;
 }
 
 .value-item {
     text-align: center;
+    font-size: 15px;
 }
 
 .value-item img {
@@ -161,6 +167,17 @@ body {
     max-width: 100px;
     height: auto;
     object-fit: contain;
+}
+
+/* Estilo geral */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #c7d3cc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
 
 .faq-item {
