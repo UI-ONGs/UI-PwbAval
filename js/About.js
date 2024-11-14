@@ -1,7 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // FAQ toggle
-    
-
     // Smooth scrolling
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -10,31 +7,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 behavior: 'smooth'
             });
         });
-    });
-
-    // Feature slider
-    const featureItems = document.querySelectorAll('.feature-item');
-    const featureType = document.getElementById('feature-type');
-    let currentSlide = 1;
-
-    function updateFeature() {
-        featureItems.forEach(item => item.classList.remove('active'));
-        featureItems[currentSlide - 1].classList.add('active');
-        featureType.textContent = currentSlide === 1 ? 'voluntário' : 'instituição';
-    }
-
-    setInterval(() => {
-        currentSlide = currentSlide === 1 ? 2 : 1;
-        updateFeature();
-    }, 5000);
-
-    // Newsletter form submission
-    const newsletterForm = document.getElementById('newsletter-form');
-    newsletterForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const email = this.querySelector('input[type="email"]').value;
-        alert(`Obrigado por se inscrever com o email: ${email}`);
-        this.reset();
     });
 
     // Mobile menu toggle
@@ -47,49 +19,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-
-document.addEventListener('DOMContentLoaded', function() {
-    const featureContainers = document.querySelectorAll('.features-container');
-
-    featureContainers.forEach(container => {
-        const scrollArea = container.querySelector('.features-scroll');
-        const featureItems = container.querySelectorAll('.feature-item');
-        const timelineDots = container.querySelectorAll('.timeline-dot');
-
-        const observerOptions = {
-            root: scrollArea,
-            rootMargin: '0px',
-            threshold: 0.6
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const activeFeature = entry.target;
-                    const featureIndex = Array.from(featureItems).indexOf(activeFeature);
-
-                    featureItems.forEach(item => item.classList.remove('active'));
-                    timelineDots.forEach(dot => dot.classList.remove('active'));
-
-                    activeFeature.classList.add('active');
-                    timelineDots[featureIndex].classList.add('active');
-                }
-            });
-        }, observerOptions);
-
-        featureItems.forEach(item => {
-            observer.observe(item);
-        });
-
-        // Animate feature items on page load
-        featureItems.forEach((item, index) => {
-            setTimeout(() => {
-                item.style.opacity = '1';
-                item.style.transform = 'translateY(0)';
-            }, index * 200);
-        });
-    });
-});
 
 const faqData = {
     sobre: [

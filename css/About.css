@@ -61,6 +61,7 @@ section{
 
 .about-text p {
     font-weight: bold;
+    font-size: 18px;
 }
 
 .about-image {
@@ -128,8 +129,8 @@ section{
 
 /* Seção Funcionalidades */
 .features {
-    max-width: 1200px;
-    margin: 2rem auto;
+    max-width: 1400px;
+    margin: 1rem auto;
     padding: 1rem;
 }
 
@@ -147,7 +148,7 @@ section{
     max-height: 400px;
     overflow-y: auto;
     scrollbar-width: thin;
-    scrollbar-color: #4A7C7C #f0f0f0;
+    scrollbar-color: #024b4b #f0f0f0;
 }
 
 .features-scroll::-webkit-scrollbar {
@@ -166,14 +167,14 @@ section{
 .feature-item {
     padding: 1.5rem;
     border-bottom: 1px solid #e0e0e0;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .feature-item:last-child {
     border-bottom: none;
 }
 
-.feature-item.active {
+.feature-item:hover {
     background-color: #e6f2f2;
 }
 
@@ -195,27 +196,6 @@ section{
     color: #2A5C5C;
 }
 
-.features-timeline {
-    width: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #f0f0f0;
-}
-
-.timeline-dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: #4A7C7C;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.timeline-dot.active {
-    transform: scale(1.2);
-    background-color: #2A5C5C;
-}
 
 .features-static {
     flex: 1;
@@ -225,10 +205,22 @@ section{
     justify-content: center;
 }
 
-h2 {
+.features-static p{
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.features-static h2 {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
     color: #333;
+}
+
+/* Aplica a barra de rolagem no lado esquerdo */
+.features-container:nth-of-type(2) {
+    direction: rtl; /* Move a barra de rolagem para o lado esquerdo */
+    text-align: left; /* Alinha o texto à esquerda */
+
 }
 
 .highlight {
@@ -239,14 +231,11 @@ h2 {
 @media (max-width: 768px) {
     .features-container {
         flex-direction: column;
+        flex-direction: column-reverse;
     }
 
     .features-scroll {
         max-height: none;
-    }
-
-    .features-timeline {
-        display: none;
     }
 
     .features-static {
