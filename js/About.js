@@ -1,25 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Smooth scrolling
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
-
-    // Mobile menu toggle
-    const mobileMenuToggle = document.querySelector('.navbar-mobile-toggle');
-    const mobileMenu = document.querySelector('.navbar-mobile-menu');
-
-    mobileMenuToggle.addEventListener('click', () => {
-        mobileMenu.classList.toggle('active');
-    });
-});
-
-
-
+// Armazenamento de perguntas e respostas da aba "Perguntas Frequentes"
 const faqData = {
     sobre: [
         { question: "Quem somos nós?", answer: "Somos uma organização dedicada a conectar voluntários com instituições que precisam de ajuda." },
@@ -41,6 +20,7 @@ const faqData = {
 const tabs = document.querySelectorAll('.tab');
 const faqContainer = document.getElementById('faq-container');
 
+// Criando no Html as perguntas e respostas
 function createFaqItem(question, answer) {
     const item = document.createElement('div');
     item.className = 'faq-item';
@@ -54,6 +34,7 @@ function createFaqItem(question, answer) {
     return item;
 }
 
+// Deixar as perguntas e respostas dinâmicas para trocar a categoria de pergunta e mostrar respostas
 function updateFAQ(category) {
     faqContainer.innerHTML = '';
     faqData[category].forEach(item => {
@@ -82,5 +63,5 @@ tabs.forEach(tab => {
     });
 });
 
-// Initialize with 'sobre' category
+// Iniciando sempre na categoria "sobre"
 updateFAQ('sobre');
