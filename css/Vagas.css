@@ -227,6 +227,7 @@ header{
 
   .form{
     min-width: 10rem;
+    border: 1px solid black;
   }
 
   .cardImage{
@@ -373,7 +374,6 @@ input:not(:placeholder-shown) ~ .reset {
 }
 
 .shadow__btn {
-    margin-top: 2em;
     min-width: 15vw;
     min-height: 7vh;
     padding: 10px 20px;
