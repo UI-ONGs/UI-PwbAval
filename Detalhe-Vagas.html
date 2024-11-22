@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informaçoes da Vaga</title>
+    <link rel="stylesheet" href="css/Detalhe-Vagas.css">
+    <link rel="stylesheet" href="css/NavBar.css">
+    <!--link para utilizar os icones-->
+    <script src="https://kit.fontawesome.com/0e6a916873.js" crossorigin="anonymous"></script>
+    <script defer src="js/Detalhe-Vagas.js"></script>
+    <script src="js/NavBar.js" defer></script>
+    <!-- Link para o FavIcon -->
+    <link rel="icon" href="imagens/logo.png">
+</head>
+<body>
+    <!-- Barra de navegação -->
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <img src="imagens/logo.png" alt="Solidarize Logo">
+            <span class="navbar-logo-text">Solidarize</span>
+        </div>
+        <ul class="navbar-menu">
+            <li><a href="index.html"><i class="fas fa-home"></i><span>Home</span></a></li>
+            <li><a href="Perfil.html"><i class="fas fa-user"></i><span>Perfil</span></a></li>
+            <li><a href="Calendario.html"><i class="fas fa-calendar-alt"></i><span>Eventos</span></a></li>
+            <li><a href="Vagas.html"><i class="fas fa-hands-helping"></i><span>Voluntariados</span></a></li>
+            <li><a href="Geo-Map.html"><i class="fas fa-map-marked-alt"></i><span>Mapa</span></a></li>
+            <li><a href="About.html"><i class="fas fa-info-circle"></i><span>Sobre Nós</span></a></li>
+        </ul>
+        <div class="navbar-user">
+            <img src="imagens/user-avatar.png" alt="User Avatar" class="navbar-user-avatar">
+            <span class="navbar-user-name">Nome do Usuário</span>
+        </div>
+    </nav>
+
+    <div class="navbar-mobile">
+        <div class="navbar-mobile-header">
+            <img src="imagens/logo.png" alt="Solidarize Logo" class="navbar-mobile-logo">
+            <button class="navbar-mobile-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <ul class="navbar-mobile-menu">
+            <li><a href="index.html"><i class="fas fa-home"></i><span>Home</span></a></li>
+            <li><a href="Perfil.html"><i class="fas fa-user"></i><span>Perfil</span></a></li>
+            <li><a href="Calendario.html"><i class="fas fa-calendar-alt"></i><span>Eventos</span></a></li>
+            <li><a href="Vagas.html"><i class="fas fa-hands-helping"></i><span>Voluntariados</span></a></li>
+            <li><a href="Geo-Map.html"><i class="fas fa-map-marked-alt"></i><span>Mapa</span></a></li>
+            <li><a href="About.html"><i class="fas fa-info-circle"></i><span>Sobre Nós</span></a></li>
+        </ul>
+    </div>
+    <div class="box">
+        <form action="">
+            <fieldset>
+                <legend><a>Dados da Vaga</a></legend>
+                <!-- Dados puxados -->
+                <div class="conteudo-img"><img src="imagens/floresta.jpg" alt="Imagem"></div>
+                <div id="eventDataDisplay">
+
+                </div>
+                <br>
+                <!-- Botão de voltar -->
+                <a href="https://ui-ongs.github.io/UI-PwbAval/Vagas.html"><button type="button" class="Voltar">Voltar</button></a>
+            </fieldset>
+
+        </form>
+    </div>
+
+</body>
+</html>
