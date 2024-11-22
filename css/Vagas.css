@@ -11,10 +11,16 @@
 }
 
 body{
-    background-color: #f6f6f6;
+
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: light_gray;
+    /*background-image: radial-gradient(rgba(255, 255, 255, 0.171) 2px, transparent 0);
+    background-size: 30px 30px;
+    background-position: -5px -5px;*/
+    max-height: 100vh;
+    overflow: hidden;
 
 }
 
@@ -285,15 +291,6 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-}
-
-body{
-  background-color: #44b88b8f;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.171) 2px, transparent 0);
-  background-size: 30px 30px;
-  background-position: -5px -5px;
-  max-height: 100vh;
-  overflow: hidden;
 }
 
 .form button {
