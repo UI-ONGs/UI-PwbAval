@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Configurações da página e inclusão de estilos e scripts -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/Login.css">
+    <script src="js/Login.js" defer></script>
+    <script src="js/NavBar.js" defer></script>
+
+    <script src="https://kit.fontawesome.com/0e6a916873.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="imagens/logo.png">
+    <title>Entrar</title>
+</head>
+<body>
+    <!-- Div para exibir mensagens -->
+    <div class="message" id="message"></div>
+
+    <!-- Container principal -->
+    <div class="container">
+        <div class="signin-signup">
+            <!-- Formulário de login -->
+            <form id="sign-in-form" class="sign-in-form">
+                <h2 class="title">Login</h2>
+                <div class="input-field">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="signin-username" placeholder="Nome de Usuário">
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="signin-password" placeholder="Senha">
+                </div>
+                <input type="submit" value="Login" class="btn">
+                <p class="social-text">Ou faça login com uma rede social</p>
+                <!-- Ícones para login social -->
+                <div class="social-media">
+                    <a href="" class="social-icon">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="" class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="" class="social-icon">
+                        <i class="fab fa-google"></i>
+                    </a>
+                    <a href="" class="social-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+                <!-- Link para mudar para o formulário de registro -->
+                <p class="account-text login">Não tem uma conta? <a href="#" id="sign-up-btn2">Cadastre-se</a></p>
+            </form>
+
+            <!-- Formulário de registro de usuário -->
+            <form id="sign-up-form" class="sign-up-form">
+                <h2 class="title">Cadastre-se</h2>
+                <div class="input-field">
+                    <i class="fas fa-solid fa-id-card"></i>
+                    <input type="text" id="signup-name" placeholder="Nome Completo">
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="signup-username" placeholder="Nome de Usuário">
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="signup-email" placeholder="Email">
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="signup-password" placeholder="Senha">
+                </div>
+                <input type="submit" value="Sign UP" class="btn">
+                <p class="social-text">Ou faça login com uma rede social</p>
+                <!-- Ícones para login social -->
+                <div class="social-media">
+                    <a href="" class="social-icon">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="" class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="" class="social-icon">
+                        <i class="fab fa-google"></i>
+                    </a>
+                    <a href="" class="social-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+                <!-- Botão para alternar para o formulário de registro de instituição -->
+                <p class="goto-p">É uma Instituição? <button type="submit" class="goto-btn" id="goto-inst">Clique Aqui</button></p>
+                <!-- Link para mudar para o formulário de login -->
+                <p class="account-text">Já tem uma conta? <a href="#" id="sign-in-btn2">Login</a></p>
+            </form>
+
+            <!-- Formulário de registro de instituição -->
+            <form id="sign-up-inst" class="sign-up-inst">
+                <h2 class="title">Login</h2>
+                <div class="input-field">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="inst-name" placeholder="Nome da Instituição">
+                </div>
+                <div class="input-field">
+                    <i class="fa-solid fa-icons"></i>
+                    <input type="text" id="inst-category" placeholder="Categoria da Instituição">
+                </div>
+                <div class="input-field">
+                    <i class="fa-solid fa-id-card"></i>
+                    <input type="text" id="inst-cnpj" placeholder="CNPJ">
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="inst-email" placeholder="Email">
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="inst-password" placeholder="Senha">
+                </div>
+                <input type="submit" value="Sign UP" class="btn">
+                <p class="social-text">Ou faça login com uma rede social</p>
+                <!-- Ícones para login social -->
+                <div class="social-media">
+                    <a href="" class="social-icon">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="" class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="" class="social-icon">
+                        <i class="fab fa-google"></i>
+                    </a>
+                    <a href="" class="social-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+                <!-- Botão para alternar para o formulário de registro de voluntário -->
+                <p class="goto-p">É um Voluntário? <button type="submit" class="goto-btn" id="goto-vol">Click here</button></p>
+                <!-- Link para mudar para o formulário de login -->
+                <p class="account-text">Já tem uma conta? <a href="#" id="sign-in-btn2">Sign in</a></p>
+            </form>
+        </div>
+
+        <!-- Painéis com conteúdo adicional -->
+        <div class="panels-container">
+            <div class="panel left-panel">
+                <div class="content">
+                    <h3>Membro de uma Instituição?</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit dolore aut consectetur tempora, quia quibusdam quae labore reiciendis quam nisi earum neque, eligendi repudiandae quaerat nulla iste magni quas non!</p>
+                    <button class="btn" id="sign-in-btn">Login</button>
+                </div>
+                <img src="imagens/signin.svg" alt="" class="image">
+            </div>
+            <div class="panel right-panel">
+                <div class="content">
+                    <h3>Novo Aqui?</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit dolore aut consectetur tempora, quia quibusdam quae labore reiciendis quam nisi earum neque, eligendi repudiandae quaerat nulla iste magni quas non!</p>
+                    <button class="btn" id="sign-up-btn">Cadastrar-se</button>
+                </div>
+                <img src="imagens/signup.svg" alt="" class="image">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
